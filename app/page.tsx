@@ -1,65 +1,269 @@
+"use client";
 import Image from "next/image";
-
+import { useEffect, useState } from "react";
+import gsap from "gsap";
+import Toggle from "./components/Toggle";
+import Content from "./components/Content";
+import Projects from "./components/Projects";
+import hearts from "../public/hearts.svg";
+import gemini from "../public/gemini.svg";
+import { LuHeart } from "react-icons/lu";
+import { FaRegCopyright } from "react-icons/fa";
+import heartsHovered from "../public/hearts-hover.svg";
 export default function Home() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isGeminiHovered, setIsGeminiHovered] = useState(false);
+  const [isHeartsHovered, setIsHeartsHovered] = useState(false);
+
+  const handleGeminiMouseEnter = () => {
+    setIsGeminiHovered(true);
+    const geminiIcon = document.querySelector(".gemini-icon");
+    if (geminiIcon) {
+      gsap.to(geminiIcon, {
+        rotation: 180,
+        duration: 0.4,
+        ease: "power2.inOut",
+      });
+    }
+  };
+
+  const handleGeminiMouseLeave = () => {
+    setIsGeminiHovered(false);
+    const geminiIcon = document.querySelector(".gemini-icon");
+    if (geminiIcon) {
+      gsap.to(geminiIcon, {
+        rotation: 0,
+        duration: 0.4,
+        ease: "power2.inOut",
+      });
+    }
+  };
+
+  const handleHeartsMouseEnter = () => {
+    setIsHeartsHovered(true);
+  };
+
+  const handleHeartsMouseLeave = () => {
+    setIsHeartsHovered(false);
+  };
+
+  useEffect(() => {
+    const container = document.querySelector(".home-container");
+    const box = document.querySelector(".fade-in-box");
+    const footer = document.querySelector(".fade-in-footer");
+    const content = document.querySelector(".slide-in-content");
+
+    if (container) {
+      gsap.to(container, {
+        backgroundImage:
+          "radial-gradient(92.18% 99.11% at 26.56% 107.7%, rgba(255, 221, 85, 0) 0%, rgba(255, 84, 62, 0) 50%, rgba(200, 55, 171, 0) 100%)",
+        backgroundColor: "#FEFEFB",
+        duration: 2,
+        ease: "power2.inOut",
+        delay: 0.5,
+      });
+    }
+
+    if (box) {
+      gsap.set(box, { opacity: 0 });
+      gsap.to(box, {
+        opacity: 1,
+        duration: 1.5,
+        ease: "power2.inOut",
+        delay: 2.2,
+      });
+    }
+
+    if (footer) {
+      gsap.set(footer, { opacity: 0 });
+      gsap.to(footer, {
+        opacity: 1,
+        duration: 1.5,
+        ease: "power2.inOut",
+        delay: 2.2,
+      });
+    }
+
+    if (content) {
+      gsap.set(content, { opacity: 0, left: "0%", position: "relative" });
+      // First: fade in at center
+      gsap.to(content, {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power2.inOut",
+        delay: 2.8,
+        left: "30%",
+      });
+      // Then: move from center to left
+      gsap.to(content, {
+        left: "0%",
+        duration: 1.5,
+        ease: "power2.inOut",
+        delay: 4.5,
+      });
+    }
+
+    const projects = document.querySelector(".projects-sidebar");
+    if (projects) {
+      gsap.set(projects, { opacity: 0 });
+      // Fade in projects when content moves to the left
+      gsap.to(projects, {
+        opacity: 1,
+        duration: 1.5,
+        ease: "power2.inOut",
+        delay: 4.5,
+      });
+    }
+
+    const toggle = document.querySelector(".toggle-button");
+    if (toggle) {
+      gsap.set(toggle, { opacity: 0 });
+      // Fade in toggle with the content
+      gsap.to(toggle, {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.inOut",
+        delay: 2.8,
+      });
+    }
+
+    const geminiIcon = document.querySelector(".gemini-icon");
+    if (geminiIcon) {
+      gsap.set(geminiIcon, { rotation: -180, opacity: 0 });
+      // Rotate and fade in gemini icon with the content
+      gsap.to(geminiIcon, {
+        rotation: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power2.inOut",
+        delay: 2.8,
+      });
+    }
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div
+      className='flex min-h-screen flex-col items-center justify-between font-sans home-container overflow-hidden'
+      style={{
+        background:
+          "radial-gradient(92.18% 99.11% at 26.56% 107.7%, rgba(255, 221, 85, 0.08) 0%, rgba(255, 84, 62, 0.08) 50%, rgba(200, 55, 171, 0.08) 100%)",
+        backgroundColor: isDarkMode ? "#3C3B3A" : "white",
+        transition: "backgroundColor 0.3s ease",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          flex: 1,
+          position: "relative",
+        }}
+      >
+        <div
+          className='fade-in-box rounded-lg bg-[#F8F8F5] flex-1'
+          style={{
+            width: "calc(100% - 48px)",
+            marginTop: "24px",
+            marginLeft: "24px",
+            marginRight: "24px",
+            padding: "32px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            position: "relative",
+            backgroundColor: isDarkMode ? "#252423" : "#F8F8F5",
+            transition: "backgroundColor 0.3s ease",
+          }}
+        >
+          {/* Header Section */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: "32px",
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            {isDarkMode ? (
+              <Image
+                src={isHeartsHovered ? heartsHovered : hearts}
+                width={32}
+                height={32}
+                alt='Picture of the author'
+                onMouseEnter={handleHeartsMouseEnter}
+                onMouseLeave={handleHeartsMouseLeave}
+                style={{ cursor: "pointer", transition: "filter 0.3s ease" }}
+              />
+            ) : (
+              <Image
+                className='gemini-icon'
+                src={gemini}
+                width={32}
+                height={32}
+                alt='Picture of the author'
+                onMouseEnter={handleGeminiMouseEnter}
+                onMouseLeave={handleGeminiMouseLeave}
+                style={{ cursor: "pointer" }}
+              />
+            )}
+            {/* Gemini Icon */}
+
+            {/* Toggle Button */}
+            <div className='toggle-button'>
+              <Toggle isDarkMode={isDarkMode} onToggle={setIsDarkMode} />
+            </div>
+          </div>
+
+          {/* Content Section */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-end",
+            }}
           >
-            Documentation
-          </a>
+            <Content isDarkMode={isDarkMode} />
+            {/* End Content Section */}
+
+            <Projects isDarkMode={isDarkMode} />
+          </div>
         </div>
-      </main>
+      </div>
+
+      <footer
+        className='fade-in-footer w-full px-12 py-4 flex justify-between items-center'
+        style={{
+          transition: "color 0.3s ease",
+        }}
+      >
+        <div className='flex items-center gap-2'>
+          <span
+            className='text-sm'
+            style={{
+              color: isDarkMode ? "#C8C7C5" : "#666666",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "4px",
+            }}
+          >
+            Love this for us. <LuHeart />
+          </span>
+        </div>
+        <div className='flex items-center gap-3'>
+          <span
+            className='text-sm'
+            style={{
+              color: isDarkMode ? "#C8C7C5" : "#666666",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "4px",
+            }}
+          >
+            <FaRegCopyright />
+            Nat Nuding 2025
+          </span>
+        </div>
+      </footer>
     </div>
   );
 }
