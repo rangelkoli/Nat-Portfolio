@@ -3,9 +3,13 @@ import { useState } from "react";
 
 interface ProjectsProps {
   isDarkMode?: boolean;
+  isMobile?: boolean;
 }
 
-export default function Projects({ isDarkMode = false }: ProjectsProps) {
+export default function Projects({
+  isDarkMode = false,
+  isMobile = false,
+}: ProjectsProps) {
   const projectButtons = ["HereAfter", "Caravan", "Maybern", "Vault", "Parker"];
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
@@ -16,8 +20,7 @@ export default function Projects({ isDarkMode = false }: ProjectsProps) {
         display: "flex",
         flexDirection: "column",
         gap: "12px",
-
-        alignItems: "flex-end",
+        alignItems: isMobile ? "center" : "flex-end",
       }}
     >
       {projectButtons.map((project) => (

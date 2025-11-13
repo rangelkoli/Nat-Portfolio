@@ -14,6 +14,7 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isGeminiHovered, setIsGeminiHovered] = useState(false);
   const [isHeartsHovered, setIsHeartsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleGeminiMouseEnter = () => {
     setIsGeminiHovered(true);
@@ -46,6 +47,16 @@ export default function Home() {
   const handleHeartsMouseLeave = () => {
     setIsHeartsHovered(false);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const container = document.querySelector(".home-container");
@@ -92,7 +103,7 @@ export default function Home() {
         duration: 0.5,
         ease: "power2.inOut",
         delay: 2.8,
-        left: "30%",
+        left: isMobile ? "0%" : "120%",
       });
       // Then: move from center to left
       gsap.to(content, {
@@ -139,11 +150,11 @@ export default function Home() {
         delay: 2.8,
       });
     }
-  }, []);
+  }, [isMobile]);
 
   return (
     <div
-      className='flex min-h-screen flex-col items-center justify-between font-sans home-container overflow-hidden'
+      className='flex h-screen flex-col items-center justify-between font-sans home-container overflow-hidden'
       style={{
         background:
           "radial-gradient(92.18% 99.11% at 26.56% 107.7%, rgba(255, 221, 85, 0.08) 0%, rgba(255, 84, 62, 0.08) 50%, rgba(200, 55, 171, 0.08) 100%)",
@@ -166,13 +177,17 @@ export default function Home() {
             marginTop: "24px",
             marginLeft: "24px",
             marginRight: "24px",
-            padding: "32px",
+
+            padding: isMobile ? "16px" : "32px",
             display: "flex",
+            gap: "100px",
             flexDirection: "column",
             justifyContent: "space-between",
             position: "relative",
             backgroundColor: isDarkMode ? "#252423" : "#F8F8F5",
             transition: "backgroundColor 0.3s ease",
+            overflowY: isMobile ? "auto" : "visible",
+            maxHeight: isMobile ? "calc(100vh - 75px)" : "auto",
           }}
         >
           {/* Header Section */}
@@ -219,13 +234,35 @@ export default function Home() {
             style={{
               display: "flex",
               justifyContent: "space-between",
-              alignItems: "flex-end",
+              flexDirection: isMobile ? "column" : "row",
+              gap: isMobile ? "80px" : "0",
+              height: isMobile ? "auto" : "100%",
+              alignItems: isMobile ? "center" : "flex-end",
+              paddingTop: isMobile ? "24px" : "0",
             }}
           >
-            <Content isDarkMode={isDarkMode} />
+            <div
+              style={{
+                width: isMobile ? "100%" : "auto",
+                textAlign: isMobile ? "center" : "left",
+              }}
+            >
+              <Content isDarkMode={isDarkMode} />
+            </div>
             {/* End Content Section */}
 
-            <Projects isDarkMode={isDarkMode} />
+            <div
+              style={{
+                width: isMobile ? "100%" : "auto",
+                maxHeight: isMobile ? "auto" : "auto",
+                overflowY: isMobile ? "visible" : "visible",
+                paddingRight: isMobile ? "0" : "0",
+                display: "flex",
+                justifyContent: isMobile ? "center" : "flex-end",
+              }}
+            >
+              <Projects isDarkMode={isDarkMode} isMobile={isMobile} />
+            </div>
           </div>
         </div>
       </div>
