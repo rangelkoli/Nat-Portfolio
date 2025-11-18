@@ -5,6 +5,8 @@ import gsap from "gsap";
 import Toggle from "./components/Toggle";
 import Content from "./components/Content";
 import Projects from "./components/Projects";
+import Maybern from "./components/projects/Maybern";
+import Vault from "./components/projects/Vault";
 import hearts from "../public/hearts.svg";
 import gemini from "../public/gemini.svg";
 import { LuHeart } from "react-icons/lu";
@@ -15,6 +17,11 @@ export default function Home() {
   const [isGeminiHovered, setIsGeminiHovered] = useState(false);
   const [isHeartsHovered, setIsHeartsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
+
+  const handleGoHome = () => {
+    setSelectedProject(null);
+  };
 
   const handleGeminiMouseEnter = () => {
     setIsGeminiHovered(true);
@@ -177,26 +184,37 @@ export default function Home() {
             marginTop: "24px",
             marginLeft: "24px",
             marginRight: "24px",
-
             padding: isMobile ? "16px" : "32px",
             display: "flex",
-            gap: "100px",
+            gap: isMobile ? "100px" : "25px",
             flexDirection: "column",
             justifyContent: "space-between",
             position: "relative",
-            backgroundColor: isDarkMode ? "#252423" : "#F8F8F5",
+            backgroundColor: selectedProject
+              ? "transparent"
+              : isDarkMode
+              ? "#252423"
+              : "#F8F8F5",
             transition: "backgroundColor 0.3s ease",
-            overflowY: isMobile ? "auto" : "visible",
-            maxHeight: isMobile ? "calc(100vh - 75px)" : "auto",
+            overflow: "hidden",
+            maxHeight: isMobile ? "calc(100vh - 75px)" : "calc(100vh - 75px)",
+            height: isMobile ? "calc(100vh - 75px)" : "calc(100vh - 75px)",
           }}
         >
           {/* Header Section */}
           <div
+            className='w-full '
             style={{
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              marginBottom: "32px",
+              position: "absolute",
+              top: "32px",
+              left: isMobile ? "16px" : "32px",
+              right: isMobile ? "16px" : "32px",
+              zIndex: 10,
+              width: "auto",
+              height: "auto",
             }}
           >
             {isDarkMode ? (
@@ -236,19 +254,46 @@ export default function Home() {
               justifyContent: "space-between",
               flexDirection: isMobile ? "column" : "row",
               gap: isMobile ? "80px" : "0",
-              height: isMobile ? "auto" : "100%",
+              height: "100%",
               alignItems: isMobile ? "center" : "flex-end",
               paddingTop: isMobile ? "24px" : "0",
+              overflow: "hidden",
             }}
           >
-            <div
-              style={{
-                width: isMobile ? "100%" : "auto",
-                textAlign: isMobile ? "center" : "left",
-              }}
-            >
-              <Content isDarkMode={isDarkMode} />
-            </div>
+            {selectedProject === "Maybern" ? (
+              <div
+                style={{
+                  overflowY: "auto",
+                  width: isMobile ? "100%" : "auto",
+                  flex: 1,
+                  paddingRight: "12px",
+                  height: isMobile ? "auto" : "100%",
+                }}
+              >
+                <Maybern />
+              </div>
+            ) : selectedProject === "Vault" ? (
+              <div
+                style={{
+                  overflowY: "auto",
+                  width: isMobile ? "100%" : "auto",
+                  flex: 1,
+                  paddingRight: "12px",
+                  height: isMobile ? "auto" : "100%",
+                }}
+              >
+                <Vault />
+              </div>
+            ) : (
+              <div
+                style={{
+                  width: isMobile ? "100%" : "auto",
+                  textAlign: isMobile ? "center" : "left",
+                }}
+              >
+                <Content isDarkMode={isDarkMode} />
+              </div>
+            )}
             {/* End Content Section */}
 
             <div
@@ -261,7 +306,13 @@ export default function Home() {
                 justifyContent: isMobile ? "center" : "flex-end",
               }}
             >
-              <Projects isDarkMode={isDarkMode} isMobile={isMobile} />
+              <Projects
+                isDarkMode={isDarkMode}
+                isMobile={isMobile}
+                onProjectSelect={setSelectedProject}
+                onGoHome={handleGoHome}
+                selectedProject={selectedProject}
+              />
             </div>
           </div>
         </div>
