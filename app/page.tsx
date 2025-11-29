@@ -415,6 +415,12 @@ export default function Home() {
               display: "inline-flex",
               alignItems: "center",
               gap: "4px",
+              fontFamily: '"Instrument Sans", sans-serif',
+              fontWeight: 400,
+              fontStyle: "normal",
+              fontSize: "14px",
+              lineHeight: "150%",
+              letterSpacing: "-0.02em",
             }}
           >
             <FaRegCopyright />

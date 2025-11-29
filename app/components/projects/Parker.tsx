@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { RiArrowRightLine } from "react-icons/ri";
 import Parker1 from "@/public/projects/Parker1.png";
 import Parker2 from "@/public/projects/Parker2.jpg";
 import Parker3 from "@/public/projects/Parker3.png";
@@ -14,9 +15,39 @@ function Parker() {
     <div className='min-h-screen bg-transparent md:p-8 overflow-auto mt-6 md:mt-10 custom-scrollbar'>
       {/* Header */}
       <div className='mb-8 px-4 md:px-0'>
-        <h1 className='text-3xl md:text-5xl font-bold text-gray-900 mb-2'>Parker</h1>
-        <p className='text-lg text-gray-600 mb-2'>getparker.com →</p>
-        <p className='text-gray-500'>
+        <h1
+          className='text-3xl md:text-5xl font-bold text-gray-900 mb-2'
+          style={{
+            fontFamily: '"Instrument Sans", sans-serif',
+            fontWeight: 400,
+            fontStyle: "normal",
+            fontSize: "28px",
+            lineHeight: "150%",
+            letterSpacing: "-0.02em",
+          }}
+        >
+          Parker
+        </h1>
+        <a
+          href="https://getparker.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className='text-lg text-gray-600 mb-2 flex items-center gap-1 group cursor-pointer w-fit'
+        >
+          getparker.com
+          <RiArrowRightLine className="transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+        <p
+          className='text-gray-500'
+          style={{
+            fontFamily: '"Instrument Sans", sans-serif',
+            fontWeight: 400,
+            fontStyle: "normal",
+            fontSize: "14px",
+            lineHeight: "150%",
+            letterSpacing: "-0.02em",
+          }}
+        >
           Series B | Head of Design
         </p>
       </div>
@@ -29,7 +60,7 @@ function Parker() {
           <Image
             src={Parker1}
             alt='Parker Hero'
-            className='w-full h-full md:rounded-lg shadow-md'
+            className='w-full h-full'
           />
         </div>
 

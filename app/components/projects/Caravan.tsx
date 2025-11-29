@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { RiArrowRightLine } from "react-icons/ri";
 import Caravan1 from "@/public/projects/Caravan1.jpg";
 import Caravan3 from "@/public/projects/Caravan3.png";
 import Caravan4 from "@/public/projects/Caravan4.png";
@@ -10,9 +11,39 @@ function Caravan() {
     <div className='min-h-screen bg-transparent md:p-8 overflow-auto mt-6 md:mt-10 custom-scrollbar'>
       {/* Header */}
       <div className='mb-8 px-4 md:px-0'>
-        <h1 className='text-3xl md:text-5xl font-bold text-gray-900 mb-2'>Caravan</h1>
-        <p className='text-lg text-gray-600 mb-2'>gocaravan.ai →</p>
-        <p className='text-gray-500'>
+        <h1
+          className='text-3xl md:text-5xl font-bold text-gray-900 mb-2'
+          style={{
+            fontFamily: '"Instrument Sans", sans-serif',
+            fontWeight: 400,
+            fontStyle: "normal",
+            fontSize: "28px",
+            lineHeight: "150%",
+            letterSpacing: "-0.02em",
+          }}
+        >
+          Caravan
+        </h1>
+        <a
+          href="https://gocaravan.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className='text-lg text-gray-600 mb-2 flex items-center gap-1 group cursor-pointer w-fit'
+        >
+          gocaravan.ai
+          <RiArrowRightLine className="transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+        <p
+          className='text-gray-500'
+          style={{
+            fontFamily: '"Instrument Sans", sans-serif',
+            fontWeight: 400,
+            fontStyle: "normal",
+            fontSize: "14px",
+            lineHeight: "150%",
+            letterSpacing: "-0.02em",
+          }}
+        >
           VC-Backed Startup | Product Designer
         </p>
       </div>
@@ -25,7 +56,7 @@ function Caravan() {
           <Image
             src={Caravan1}
             alt='Caravan Shipment Detail Page'
-            className='w-full h-full md:rounded-lg shadow-md'
+            className='w-full h-full'
           />
         </div>
 

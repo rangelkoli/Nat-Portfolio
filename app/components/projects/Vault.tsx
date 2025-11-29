@@ -17,7 +17,7 @@ function Vault() {
         <h1
           className='text-3xl md:text-5xl font-bold text-[#252423] mb-2'
           style={{
-            fontFamily: "Instrument Sans",
+            fontFamily: '"Instrument Sans", sans-serif',
             fontStyle: "normal",
             fontWeight: 400,
             fontSize: "28px",
@@ -30,7 +30,7 @@ function Vault() {
         <p
           className='text-[#6B6B69]'
           style={{
-            fontFamily: "'Instrument Sans'",
+            fontFamily: '"Instrument Sans", sans-serif',
             fontStyle: "normal",
             fontWeight: 400,
             fontSize: "14px",

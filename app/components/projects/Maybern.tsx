@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { RiArrowRightLine } from "react-icons/ri";
 import Dashboard from "@/public/projects/Dashboard.png";
 import Divider from "@/public/Divider.svg";
 import ReportBuilder from "@/public/projects/ReportBuilder.png";
@@ -11,9 +12,39 @@ function Maybern() {
     <div className='min-h-screen bg-transparent md:p-8 overflow-auto mt-6 md:mt-10 custom-scrollbar'>
       {/* Header */}
       <div className='mb-8 px-4 md:px-0'>
-        <h1 className='text-3xl md:text-5xl font-bold text-gray-900 mb-2'>Maybern</h1>
-        <p className='text-lg text-gray-600 mb-2'>Maybern.com →</p>
-        <p className='text-gray-500'>
+        <h1
+          className='text-3xl md:text-5xl font-bold text-gray-900 mb-2'
+          style={{
+            fontFamily: '"Instrument Sans", sans-serif',
+            fontWeight: 400,
+            fontStyle: "normal",
+            fontSize: "28px",
+            lineHeight: "150%",
+            letterSpacing: "-0.02em",
+          }}
+        >
+          Maybern
+        </h1>
+        <a
+          href="https://Maybern.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className='text-lg text-gray-600 mb-2 flex items-center gap-1 group cursor-pointer w-fit'
+        >
+          Maybern.com
+          <RiArrowRightLine className="transition-transform duration-300 group-hover:translate-x-1" />
+        </a>
+        <p
+          className='text-gray-500'
+          style={{
+            fontFamily: '"Instrument Sans", sans-serif',
+            fontWeight: 400,
+            fontStyle: "normal",
+            fontSize: "14px",
+            lineHeight: "150%",
+            letterSpacing: "-0.02em",
+          }}
+        >
           Series A | Senior Product Designer | 2025
         </p>
       </div>
