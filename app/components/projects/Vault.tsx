@@ -11,11 +11,11 @@ import Drop2 from "@/public/projects/Drop2.png";
 
 function Vault() {
   return (
-    <div className='min-h-screen bg-transparent p-8 overflow-auto mt-10 '>
+    <div className='min-h-screen bg-transparent md:p-8 overflow-auto mt-6 md:mt-10 '>
       {/* Header */}
-      <div className='mb-8'>
+      <div className='mb-8 px-4 md:px-0'>
         <h1
-          className='text-5xl font-bold text-[#252423] mb-2'
+          className='text-3xl md:text-5xl font-bold text-[#252423] mb-2'
           style={{
             fontFamily: "Instrument Sans",
             fontStyle: "normal",
@@ -30,7 +30,7 @@ function Vault() {
         <p
           className='text-[#6B6B69]'
           style={{
-            fontFamily: "&apos;Instrument Sans&apos;",
+            fontFamily: "'Instrument Sans'",
             fontStyle: "normal",
             fontWeight: 400,
             fontSize: "14px",
@@ -44,24 +44,24 @@ function Vault() {
 
       {/* Main Content Grid */}
 
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mb-8'>
         {/* Introduction Section */}
 
         <div className='w-full col-span-2'>
           <Image
             src={Vault1}
             alt='Vault Project 1'
-            className='w-full h-full rounded-lg shadow-md'
+            className='w-full h-full '
           />
         </div>
 
-        <div className='col-span-1 flex flex-col lg:flex-row gap-8'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 px-4 md:px-0'>
           <div className='w-full'>
             <div className='w-full leading-relaxed space-y-6'>
               <p
                 className='text-sm font-normal text-[#6B6B69]'
                 style={{
-                  fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                  fontFamily: "'Instrument Sans', sans-serif",
 
                   lineHeight: "150%",
 
@@ -79,7 +79,7 @@ function Vault() {
               <p
                 className='text-sm font-normal text-[#6B6B69]'
                 style={{
-                  fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                  fontFamily: "'Instrument Sans', sans-serif",
 
                   lineHeight: "150%",
 
@@ -106,12 +106,12 @@ function Vault() {
 
         {/* Report Builder Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-8'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 px-4 md:px-0'>
           <div className='w-full lg:w-1/2'>
             <div
               className='mb-4 text-[#585755]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 fontWeight: 400,
 
@@ -130,7 +130,7 @@ function Vault() {
             <p
               className='text-sm font-normal text-[#6B6B69]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -146,7 +146,7 @@ function Vault() {
             <p
               className='text-sm font-normal text-[#6B6B69] mt-4'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -168,11 +168,11 @@ function Vault() {
 
         {/* Research Section */}
 
-        <div className='col-span-1'>
+        <div className='col-span-1 px-4 md:px-0'>
           <div
             className='mb-4 text-[#585755]'
             style={{
-              fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+              fontFamily: "'Instrument Sans', sans-serif",
 
               fontWeight: 400,
 
@@ -191,7 +191,7 @@ function Vault() {
           <p
             className='text-sm font-normal text-[#6B6B69]'
             style={{
-              fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+              fontFamily: "'Instrument Sans', sans-serif",
 
               lineHeight: "150%",
 
@@ -213,12 +213,12 @@ function Vault() {
 
         {/* Design Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-8 relative'>
-          <div className='w-full lg:w-1/2'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 relative'>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
               className='mb-4 text-[#585755]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 fontWeight: 400,
 
@@ -237,7 +237,7 @@ function Vault() {
             <p
               className='text-sm font-normal text-[#6B6B69]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -255,7 +255,7 @@ function Vault() {
             <p
               className='text-sm font-normal text-[#6B6B69] mt-4'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -274,7 +274,7 @@ function Vault() {
             </p>
           </div>
 
-          <div className='w-full lg:w-1/2  absolute bottom-3 right-0'>
+          <div className='w-full lg:w-1/2 lg:absolute lg:bottom-3 lg:right-0'>
             <div className='flex justify-center items-center'>
               <Image
                 src={VaultBoard}
@@ -290,18 +290,18 @@ function Vault() {
           </div>
         </div>
 
-        <div className='col-span-1'>
+        <div className='col-span-1 px-4 md:px-0'>
           <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
         </div>
 
         {/* North Star Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-8'>
-          <div className='w-full lg:w-1/2'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
               className='mb-4 text-[#585755]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 fontWeight: 400,
 
@@ -320,7 +320,7 @@ function Vault() {
             <p
               className='text-sm font-normal text-[#6B6B69]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -339,7 +339,7 @@ function Vault() {
             <p
               className='text-sm font-normal text-[#6B6B69] mt-4'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -370,18 +370,18 @@ function Vault() {
           </div>
         </div>
 
-        <div className='col-span-1'>
+        <div className='col-span-1 px-4 md:px-0'>
           <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
         </div>
 
         {/* MVP Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-8'>
-          <div className='w-full lg:w-1/2'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
               className='mb-4 text-[#585755]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 fontWeight: 400,
 
@@ -400,7 +400,7 @@ function Vault() {
             <p
               className='text-sm font-normal text-[#6B6B69]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 

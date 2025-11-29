@@ -7,11 +7,16 @@ import Content from "./components/Content";
 import Projects from "./components/Projects";
 import Maybern from "./components/projects/Maybern";
 import Vault from "./components/projects/Vault";
+import HereAfter from "./components/projects/HereAfter";
+import Parker from "./components/projects/Parker";
+import Caravan from "./components/projects/Caravan";
 import hearts from "../public/hearts.svg";
 import gemini from "../public/gemini.svg";
 import { LuHeart } from "react-icons/lu";
 import { FaRegCopyright } from "react-icons/fa";
 import heartsHovered from "../public/hearts-hover.svg";
+import { IoMdArrowRoundBack } from "react-icons/io";
+
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isGeminiHovered, setIsGeminiHovered] = useState(false);
@@ -159,6 +164,16 @@ export default function Home() {
     }
   }, [isMobile]);
 
+  useEffect(() => {
+    if (selectedProject) {
+      setIsDarkMode(false);
+      const box = document.querySelector(".fade-in-box");
+      if (box) {
+        box.scrollTop = 0;
+      }
+    }
+  }, [selectedProject]);
+
   return (
     <div
       className='flex h-screen flex-col items-center justify-between font-sans home-container overflow-hidden'
@@ -196,7 +211,7 @@ export default function Home() {
               ? "#252423"
               : "#F8F8F5",
             transition: "backgroundColor 0.3s ease",
-            overflow: "hidden",
+            overflow: isMobile ? "auto" : "hidden",
             maxHeight: isMobile ? "calc(100vh - 75px)" : "calc(100vh - 75px)",
             height: isMobile ? "calc(100vh - 75px)" : "calc(100vh - 75px)",
           }}
@@ -217,7 +232,16 @@ export default function Home() {
               height: "auto",
             }}
           >
-            {isDarkMode ? (
+            {isMobile && selectedProject ? (
+              <button
+                onClick={handleGoHome}
+                className="text-gray-900 font-medium flex items-center gap-2"
+                style={{ fontFamily: "'Instrument Sans', sans-serif" }}
+              >
+                <IoMdArrowRoundBack size={24} color="#252423" />
+
+              </button>
+            ) : isDarkMode ? (
               <Image
                 src={isHeartsHovered ? heartsHovered : hearts}
                 width={32}
@@ -242,9 +266,11 @@ export default function Home() {
             {/* Gemini Icon */}
 
             {/* Toggle Button */}
-            <div className='toggle-button'>
-              <Toggle isDarkMode={isDarkMode} onToggle={setIsDarkMode} />
-            </div>
+            {!isMobile && !selectedProject && (
+              <div className='toggle-button'>
+                <Toggle isDarkMode={isDarkMode} onToggle={setIsDarkMode} />
+              </div>
+            )}
           </div>
 
           {/* Content Section */}
@@ -253,15 +279,17 @@ export default function Home() {
               display: "flex",
               justifyContent: "space-between",
               flexDirection: isMobile ? "column" : "row",
-              gap: isMobile ? "80px" : "0",
-              height: "100%",
+              gap: isMobile ? "120px" : "0",
+              height: isMobile ? "auto" : "100%",
               alignItems: isMobile ? "center" : "flex-end",
-              paddingTop: isMobile ? "24px" : "0",
-              overflow: "hidden",
+              paddingTop: isMobile ? selectedProject ? "24px" : "160px" : "0",
+              paddingBottom: isMobile ? "60px" : "0",
+              overflow: isMobile ? "visible" : "hidden",
             }}
           >
             {selectedProject === "Maybern" ? (
               <div
+                key="Maybern"
                 style={{
                   overflowY: "auto",
                   width: isMobile ? "100%" : "auto",
@@ -274,6 +302,7 @@ export default function Home() {
               </div>
             ) : selectedProject === "Vault" ? (
               <div
+                key="Vault"
                 style={{
                   overflowY: "auto",
                   width: isMobile ? "100%" : "auto",
@@ -283,6 +312,45 @@ export default function Home() {
                 }}
               >
                 <Vault />
+              </div>
+            ) : selectedProject === "HereAfter" ? (
+              <div
+                key="HereAfter"
+                style={{
+                  overflowY: "auto",
+                  width: isMobile ? "100%" : "auto",
+                  flex: 1,
+                  paddingRight: "12px",
+                  height: isMobile ? "auto" : "100%",
+                }}
+              >
+                <HereAfter />
+              </div>
+            ) : selectedProject === "Parker" ? (
+              <div
+                key="Parker"
+                style={{
+                  overflowY: "auto",
+                  width: isMobile ? "100%" : "auto",
+                  flex: 1,
+                  paddingRight: "12px",
+                  height: isMobile ? "auto" : "100%",
+                }}
+              >
+                <Parker />
+              </div>
+            ) : selectedProject === "Caravan" ? (
+              <div
+                key="Caravan"
+                style={{
+                  overflowY: "auto",
+                  width: isMobile ? "100%" : "auto",
+                  flex: 1,
+                  paddingRight: "12px",
+                  height: isMobile ? "auto" : "100%",
+                }}
+              >
+                <Caravan />
               </div>
             ) : (
               <div
@@ -296,24 +364,26 @@ export default function Home() {
             )}
             {/* End Content Section */}
 
-            <div
-              style={{
-                width: isMobile ? "100%" : "auto",
-                maxHeight: isMobile ? "auto" : "auto",
-                overflowY: isMobile ? "visible" : "visible",
-                paddingRight: isMobile ? "0" : "0",
-                display: "flex",
-                justifyContent: isMobile ? "center" : "flex-end",
-              }}
-            >
-              <Projects
-                isDarkMode={isDarkMode}
-                isMobile={isMobile}
-                onProjectSelect={setSelectedProject}
-                onGoHome={handleGoHome}
-                selectedProject={selectedProject}
-              />
-            </div>
+            {(!isMobile || !selectedProject) && (
+              <div
+                style={{
+                  width: isMobile ? "100%" : "auto",
+                  maxHeight: isMobile ? "auto" : "auto",
+                  overflowY: isMobile ? "visible" : "visible",
+                  paddingRight: isMobile ? "0" : "0",
+                  display: "flex",
+                  justifyContent: isMobile ? "center" : "flex-end",
+                }}
+              >
+                <Projects
+                  isDarkMode={isDarkMode}
+                  isMobile={isMobile}
+                  onProjectSelect={setSelectedProject}
+                  onGoHome={handleGoHome}
+                  selectedProject={selectedProject}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>

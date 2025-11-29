@@ -33,7 +33,7 @@ export default function Projects({
         display: "flex",
         flexDirection: "column",
         gap: "12px",
-        alignItems: isMobile ? "center" : "flex-end",
+        alignItems: isMobile ? "stretch" : "flex-end",
       }}
     >
       {selectedProject && (

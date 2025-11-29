@@ -8,10 +8,10 @@ import IRRBridge from "@/public/projects/IRRBridge.png";
 
 function Maybern() {
   return (
-    <div className='min-h-screen bg-transparent p-8 overflow-auto mt-10 custom-scrollbar'>
+    <div className='min-h-screen bg-transparent md:p-8 overflow-auto mt-6 md:mt-10 custom-scrollbar'>
       {/* Header */}
-      <div className='mb-8'>
-        <h1 className='text-5xl font-bold text-gray-900 mb-2'>Maybern</h1>
+      <div className='mb-8 px-4 md:px-0'>
+        <h1 className='text-3xl md:text-5xl font-bold text-gray-900 mb-2'>Maybern</h1>
         <p className='text-lg text-gray-600 mb-2'>Maybern.com →</p>
         <p className='text-gray-500'>
           Series A | Senior Product Designer | 2025
@@ -20,24 +20,24 @@ function Maybern() {
 
       {/* Main Content Grid */}
 
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mb-8'>
         {/* Introduction Section */}
 
         <div className='w-full col-span-2'>
           <Image
             src={Dashboard}
             alt='Maybern Project 1'
-            className='w-full h-full rounded-lg shadow-md'
+            className='w-full h-full '
           />
         </div>
 
-        <div className='col-span-1 flex flex-col lg:flex-row gap-8'>
+        <div className='col-span-1 flex flex-col lg:flex-row gap-4 md:gap-8 px-4 md:px-0'>
           <div className='w-full'>
             <div className='w-full leading-relaxed space-y-6'>
               <p
                 className='text-sm font-normal text-[#6B6B69]'
                 style={{
-                  fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                  fontFamily: "'Instrument Sans', sans-serif",
 
                   lineHeight: "150%",
 
@@ -58,7 +58,7 @@ function Maybern() {
               <p
                 className='text-sm font-normal text-[#6B6B69]'
                 style={{
-                  fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                  fontFamily: "'Instrument Sans', sans-serif",
 
                   lineHeight: "150%",
 
@@ -85,12 +85,12 @@ function Maybern() {
 
         {/* Report Builder Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-8'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 px-4 md:px-0'>
           <div className='w-full lg:w-1/2'>
             <div
               className='mb-4 text-[#585755]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 fontWeight: 400,
 
@@ -109,7 +109,7 @@ function Maybern() {
             <p
               className='text-sm font-normal text-[#6B6B69]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -126,7 +126,7 @@ function Maybern() {
             <p
               className='text-sm font-normal text-[#6B6B69] mt-4'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -149,17 +149,17 @@ function Maybern() {
             className='w-full h-full '
           />
         </div>
-        <div className='col-span-1'>
+        <div className='col-span-1 px-4 md:px-0'>
           <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
         </div>
 
         {/* Research Section */}
 
-        <div className='col-span-2'>
+        <div className='col-span-2 px-4 md:px-0'>
           <div
             className='mb-4 text-[#585755]'
             style={{
-              fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+              fontFamily: "'Instrument Sans', sans-serif",
 
               fontWeight: 400,
 
@@ -178,7 +178,7 @@ function Maybern() {
           <p
             className='text-sm font-normal text-[#6B6B69]'
             style={{
-              fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+              fontFamily: "'Instrument Sans', sans-serif",
 
               lineHeight: "150%",
 
@@ -195,18 +195,18 @@ function Maybern() {
           </p>
         </div>
 
-        <div className='col-span-1'>
+        <div className='col-span-1 px-4 md:px-0'>
           <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
         </div>
 
         {/* Design Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-8'>
-          <div className='w-full lg:w-1/2'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
               className='mb-4 text-[#585755]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 fontWeight: 400,
 
@@ -225,7 +225,7 @@ function Maybern() {
             <p
               className='text-sm font-normal text-[#6B6B69]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -242,7 +242,7 @@ function Maybern() {
             <p
               className='text-sm font-normal text-[#6B6B69] mt-4'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -267,18 +267,18 @@ function Maybern() {
           </div>
         </div>
 
-        <div className='col-span-1'>
+        <div className='col-span-1 px-4 md:px-0'>
           <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
         </div>
 
         {/* North Star Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-8'>
-          <div className='w-full lg:w-1/2'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
               className='mb-4 text-[#585755]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 fontWeight: 400,
 
@@ -297,7 +297,7 @@ function Maybern() {
             <p
               className='text-sm font-normal text-[#6B6B69]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -317,7 +317,7 @@ function Maybern() {
             <p
               className='text-sm font-normal text-[#6B6B69] mt-4'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -340,18 +340,18 @@ function Maybern() {
           </div>
         </div>
 
-        <div className='col-span-1'>
+        <div className='col-span-1 px-4 md:px-0'>
           <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
         </div>
 
         {/* MVP Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-8'>
-          <div className='w-full lg:w-1/2'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
               className='mb-4 text-[#585755]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 fontWeight: 400,
 
@@ -370,7 +370,7 @@ function Maybern() {
             <p
               className='text-sm font-normal text-[#6B6B69]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -386,7 +386,7 @@ function Maybern() {
             <p
               className='text-sm font-normal text-[#6B6B69] mt-4'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -411,18 +411,18 @@ function Maybern() {
           </div>
         </div>
 
-        <div className='col-span-1'>
+        <div className='col-span-1 px-4 md:px-0'>
           <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
         </div>
 
         {/* IRR Bridges Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-8'>
-          <div className='w-full lg:w-1/2'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
               className='mb-4 text-[#585755]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 fontWeight: 400,
 
@@ -441,7 +441,7 @@ function Maybern() {
             <p
               className='text-sm font-normal text-[#6B6B69]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -457,7 +457,7 @@ function Maybern() {
             <p
               className='text-sm font-normal text-[#6B6B69] mt-4'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -483,18 +483,18 @@ function Maybern() {
           </div>
         </div>
 
-        <div className='col-span-1'>
+        <div className='col-span-1 px-4 md:px-0'>
           <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
         </div>
 
         {/* Conclusions Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-8'>
-          <div className='w-full lg:w-1/2'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
               className='mb-4 text-[#585755]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 fontWeight: 400,
 
@@ -513,7 +513,7 @@ function Maybern() {
             <p
               className='text-sm font-normal text-[#6B6B69]'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
@@ -531,7 +531,7 @@ function Maybern() {
             <p
               className='text-sm font-normal text-[#6B6B69] mt-4'
               style={{
-                fontFamily: "&apos;Instrument Sans&apos;, sans-serif",
+                fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
