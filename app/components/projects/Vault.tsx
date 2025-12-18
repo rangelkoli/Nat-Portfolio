@@ -11,7 +11,7 @@ import Drop2 from "@/public/projects/Drop2.png";
 
 function Vault() {
   return (
-    <div className='min-h-screen bg-transparent md:p-8 overflow-auto mt-6 md:mt-10 '>
+    <div className='min-h-screen bg-transparent md:p-8 overflow-auto mt-6 md:mt-10 overflow-hidden'>
       {/* Header */}
       <div className='mb-8 px-4 md:px-0'>
         <h1
@@ -353,18 +353,17 @@ function Vault() {
             </p>
           </div>
 
-          <div className='w-1/2 col-span-1 '>
-            {/* Added padding-right for gap */}
-            <div className=' flex flex-row justify-around w-1/2 mx-auto gap-4'>
+          <div className='w-full lg:w-1/2'>
+            <div className=' flex flex-row justify-around w-full mx-auto gap-4'>
               <Image
                 src={Drop1}
                 alt='North star design'
-                className=' h-auto my-4 max-h-[400px] object-contain' // Added max-h and object-contain
+                className='w-1/2 h-auto my-4 max-h-[400px] object-contain'
               />
               <Image
                 src={Drop2}
                 alt='North star design'
-                className=' h-auto my-4 max-h-[400px] object-contain' // Added max-h and object-contain
+                className='w-1/2 h-auto my-4 max-h-[400px] object-contain'
               />
             </div>
           </div>

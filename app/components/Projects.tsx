@@ -23,7 +23,7 @@ export default function Projects({
 
   return (
     <div
-      className='projects-sidebar'
+      className='projects-sidebar max-md:mb-6'
       style={{
         display: "flex",
         flexDirection: "column",
@@ -96,6 +96,8 @@ export default function Projects({
               textAlign: "center",
               display: "block", 
               textDecoration: "none"
+
+              
             }}
           >
             {project}
