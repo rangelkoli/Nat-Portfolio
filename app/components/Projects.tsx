@@ -1,30 +1,24 @@
 "use client";
 import { useState } from "react";
 import { RiHomeLine } from "react-icons/ri";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useTheme } from "../context/ThemeContext";
 
 interface ProjectsProps {
-  isDarkMode?: boolean;
   isMobile?: boolean;
-  onProjectSelect?: (projectName: string) => void;
-  onGoHome?: () => void;
-  selectedProject?: string | null;
 }
 
 export default function Projects({
-  isDarkMode = false,
   isMobile = false,
-  onProjectSelect,
-  onGoHome,
-  selectedProject,
 }: ProjectsProps) {
-  const projectButtons = ["HereAfter", "Caravan", "Maybern", "Vault", "Parker"];
+  const { isDarkMode } = useTheme();
+  const pathname = usePathname();
+  const projectButtons = ["HereAfter","Maybern","Parker","Caravan","Vault",];
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
-  const handleProjectClick = (project: string) => {
-    if (onProjectSelect) {
-      onProjectSelect(project);
-    }
-  };
+  const isProjectValues = projectButtons.map(p => pathname.includes(p));
+  const isAnyProjectSelected = isProjectValues.some(Boolean);
 
   return (
     <div
@@ -36,9 +30,9 @@ export default function Projects({
         alignItems: isMobile ? "stretch" : "flex-end",
       }}
     >
-      {selectedProject && (
-        <button
-          onClick={onGoHome}
+      {isAnyProjectSelected && (
+        <Link
+          href="/"
           style={{
             borderRadius: "64px",
             borderWidth: "1px",
@@ -56,44 +50,54 @@ export default function Projects({
             backgroundColor: "transparent",
             cursor: "pointer",
             transition: "background-color 0.3s ease",
+            display: "inline-flex",
+            justifyContent: "center",
+            alignItems: "center"
           }}
         >
           <RiHomeLine />
-        </button>
+        </Link>
       )}
-      {projectButtons.map((project) => (
-        <button
-          key={project}
-          onClick={() => handleProjectClick(project)}
-          onMouseEnter={() => setHoveredProject(project)}
-          onMouseLeave={() => setHoveredProject(null)}
-          style={{
-            borderRadius: "64px",
-            borderWidth: "1px",
-            borderColor: isDarkMode ? "#C8C7C5" : "#C8C7C5",
-            paddingTop: "12px",
-            paddingRight: "32px",
-            paddingBottom: "12px",
-            paddingLeft: "32px",
-            fontFamily: '"Instrument Sans", sans-serif',
-            fontWeight: 400,
-            fontSize: "28px",
-            lineHeight: "150%",
-            letterSpacing: "-2%",
-            color: isDarkMode ? "#FEFEFB" : "#252423",
-            backgroundColor:
-              hoveredProject === project
-                ? isDarkMode
-                  ? "#3C3B3A"
-                  : "#E5E5E2BF"
-                : "transparent",
-            cursor: "pointer",
-            transition: "background-color 0.3s ease",
-          }}
-        >
-          {project}
-        </button>
-      ))}
+      {projectButtons.map((project) => {
+        const isSelected = pathname.includes(project);
+        return (
+          <Link
+            key={project}
+            href={`/projects/${project}`}
+            onMouseEnter={() => setHoveredProject(project)}
+            onMouseLeave={() => setHoveredProject(null)}
+            style={{
+              borderRadius: "64px",
+              borderWidth: "1px",
+              borderColor: isDarkMode ? "#C8C7C5" : "#C8C7C5",
+              paddingTop: "12px",
+              paddingRight: "32px",
+              paddingBottom: "12px",
+              paddingLeft: "32px",
+              fontFamily: '"Instrument Sans", sans-serif',
+              fontWeight: 400,
+              fontSize: "28px",
+              lineHeight: "150%",
+              letterSpacing: "-2%",
+              color: isSelected ? "#FEFEFB" : (isDarkMode ? "#FEFEFB" : "#252423"),
+              backgroundColor: isSelected
+                ? "#252423"
+                : hoveredProject === project
+                  ? isDarkMode
+                    ? "#3C3B3A"
+                    : "#E5E5E2BF"
+                  : "transparent",
+              cursor: "pointer",
+              transition: "background-color 0.3s ease",
+              textAlign: "center",
+              display: "block", 
+              textDecoration: "none"
+            }}
+          >
+            {project}
+          </Link>
+        );
+      })}
     </div>
   );
 }

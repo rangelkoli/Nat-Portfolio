@@ -41,27 +41,15 @@ body {
   }
 }
 
-/* Custom Scrollbar Theme */
+/* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #C8C7C5;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #A0A09D;
-}
-
-/* For Firefox */
+/* Hide scrollbar for IE, Edge and Firefox */
 * {
-  scrollbar-width: thin;
-  scrollbar-color: #C8C7C5 transparent;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

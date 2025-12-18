@@ -1,22 +1,12 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
+import { useTheme } from "../context/ThemeContext";
 
-interface ToggleProps {
-  isDarkMode?: boolean;
-  onToggle?: (isOn: boolean) => void;
-}
-
-export default function Toggle({ isDarkMode = false, onToggle }: ToggleProps) {
-  const [isOn, setIsOn] = useState(false);
+export default function Toggle() {
+  const { isDarkMode, toggleTheme } = useTheme();
   const toggleButtonRef = useRef<HTMLButtonElement>(null);
   const circleRef = useRef<HTMLDivElement>(null);
-
-  const handleToggle = () => {
-    const newState = !isOn;
-    setIsOn(newState);
-    onToggle?.(newState);
-  };
 
   const handleMouseEnter = () => {
     if (toggleButtonRef.current && circleRef.current) {
@@ -81,7 +71,7 @@ export default function Toggle({ isDarkMode = false, onToggle }: ToggleProps) {
   return (
     <button
       ref={toggleButtonRef}
-      onClick={handleToggle}
+      onClick={toggleTheme}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -109,7 +99,7 @@ export default function Toggle({ isDarkMode = false, onToggle }: ToggleProps) {
           borderRadius: "12px",
           backgroundColor: currentStyle.circle,
           top: "4px",
-          left: isOn ? "20px" : "4px",
+          left: isDarkMode ? "20px" : "4px",
           transition: "left 0.3s ease",
           boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
         }}
