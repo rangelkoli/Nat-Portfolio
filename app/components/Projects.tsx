@@ -4,6 +4,7 @@ import { RiHomeLine } from "react-icons/ri";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "../context/ThemeContext";
+import { preloadProjectAssets } from "../utils/preloadAssets";
 
 interface ProjectsProps {
   isMobile?: boolean;
@@ -64,7 +65,10 @@ export default function Projects({
           <Link
             key={project}
             href={`/projects/${project}`}
-            onMouseEnter={() => setHoveredProject(project)}
+            onMouseEnter={() => {
+              setHoveredProject(project);
+              preloadProjectAssets(project);
+            }}
             onMouseLeave={() => setHoveredProject(null)}
             style={{
               borderRadius: "64px",

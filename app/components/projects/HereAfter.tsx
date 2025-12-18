@@ -248,6 +248,7 @@ function HereAfter() {
             loop
             muted
             playsInline
+            preload="auto"
             className='w-full h-auto'
           />
         </div>
@@ -289,6 +290,7 @@ function HereAfter() {
             loop
             muted
             playsInline
+            preload="auto"
             className='w-full h-auto'
           />
         </div>
@@ -338,6 +340,7 @@ function HereAfter() {
             loop
             muted
             playsInline
+            preload="auto"
             className='w-full h-auto'
           />
         </div>
@@ -378,6 +381,7 @@ function HereAfter() {
             loop
             muted
             playsInline
+            preload="auto"
             className='w-full h-auto'
           />
         </div>

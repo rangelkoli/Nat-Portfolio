@@ -114,6 +114,7 @@ function Caravan() {
               loop
               muted
               playsInline
+              preload="auto"
               className='w-full h-auto'
             />
         </div>
@@ -240,6 +241,7 @@ function Caravan() {
               loop
               muted
               playsInline
+              preload="auto"
               className='w-full h-auto'
             />
         </div>

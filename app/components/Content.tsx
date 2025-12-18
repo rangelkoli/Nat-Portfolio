@@ -99,16 +99,25 @@ export default function Content() {
             Currently hanging at{" "}
             <a
               href='#'
-              className='font-semibold '
+              className='font-semibold group'
               style={{
                 color: "#FEFEFB",
                 fontFamily: '"Instrument Sans", sans-serif',
+                fontWeight: 400,
+                fontSize: "14px",
+                lineHeight: "150%",
+                letterSpacing: "-2%",
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 2,
               }}
             >
-              Om factory <FaArrowRight color='#FEFEFB' size={8} />
+              Om factory 
+              <FaArrowRight
+                color='#FEFEFB'
+                size={8}
+                className='transition-transform group-hover:translate-x-1'
+              />
             </a>{" "}
             & dreaming up new ways to connect.
           </>
