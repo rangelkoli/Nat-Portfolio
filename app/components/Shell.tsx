@@ -297,21 +297,45 @@ export default function Shell({ children }: { children: React.ReactNode }) {
               >
                 <IoMdArrowRoundBack size={24} color="#252423" />
               </Link>
-            ) : isDarkMode ? (
-             <Heart />
             ) : (
-              <Link href="/">
-                <Image
-                  className='gemini-icon'
-                  src={gemini}
-                  width={32}
-                  height={32}
-                  alt='Picture of the author'
-                  onMouseEnter={handleGeminiMouseEnter}
-                  onMouseLeave={handleGeminiMouseLeave}
-                  style={{ cursor: "pointer", opacity: 0 }}
-                />
-              </Link>
+              <div style={{ position: "relative", width: 34, height: 34 }}>
+                {/* Heart Icon - visible in dark mode */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    opacity: isDarkMode ? 1 : 0,
+                    transition: "opacity 300ms ease-in-out",
+                    pointerEvents: isDarkMode ? "auto" : "none",
+                  }}
+                >
+                  <Heart />
+                </div>
+                {/* Gemini Icon - visible in light mode */}
+                <Link 
+                  href="/"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    opacity: isDarkMode ? 0 : 1,
+                    transition: "opacity 300ms ease-in-out",
+                    pointerEvents: isDarkMode ? "none" : "auto",
+                  }}
+                >
+                  <Image
+                    className='gemini-icon'
+                    src={gemini}
+                    width={32}
+                    height={32}
+                    alt='Picture of the author'
+                    onMouseEnter={handleGeminiMouseEnter}
+                    onMouseLeave={handleGeminiMouseLeave}
+                    style={{ cursor: "pointer", opacity: 0 }}
+                  />
+                </Link>
+              </div>
             )}
 
             {/* Toggle Button */}
