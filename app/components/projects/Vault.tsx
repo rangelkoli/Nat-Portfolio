@@ -1,6 +1,10 @@
+"use client";
 import React from "react";
+import { useTheme } from "../../context/ThemeContext";
 import Image from "next/image";
 import Divider from "@/public/Divider.svg";
+import Link from "next/link";
+import { RiArrowRightLine, RiHomeLine } from "react-icons/ri";
 import Report from "@/public/projects/Report.png";
 import Vault1 from "@/public/projects/Vault1.png";
 import Design from "@/public/projects/Design.png";
@@ -10,12 +14,13 @@ import Drop1 from "@/public/projects/Drop1.png";
 import Drop2 from "@/public/projects/Drop2.png";
 
 function Vault() {
+  const { isDarkMode } = useTheme();
   return (
     <div className='min-h-screen bg-transparent md:p-8 overflow-auto mt-6 md:mt-10 overflow-hidden'>
       {/* Header */}
       <div className='mb-8 px-4 md:px-0'>
         <h1
-          className='text-3xl md:text-5xl font-bold text-[#252423] mb-2'
+          className='text-3xl md:text-5xl font-bold mb-2'
           style={{
             fontFamily: '"Instrument Sans", sans-serif',
             fontStyle: "normal",
@@ -23,19 +28,23 @@ function Vault() {
             fontSize: "28px",
             lineHeight: "150%",
             letterSpacing: "-0.02em",
+            color: isDarkMode ? "#E8E8E6" : "#1a1a1a",
+            transition: "color 0.3s ease",
           }}
         >
           Vault
         </h1>
         <p
-          className='text-[#6B6B69]'
+          className=''
           style={{
             fontFamily: '"Instrument Sans", sans-serif',
             fontStyle: "normal",
             fontWeight: 400,
-            fontSize: "14px",
+            fontSize: "16px",
             lineHeight: "150%",
             letterSpacing: "-0.02em",
+            color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+            transition: "color 0.3s ease",
           }}
         >
           Series A | Senior Product Designer | 2025
@@ -47,7 +56,7 @@ function Vault() {
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mb-8'>
         {/* Introduction Section */}
 
-        <div className='w-full col-span-2'>
+        <div className='w-full col-span-2 px-4 md:px-0'>
           <Image
             src={Vault1}
             alt='Vault Project 1'
@@ -59,31 +68,35 @@ function Vault() {
           <div className='w-full'>
             <div className='w-full leading-relaxed space-y-6'>
               <p
-                className='text-sm font-normal text-[#6B6B69]'
+                className='text-sm font-normal'
                 style={{
                   fontFamily: "'Instrument Sans', sans-serif",
 
                   lineHeight: "150%",
 
                   letterSpacing: "-0.02em",
+                  color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                  transition: "color 0.3s ease",
                 }}
               >
                 Vault is a platform for artists to share unreleased music and
                 exclusive drops with fans.{" "}
-                <span className='font-bold'>
+                <span className="bg-highlight px-[2px] py-[1px]" style={{ color: isDarkMode ? "#252423" : "#252423" }}>
                   I was brought in to increase artist engagement and accelerate
                   product → design → engineering loops.
                 </span>
               </p>
 
               <p
-                className='text-sm font-normal text-[#6B6B69]'
+                className='text-sm font-normal'
                 style={{
                   fontFamily: "'Instrument Sans', sans-serif",
 
                   lineHeight: "150%",
 
                   letterSpacing: "-0.02em",
+                  color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                  transition: "color 0.3s ease",
                 }}
               >
                 Artists used Vault during album launches and tours, but
@@ -94,7 +107,7 @@ function Vault() {
                 fans alike.
               </p>
             </div>
-            <div className='col-span-1'>
+            <div className='col-span-1 '>
               <Image
                 src={Divider}
                 alt='Divider'
@@ -109,7 +122,7 @@ function Vault() {
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 px-4 md:px-0'>
           <div className='w-full lg:w-1/2'>
             <div
-              className='mb-4 text-[#585755]'
+              className='mb-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -122,19 +135,23 @@ function Vault() {
                 lineHeight: "150%",
 
                 letterSpacing: "-2%",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               Opportunity
             </div>
 
             <p
-              className='text-sm font-normal text-[#6B6B69]'
+              className='text-sm font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               Engagement dropped sharply between campaigns. Artists knew how to
@@ -144,13 +161,15 @@ function Vault() {
             </p>
 
             <p
-              className='text-sm font-normal text-[#6B6B69] mt-4'
+              className='text-sm font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               How might we motivate artists to onboard and upload unreleased
@@ -170,7 +189,7 @@ function Vault() {
 
         <div className='col-span-1 px-4 md:px-0'>
           <div
-            className='mb-4 text-[#585755]'
+            className='mb-4'
             style={{
               fontFamily: "'Instrument Sans', sans-serif",
 
@@ -183,19 +202,23 @@ function Vault() {
               lineHeight: "150%",
 
               letterSpacing: "-2%",
+              color: isDarkMode ? "#E8E8E6" : "#585755",
+              transition: "color 0.3s ease",
             }}
           >
             Research
           </div>
 
           <p
-            className='text-sm font-normal text-[#6B6B69]'
+            className='text-sm font-normal'
             style={{
               fontFamily: "'Instrument Sans', sans-serif",
 
               lineHeight: "150%",
 
               letterSpacing: "-0.02em",
+              color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+              transition: "color 0.3s ease",
             }}
           >
             I ran a short research sprint reviewing the live product, Mixpanel
@@ -216,7 +239,7 @@ function Vault() {
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 relative'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
-              className='mb-4 text-[#585755]'
+              className='mb-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -229,19 +252,23 @@ function Vault() {
                 lineHeight: "150%",
 
                 letterSpacing: "-2%",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               Ideation
             </div>
 
             <p
-              className='text-sm font-normal text-[#6B6B69]'
+              className='text-sm font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+            color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               I led a FigJam sprint using a Dungeons & Dragons inspired
@@ -253,13 +280,15 @@ function Vault() {
             </p>
 
             <p
-              className='text-sm font-normal text-[#6B6B69] mt-4'
+              className='text-sm font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+            color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               I shared the brainstorm with stakeholders for async feedback and
@@ -275,7 +304,7 @@ function Vault() {
           </div>
 
           <div className='w-full lg:w-1/2 lg:absolute lg:bottom-3 lg:right-0'>
-            <div className='flex justify-center items-center'>
+            <div className='flex justify-center items-center px-4 md:px-0'>
               <Image
                 src={VaultBoard}
                 alt='Design process'
@@ -299,7 +328,7 @@ function Vault() {
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
-              className='mb-4 text-[#585755]'
+              className='mb-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -312,19 +341,23 @@ function Vault() {
                 lineHeight: "150%",
 
                 letterSpacing: "-2%",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               Collective Unlocking™️
             </div>
 
             <p
-              className='text-sm font-normal text-[#6B6B69]'
+              className='text-sm font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               Collective Unlocking turns drops into fan-driven events. Drops
@@ -337,13 +370,15 @@ function Vault() {
             </p>
 
             <p
-              className='text-sm font-normal text-[#6B6B69] mt-4'
+              className='text-sm font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               Fans request access, track progress, and celebrate when the
@@ -353,8 +388,8 @@ function Vault() {
             </p>
           </div>
 
-          <div className='w-full lg:w-1/2'>
-            <div className=' flex flex-row justify-around w-full mx-auto gap-4'>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
+            <div className=' flex flex-row justify-around w-full mx-auto gap-4 '>
               <Image
                 src={Drop1}
                 alt='North star design'
@@ -378,7 +413,7 @@ function Vault() {
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
-              className='mb-4 text-[#585755]'
+              className='mb-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -391,19 +426,23 @@ function Vault() {
                 lineHeight: "150%",
 
                 letterSpacing: "-2%",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               Conclusions
             </div>
 
             <p
-              className='text-sm font-normal text-[#6B6B69]'
+              className='text-sm font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               Close collaboration with engineering and stakeholders enabled
@@ -416,7 +455,7 @@ function Vault() {
             </p>
           </div>
 
-          <div className='w-full lg:w-1/2'>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <Image
               src={Design}
               alt='MVP design'
@@ -424,6 +463,36 @@ function Vault() {
             />
           </div>
         </div>
+      </div>
+
+      {/* Mobile Navigation Pill */}
+      <div className="md:hidden w-full flex justify-center py-6">
+        <Link 
+          href="/"
+          style={{
+              borderRadius: "64px",
+              borderWidth: "1px",
+              borderColor: isDarkMode ? "#C8C7C5" : "#C8C7C5",
+              paddingTop: "12px",
+              paddingRight: "32px",
+              paddingBottom: "12px",
+              paddingLeft: "32px",
+              fontFamily: '"Instrument Sans", sans-serif',
+              fontWeight: 400,
+              fontSize: "28px",
+              lineHeight: "150%",
+              letterSpacing: "-2%",
+              color: isDarkMode ? "#FEFEFB" : "#252423",
+              backgroundColor: "transparent",
+              cursor: "pointer",
+              transition: "background-color 0.3s ease",
+              textAlign: "center",
+              display: "block", 
+              textDecoration: "none"
+          }}
+        >
+          <RiHomeLine />
+        </Link>
       </div>
     </div>
   );

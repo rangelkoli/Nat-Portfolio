@@ -26,7 +26,7 @@ export default async function ProjectPage({
   }
 
   return (
-    <div className="max-w-[800px] pt-[64px]">
+    <div className="max-w-[1000px] pt-[64px]">
       <ProjectComponent />
     </div>
   );

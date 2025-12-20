@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
+import { useTheme } from "../../context/ThemeContext";
 import Image from "next/image";
 import { RiArrowRightLine } from "react-icons/ri";
+import Link from "next/link";
 import Dashboard from "@/public/projects/Dashboard.png";
 import Divider from "@/public/Divider.svg";
 import ReportBuilder from "@/public/projects/ReportBuilder.png";
@@ -8,12 +11,13 @@ import Design from "@/public/projects/Design.png";
 import IRRBridge from "@/public/projects/IRRBridge.png";
 
 function Maybern() {
+  const { isDarkMode } = useTheme();
   return (
     <div className='min-h-screen bg-transparent md:p-8 overflow-auto mt-6 md:mt-10 custom-scrollbar'>
       {/* Header */}
       <div className='mb-8 px-4 md:px-0'>
         <h1
-          className='text-3xl md:text-5xl font-bold text-gray-900 mb-2'
+          className='text-3xl md:text-5xl font-bold mb-2'
           style={{
             fontFamily: '"Instrument Sans", sans-serif',
             fontWeight: 400,
@@ -21,6 +25,8 @@ function Maybern() {
             fontSize: "28px",
             lineHeight: "150%",
             letterSpacing: "-0.02em",
+            color: isDarkMode ? "#E8E8E6" : "#1a1a1a",
+            transition: "color 0.3s ease",
           }}
         >
           Maybern
@@ -29,13 +35,14 @@ function Maybern() {
           href="https://Maybern.com"
           target="_blank"
           rel="noopener noreferrer"
-          className='text-lg text-gray-600 mb-2 flex items-center gap-1 group cursor-pointer w-fit'
+          className='text-lg mb-2 flex items-center gap-1 group cursor-pointer w-fit'
+          style={{ color: isDarkMode ? "#FEFEFB" : "#252423", transition: "color 0.3s ease" }}
         >
           Maybern.com
           <RiArrowRightLine className="transition-transform duration-300 group-hover:translate-x-1" />
         </a>
         <p
-          className='text-gray-500'
+          className=''
           style={{
             fontFamily: '"Instrument Sans", sans-serif',
             fontWeight: 400,
@@ -43,6 +50,8 @@ function Maybern() {
             fontSize: "14px",
             lineHeight: "150%",
             letterSpacing: "-0.02em",
+            color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+            transition: "color 0.3s ease",
           }}
         >
           Series A | Senior Product Designer | 2025
@@ -54,7 +63,7 @@ function Maybern() {
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mb-8'>
         {/* Introduction Section */}
 
-        <div className='w-full col-span-2'>
+        <div className='w-full col-span-2 px-4 md:px-0'>
           <Image
             src={Dashboard}
             alt='Maybern Project 1'
@@ -66,13 +75,15 @@ function Maybern() {
           <div className='w-full'>
             <div className='w-full leading-relaxed space-y-6'>
               <p
-                className='text-sm font-normal text-[#6B6B69]'
+                className='text-sm font-normal'
                 style={{
                   fontFamily: "'Instrument Sans', sans-serif",
 
                   lineHeight: "150%",
 
                   letterSpacing: "-0.02em",
+                  color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                  transition: "color 0.3s ease",
                 }}
               >
                 When I first saw Maybern, my thought was: how does this not
@@ -80,20 +91,22 @@ function Maybern() {
                 relies on outsourced administrators managing massive Excel
                 sheets, translating legal agreements into formulas, and juggling
                 ever-shifting LP pools.{" "}
-                <span className='font-bold'>
+                <span className="bg-highlight px-[2px] py-[1px]" style={{ color: isDarkMode ? "#252423" : "#252423" }}>
                   Maybern handles this complexity with math-driven allocations
                   and a user-configurable calculation language, mXL.
                 </span>
               </p>
 
               <p
-                className='text-sm font-normal text-[#6B6B69]'
+                className='text-sm font-normal'
                 style={{
                   fontFamily: "'Instrument Sans', sans-serif",
 
                   lineHeight: "150%",
 
                   letterSpacing: "-0.02em",
+                  color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                  transition: "color 0.3s ease",
                 }}
               >
                 The leadership team includes experts from Cadre, Goldman Sachs,
@@ -104,7 +117,7 @@ function Maybern() {
                 how LP agreements, fund configurations, and investments impact
                 results. I joined as the core product was taking shape. Major
                 funds like KSL and Brookfield were coming on board, and{" "}
-                <span className='font-bold'>
+                <span className="bg-highlight px-[2px] py-[1px]" style={{ color: isDarkMode ? "#252423" : "#252423" }}>
                   my role was to design the self-serve UX, replacing the
                   Excel-style training that dominates the industry, and lead
                   design on a new product: the Maybern Report Builder
@@ -119,7 +132,7 @@ function Maybern() {
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 px-4 md:px-0'>
           <div className='w-full lg:w-1/2'>
             <div
-              className='mb-4 text-[#585755]'
+              className='mb-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -132,19 +145,23 @@ function Maybern() {
                 lineHeight: "150%",
 
                 letterSpacing: "-2%",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               Report Builder
             </div>
 
             <p
-              className='text-sm font-normal text-[#6B6B69]'
+              className='text-sm font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               For fund managers, the biggest pain point is access to their own
@@ -155,13 +172,15 @@ function Maybern() {
             </p>
 
             <p
-              className='text-sm font-normal text-[#6B6B69] mt-4'
+              className='text-sm font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               Our challenge was to give users full visibility and flexibility
@@ -173,7 +192,7 @@ function Maybern() {
             </p>
           </div>
         </div>
-        <div className='w-full col-span-2'>
+        <div className='w-full col-span-2 px-4 md:px-0'>
           <Image
             src={ReportBuilder}
             alt='Maybern Project 2'
@@ -188,7 +207,7 @@ function Maybern() {
 
         <div className='col-span-2 px-4 md:px-0'>
           <div
-            className='mb-4 text-[#585755]'
+            className='mb-4'
             style={{
               fontFamily: "'Instrument Sans', sans-serif",
 
@@ -199,8 +218,9 @@ function Maybern() {
               fontSize: "18px",
 
               lineHeight: "150%",
-
               letterSpacing: "-2%",
+              color: isDarkMode ? "#E8E8E6" : "#585755",
+              transition: "color 0.3s ease",
             }}
           >
             Research
@@ -214,6 +234,8 @@ function Maybern() {
               lineHeight: "150%",
 
               letterSpacing: "-0.02em",
+              color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+              transition: "color 0.3s ease",
             }}
           >
             I interviewed stakeholders in administration, operations, and
@@ -235,7 +257,7 @@ function Maybern() {
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
-              className='mb-4 text-[#585755]'
+              className='mb-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -248,19 +270,23 @@ function Maybern() {
                 lineHeight: "150%",
 
                 letterSpacing: "-2%",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               Design
             </div>
 
             <p
-              className='text-sm font-normal text-[#6B6B69]'
+              className='text-sm font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               I mapped a unified information architecture for all reports,
@@ -271,13 +297,15 @@ function Maybern() {
             </p>
 
             <p
-              className='text-sm font-normal text-[#6B6B69] mt-4'
+              className='text-sm font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               From there, we defined the north star vision: a fully featured hub
@@ -289,7 +317,7 @@ function Maybern() {
             </p>
           </div>
 
-          <div className='w-full lg:w-1/2'>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <Image
               src={Design}
               alt='Design process'
@@ -307,7 +335,7 @@ function Maybern() {
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
-              className='mb-4 text-[#585755]'
+              className='mb-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -320,19 +348,23 @@ function Maybern() {
                 lineHeight: "150%",
 
                 letterSpacing: "-2%",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               North Star
             </div>
 
             <p
-              className='text-sm font-normal text-[#6B6B69]'
+              className='text-sm font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               The north star envisioned a fully integrated hub to keep users in
@@ -346,13 +378,15 @@ function Maybern() {
             </p>
 
             <p
-              className='text-sm font-normal text-[#6B6B69] mt-4'
+              className='text-sm font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               This process unified leadership and stakeholders. By grounding
@@ -362,7 +396,7 @@ function Maybern() {
             </p>
           </div>
 
-          <div className='w-full lg:w-1/2'>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <Image
               src={Design}
               alt='North star design'
@@ -380,7 +414,7 @@ function Maybern() {
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
-              className='mb-4 text-[#585755]'
+              className='mb-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -393,19 +427,23 @@ function Maybern() {
                 lineHeight: "150%",
 
                 letterSpacing: "-2%",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               MVP
             </div>
 
             <p
-              className='text-sm font-normal text-[#6B6B69]'
+              className='text-sm font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               The MVP focused on perfecting core workflows: creating, running,
@@ -415,13 +453,15 @@ function Maybern() {
             </p>
 
             <p
-              className='text-sm font-normal text-[#6B6B69] mt-4'
+              className='text-sm font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               We built a report database where each run is treated as a
@@ -433,7 +473,7 @@ function Maybern() {
             </p>
           </div>
 
-          <div className='w-full lg:w-1/2'>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <Image
               src={Design}
               alt='MVP design'
@@ -451,7 +491,7 @@ function Maybern() {
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
-              className='mb-4 text-[#585755]'
+              className='mb-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -464,19 +504,23 @@ function Maybern() {
                 lineHeight: "150%",
 
                 letterSpacing: "-2%",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               IRR Bridges
             </div>
 
             <p
-              className='text-sm font-normal text-[#6B6B69]'
+              className='text-sm font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               While the MVP was in engineering, investors were especially
@@ -486,13 +530,15 @@ function Maybern() {
             </p>
 
             <p
-              className='text-sm font-normal text-[#6B6B69] mt-4'
+              className='text-sm font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               Users can input starting and ending values, select drivers like
@@ -505,7 +551,7 @@ function Maybern() {
             </p>
           </div>
 
-          <div className='w-full lg:w-1/2 relative no-scrollbar'>
+          <div className='w-full lg:w-1/2 relative no-scrollbar px-4 md:px-0'>
             <Image
               src={IRRBridge}
               alt='IRR Bridges design'
@@ -523,7 +569,7 @@ function Maybern() {
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <div
-              className='mb-4 text-[#585755]'
+              className='mb-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -536,19 +582,23 @@ function Maybern() {
                 lineHeight: "150%",
 
                 letterSpacing: "-2%",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               Conclusions
             </div>
 
             <p
-              className='text-sm font-normal text-[#6B6B69]'
+              className='text-sm font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               This project taught me that designing a north star isn’t just
@@ -560,13 +610,15 @@ function Maybern() {
             </p>
 
             <p
-              className='text-sm font-normal text-[#6B6B69] mt-4'
+              className='text-sm font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
                 lineHeight: "150%",
 
                 letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
               }}
             >
               I also learned that in finance, visuals only matter if they
@@ -578,6 +630,36 @@ function Maybern() {
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Mobile Navigation Pill */}
+      <div className="md:hidden w-full flex justify-center py-6">
+        <Link 
+          href="/projects/Parker"
+          style={{
+              borderRadius: "64px",
+              borderWidth: "1px",
+              borderColor: isDarkMode ? "#C8C7C5" : "#C8C7C5",
+              paddingTop: "12px",
+              paddingRight: "32px",
+              paddingBottom: "12px",
+              paddingLeft: "32px",
+              fontFamily: '"Instrument Sans", sans-serif',
+              fontWeight: 400,
+              fontSize: "28px",
+              lineHeight: "150%",
+              letterSpacing: "-2%",
+              color: isDarkMode ? "#FEFEFB" : "#252423",
+              backgroundColor: "transparent",
+              cursor: "pointer",
+              transition: "background-color 0.3s ease",
+              textAlign: "center",
+              display: "block", 
+              textDecoration: "none"
+          }}
+        >
+          Parker
+        </Link>
       </div>
     </div>
   );

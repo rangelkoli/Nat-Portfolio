@@ -23,7 +23,7 @@ export default function Content() {
   const [isInstagramHovered, setIsInstagramHovered] = useState(false);
   const [isSpotifyHovered, setIsSpotifyHovered] = useState(false);
   return (
-    <div className='max-w-lg max-md:max-w-full max-md:w-full max-md:text-center' style={{ minHeight: "fit-content" }}>
+    <div className='max-w-xl max-md:max-w-full max-md:w-full max-md:text-center' style={{ minHeight: "fit-content" }}>
       <h1
         className='mb-6'
         style={{
@@ -55,7 +55,7 @@ export default function Content() {
           fontFamily: '"Instrument Sans", sans-serif',
           fontWeight: 400,
           fontStyle: "normal",
-          fontSize: "14px",
+          fontSize: "16px",
           lineHeight: "150%",
           letterSpacing: "-2%",
           color: isDarkMode ? "#B8B8B6" : "#6B6B69",
@@ -86,7 +86,7 @@ export default function Content() {
         style={{
           fontFamily: '"Instrument Sans", sans-serif',
           fontWeight: 400,
-          fontSize: "14px",
+          fontSize: "16px",
           lineHeight: "150%",
           letterSpacing: "-2%",
           color: isDarkMode ? "#B8B8B6" : "#6B6B69",
@@ -98,13 +98,15 @@ export default function Content() {
           <>
             Currently hanging at{" "}
             <a
-              href='#'
+              href='https://www.omfactory.yoga/'
+              target="_blank"
+              rel="noopener noreferrer"
               className='font-semibold group'
               style={{
                 color: "#FEFEFB",
                 fontFamily: '"Instrument Sans", sans-serif',
                 fontWeight: 400,
-                fontSize: "14px",
+                fontSize: "16px",
                 lineHeight: "150%",
                 letterSpacing: "-2%",
                 display: "inline-flex",
@@ -125,13 +127,15 @@ export default function Content() {
           <>
             Currently building cool stuff with{" "}
             <a
-              href='#'
+              href='https://www.maybern.com/'
+              target="_blank"
+              rel="noopener noreferrer"
               className='group'
               style={{
                 color: "#252423",
                 fontFamily: '"Instrument Sans", sans-serif',
                 fontWeight: 400,
-                fontSize: "14px",
+                fontSize: "16px",
                 lineHeight: "150%",
                 letterSpacing: "-2%",
                 display: "inline-flex",
@@ -148,13 +152,15 @@ export default function Content() {
             </a>{"    "}
             &{" "}
             <a
-              href='#'
+              href='https://hereafter.social/'
+              target="_blank"
+              rel="noopener noreferrer"
               className='group'
               style={{
                 color: "#252423",
                 fontFamily: '"Instrument Sans", sans-serif',
                 fontWeight: 400,
-                fontSize: "14px",
+                fontSize: "16px",
                 lineHeight: "150%",
                 letterSpacing: "-2%",
                 display: "inline-flex",
@@ -176,7 +182,9 @@ export default function Content() {
       {isDarkMode ? (
         <div className='flex gap-6 text-2xl justify-center md:justify-start'>
           <a
-            href='#'
+            href='https://www.instagram.com/natnud/'
+            target="_blank"
+            rel="noopener noreferrer"
             onMouseEnter={() => setIsInstagramHovered(true)}
             onMouseLeave={() => setIsInstagramHovered(false)}
             style={{
@@ -210,7 +218,9 @@ export default function Content() {
             </div>
           </a>
           <a
-            href='#'
+            href='https://open.spotify.com/show/00Iokzxkn8bFwdzZ9TBcJv?si=5b2b7241edab4398'
+            target="_blank"
+            rel="noopener noreferrer"
             onMouseEnter={() => setIsSpotifyHovered(true)}
             onMouseLeave={() => setIsSpotifyHovered(false)}
             style={{
@@ -247,7 +257,9 @@ export default function Content() {
       ) : (
         <div className='flex gap-6 text-2xl justify-center md:justify-start'>
           <a
-            href='#'
+            href='https://dribbble.com/natnud'
+            target="_blank"
+            rel="noopener noreferrer"
             onMouseEnter={() => setIsDribbleHovered(true)}
             onMouseLeave={() => setIsDribbleHovered(false)}
             style={{
@@ -281,7 +293,9 @@ export default function Content() {
             </div>
           </a>
           <a
-            href='#'
+            href='https://www.figma.com/@natnud'
+            target="_blank"
+            rel="noopener noreferrer"
             onMouseEnter={() => setIsFigmaHovered(true)}
             onMouseLeave={() => setIsFigmaHovered(false)}
             style={{
@@ -315,7 +329,9 @@ export default function Content() {
             </div>
           </a>
           <a
-            href='#'
+            href='https://medium.com/@natnud'
+            target="_blank"
+            rel="noopener noreferrer"
             onMouseEnter={() => setIsMediumHovered(true)}
             onMouseLeave={() => setIsMediumHovered(false)}
             style={{

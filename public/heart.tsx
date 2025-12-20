@@ -8,8 +8,8 @@ const Heart = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-0.348 6.365 32.653 19.773"
-      width={34}
-      height="19.773px"
+      width={32}
+      height={32}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{ cursor: "pointer" }}

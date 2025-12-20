@@ -97,7 +97,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           backgroundColor: "#FEFEFB",
           duration: 0.3,
           ease: "power2.inOut",
-          delay: 0,
+          delay: 0.5,
         });
       }
 
@@ -126,7 +126,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   // Handle selectedProject changes (reset scroll, etc)
   useEffect(() => {
     if (selectedProject) {
-      setIsDarkMode(false);
       const box = document.querySelector(".fade-in-box");
       if (box) {
         box.scrollTop = 0;
@@ -239,8 +238,13 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       className='flex h-screen flex-col items-center justify-between font-sans home-container overflow-hidden'
       style={{
         background:
-          "radial-gradient(92.18% 99.11% at 26.56% 107.7%, rgba(255, 221, 85, 0.08) 0%, rgba(255, 84, 62, 0.08) 50%, rgba(200, 55, 171, 0.08) 100%)",
-        backgroundColor: isDarkMode ? "#3C3B3A" : "white",
+          "radial-gradient(92.18% 99.11% at 26.56% 107.7%, rgba(255, 221, 85, 0.15) 0%, rgba(255, 84, 62, 0.15) 50%, rgba(200, 55, 171, 0.15) 100%)",
+        backgroundColor:
+          selectedProject && isDarkMode
+            ? "#252423"
+            : isDarkMode
+            ? "#3C3B3A"
+            : "#FEFEFB",
         transition: "background-color 0.6s ease-out",
       }}
     >
@@ -258,9 +262,9 @@ export default function Shell({ children }: { children: React.ReactNode }) {
             width: "calc(100% - 48px)",
             marginTop: selectedProject ? "0px" : "16px",
             marginLeft: selectedProject ? "0px" : "16px",
-            marginRight: "16px",
+            marginRight: selectedProject ? "0px" : "16px",
             paddingTop: selectedProject ? "0px" : "32px",
-            paddingRight: isMobile ? "16px" : "32px",
+            paddingRight: isMobile ? (selectedProject ? "32px" : "16px") : (selectedProject ? "48px" : "32px"),
             paddingBottom: selectedProject ? "0px" : "32px",
             paddingLeft: isMobile ? "16px" : selectedProject ? "16px" : "32px",
             display: "flex",
@@ -289,7 +293,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
               position: "absolute",
               top: selectedProject ? "48px" : "32px",
               left: isMobile ? (selectedProject ? "32px" : "16px") : (selectedProject ? "48px" : "32px"),
-              right: isMobile ? "16px" : "32px",
+              right: isMobile ? (selectedProject ? "32px" : "16px") : (selectedProject ? "48px" : "32px"),
               zIndex: 10,
               width: "auto",
               height: "auto",
@@ -301,12 +305,19 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                 className="text-gray-900 font-medium flex items-center gap-2"
                 style={{ fontFamily: "'Instrument Sans', sans-serif" }}
               >
-                <IoMdArrowRoundBack size={24} color="#252423" />
+                <Image
+                  src={isDarkMode ? "/icons/ArrowLight.svg" : "/icons/Arrow.svg"}
+                  width={32}
+                  height={32}
+                  alt="Arrow"
+                  style={{ cursor: "pointer" }}
+                />
               </Link>
             ) : (
-              <div style={{ position: "relative", width: 34, height: 34 }}>
+              <div style={{ position: "relative", width: 32, height: 32 }}>
                 {/* Heart Icon - visible in dark mode */}
-                <div
+                <Link
+                  href="/"
                   style={{
                     position: "absolute",
                     top: 0,
@@ -317,7 +328,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                   }}
                 >
                   <Heart />
-                </div>
+                </Link>
                 {/* Gemini Icon - visible in light mode */}
                 <Link 
                   href="/"
@@ -345,11 +356,9 @@ export default function Shell({ children }: { children: React.ReactNode }) {
             )}
 
             {/* Toggle Button */}
-            {!selectedProject && (
-              <div className='toggle-button' style={{ opacity: 0 }}>
-                 <Toggle />
-              </div>
-            )}
+            <div className='toggle-button' style={{ opacity: isInitialLoad ? 0 : 1 }}>
+                <Toggle />
+            </div>
           </div>
 
           {/* Content Section */}
@@ -426,6 +435,44 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                   }}
                 >
                   {children}
+                  {isMobile && selectedProject && (
+                    <footer className='w-full py-8 px-[32px] flex justify-between items-center'>
+                      <div className='flex items-center gap-2'>
+                        <span
+                          className='text-base'
+                          style={{
+                            color: isDarkMode ? "#C8C7C5" : "#666666",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "4px",
+                            fontFamily: '"Instrument Sans", sans-serif',
+                          }}
+                        >
+                          Love this for us. <LuHeart />
+                        </span>
+                      </div>
+                      <div className='flex items-center gap-2'>
+                        <span
+                          className='text-base'
+                          style={{
+                            color: isDarkMode ? "#C8C7C5" : "#666666",
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "4px",
+                            fontFamily: '"Instrument Sans", sans-serif',
+                            fontWeight: 400,
+                            fontStyle: "normal",
+                            fontSize: "16px",
+                            lineHeight: "150%",
+                            letterSpacing: "-0.02em",
+                          }}
+                        >
+                          <FaRegCopyright />
+                          Nat Nuding 2025
+                        </span>
+                      </div>
+                    </footer>
+                  )}
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -468,7 +515,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         <div className='flex items-center gap-2' >
           {!selectedProject && (
               <span
-                className='text-sm'
+                className='text-base'
                 style={{
                   color: isDarkMode ? "#C8C7C5" : "#666666",
                   display: "inline-flex",
@@ -483,7 +530,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         </div>
         <div className='flex items-center gap-3'>
           <span
-            className='text-sm'
+            className='text-base'
             style={{
               color: isDarkMode ? "#C8C7C5" : "#666666",
               display: "inline-flex",
@@ -492,7 +539,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
               fontFamily: '"Instrument Sans", sans-serif',
               fontWeight: 400,
               fontStyle: "normal",
-              fontSize: "14px",
+              fontSize: "16px",
               lineHeight: "150%",
               letterSpacing: "-0.02em",
               pointerEvents: "auto"

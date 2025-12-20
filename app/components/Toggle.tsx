@@ -9,6 +9,9 @@ export default function Toggle() {
   const circleRef = useRef<HTMLDivElement>(null);
 
   const handleMouseEnter = () => {
+    // Disable hover effects on mobile
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
+
     if (toggleButtonRef.current && circleRef.current) {
       // Light mode
       if (!isDarkMode) {
@@ -40,6 +43,9 @@ export default function Toggle() {
   };
 
   const handleMouseLeave = () => {
+    // Disable hover effects on mobile
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
+
     if (toggleButtonRef.current && circleRef.current) {
       // Reset to initial state
       gsap.to(toggleButtonRef.current, {

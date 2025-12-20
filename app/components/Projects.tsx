@@ -83,9 +83,15 @@ export default function Projects({
               fontSize: "28px",
               lineHeight: "150%",
               letterSpacing: "-2%",
-              color: isSelected ? "#FEFEFB" : (isDarkMode ? "#FEFEFB" : "#252423"),
+              color: isSelected
+                ? isDarkMode
+                  ? "#252423"
+                  : "#FEFEFB"
+                : isDarkMode
+                  ? "#FEFEFB"
+                  : "#252423",
               backgroundColor: isSelected
-                ? "#252423"
+                ? (isDarkMode ? "#FEFEFB" : "#252423")
                 : hoveredProject === project
                   ? isDarkMode
                     ? "#3C3B3A"
