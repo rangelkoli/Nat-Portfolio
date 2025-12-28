@@ -46,7 +46,7 @@ function Caravan() {
             fontFamily: '"Instrument Sans", sans-serif',
             fontWeight: 400,
             fontStyle: "normal",
-            fontSize: "px",
+            fontSize: "16px",
             lineHeight: "150%",
             letterSpacing: "-0.02em",
             color: isDarkMode ? "#B8B8B6" : "#6B6B69",
@@ -65,51 +65,49 @@ function Caravan() {
           <Image
             src={Caravan1}
             alt='Caravan Shipment Detail Page'
-            className='w-full h-full'
+            className='w-full h-full rounded-[8px]'
           />
         </div>
 
         {/* Intro Text */}
-        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 px-4 md:px-0'>
-          <div className='w-full'>
-            <div className='w-full leading-relaxed space-y-6'>
-              <p
-                className='text-sm font-normal'
-                style={{
-                  fontFamily: "'Instrument Sans', sans-serif",
-                  lineHeight: "150%",
-                  letterSpacing: "-0.02em",
-                  color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-                  transition: "color 0.3s ease",
-                }}
-              >
-                Caravan is a venture-backed startup at the intersection of logistics and AI, building a tech-enabled BPO platform for freight brokers. Freight brokerage is complex: agents manage shipments across carriers, shippers, and facilities while juggling bookings, communications, and exceptions. This process is traditionally fragmented and error-prone, forcing brokers to track dozens of tasks via spreadsheets, phone calls, and emails.
-              </p>
-              <p
-                className='text-sm font-normal'
-                style={{
-                  fontFamily: "'Instrument Sans', sans-serif",
-                  lineHeight: "150%",
-                  letterSpacing: "-0.02em",
-                  color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-                  transition: "color 0.3s ease",
-                }}
-              >
-                When I joined, Caravan had a powerful concept—AI agents handling repetitive freight tasks—but the platform was fragmented and incomplete. My role was to transform this partially built system into a coherent, high-impact workflow platform, where AI automation and human decision-making worked together seamlessly.
-              </p>
-            </div>
+        <div className='col-span-2 px-4 md:px-0'>
+          <div className='max-w-[600px] w-full leading-relaxed space-y-6'>
+            <p
+              className='text-base font-normal'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                lineHeight: "150%",
+                letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
+              }}
+            >
+              Caravan is a venture-backed startup at the intersection of logistics and AI, building a tech-enabled BPO platform for freight brokers. Freight brokerage is complex: agents manage shipments across carriers, shippers, and facilities while juggling bookings, communications, and exceptions. This process is traditionally fragmented and error-prone, forcing brokers to track dozens of tasks via spreadsheets, phone calls, and emails.
+            </p>
+            <p
+              className='text-base font-normal'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                lineHeight: "150%",
+                letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
+              }}
+            >
+              When I joined, Caravan had a powerful concept—AI agents handling repetitive freight tasks—but the platform was fragmented and incomplete. My role was to transform this partially built system into a coherent, high-impact workflow platform, where AI automation and human decision-making worked together seamlessly.
+            </p>
           </div>
         </div>
 
-        <div className='col-span-1 px-4 md:px-0'>
-           <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='col-span-2 px-4 md:px-0'>
+           <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* Track & Trace Agent Section */}
-        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 px-4 md:px-0'>
-          <div className='w-full lg:w-1/2'>
+        <div className='col-span-2 px-4 md:px-0'>
+          <div className='max-w-[600px] w-full'>
             <p
-              className='text-sm font-normal'
+              className='text-base font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
                 lineHeight: "150%",
@@ -130,11 +128,11 @@ function Caravan() {
               muted
               playsInline
               preload="auto"
-              className='w-full h-auto'
+              className='w-full h-auto rounded-[8px]'
             />
         </div>
-        <div className='col-span-1 px-4 md:px-0'>
-           <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='col-span-2 px-4 md:px-0'>
+           <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* Design System Section */}
@@ -156,7 +154,7 @@ function Caravan() {
             </div>
 
             <p
-              className='text-sm font-normal'
+              className='text-base font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
                 lineHeight: "150%",
@@ -172,13 +170,13 @@ function Caravan() {
             <Image
               src={Caravan3}
               alt='Design System'
-              className='w-full h-auto'
+              className='w-full h-auto rounded-[8px]'
             />
           </div>
         </div>
 
-        <div className='col-span-1 px-4 md:px-0'>
-           <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='col-span-2 px-4 md:px-0'>
+           <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* Global Tasks Section */}
@@ -200,7 +198,7 @@ function Caravan() {
             </div>
 
             <p
-              className='text-sm font-normal'
+              className='text-base font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
                 lineHeight: "150%",
@@ -212,23 +210,22 @@ function Caravan() {
               Global Tasks centralizes all active shipments and AI-driven actions in one view. Tasks are prioritized by urgency, letting agents quickly resolve issues, unblock workflows, and maintain visibility across high-volume operations.
             </p>
           </div>
+          <div className='w-full lg:w-1/2'>
+            <Image
+              src={Caravan4}
+              alt='Global Tasks'
+              className='w-full h-auto rounded-[8px]'
+            />
+          </div>
         </div>
 
-        <div className='w-full col-span-2 px-4 md:px-0'>
-          <Image
-            src={Caravan4}
-            alt='Global Tasks'
-            className='w-full h-full '
-          />
-        </div>
-
-        <div className='col-span-1'>
-           <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='col-span-2 px-4 md:px-0'>
+           <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* Shipment Details Section */}
-        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
-          <div className='w-full lg:w-1/2 px-4 md:px-0' >
+        <div className='col-span-2 px-4 md:px-0'>
+          <div className='max-w-[600px] w-full' >
             <div
               className='mb-4'
               style={{
@@ -245,7 +242,7 @@ function Caravan() {
             </div>
 
             <p
-              className='text-sm font-normal'
+              className='text-base font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
                 lineHeight: "150%",
@@ -266,13 +263,13 @@ function Caravan() {
               muted
               playsInline
               preload="auto"
-              className='w-full h-auto'
+              className='w-full h-auto rounded-[8px]'
             />
         </div>
       </div>
 
       {/* Mobile Navigation Pill */}
-      <div className="md:hidden w-full flex justify-center py-6 ">
+      <div className="md:hidden w-full flex justify-center py-4 ">
         <Link 
           href="/projects/Vault"
           style={{

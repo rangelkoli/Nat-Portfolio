@@ -29,6 +29,7 @@ export default function Projects({
         flexDirection: "column",
         gap: "12px",
         alignItems: isMobile ? "stretch" : "flex-end",
+        paddingBottom: isMobile ? "60px" : "0px",
       }}
     >
       {isAnyProjectSelected && (

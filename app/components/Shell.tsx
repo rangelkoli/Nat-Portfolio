@@ -6,6 +6,7 @@ import Toggle from "./Toggle";
 import Projects from "./Projects";
 import hearts from "../../public/hearts.svg";
 import gemini from "../../public/gemini.svg";
+import geminiLight from "../../public/gemini-light.svg";
 import { LuHeart } from "react-icons/lu";
 import { FaRegCopyright } from "react-icons/fa";
 import heartsHovered from "../../public/hearts-hover.svg";
@@ -32,13 +33,13 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsInitialLoad(false);
-    }, 3500); // 2.2s delay + 0.6s animation + buffer
+    }, 4500); // Increased buffer for slower animations
     return () => clearTimeout(timer);
   }, []);
 
-  const handleGeminiMouseEnter = () => {
+  const handleGeminiMouseEnter = (e: React.MouseEvent) => {
     setIsGeminiHovered(true);
-    const geminiIcon = document.querySelector(".gemini-icon");
+    const geminiIcon = e.currentTarget;
     if (geminiIcon) {
       gsap.to(geminiIcon, {
         rotation: 180,
@@ -48,9 +49,9 @@ export default function Shell({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const handleGeminiMouseLeave = () => {
+  const handleGeminiMouseLeave = (e: React.MouseEvent) => {
     setIsGeminiHovered(false);
-    const geminiIcon = document.querySelector(".gemini-icon");
+    const geminiIcon = e.currentTarget;
     if (geminiIcon) {
       gsap.to(geminiIcon, {
         rotation: 0,
@@ -95,7 +96,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           backgroundImage:
             "radial-gradient(92.18% 99.11% at 26.56% 107.7%, rgba(255, 221, 85, 0) 0%, rgba(255, 84, 62, 0) 50%, rgba(200, 55, 171, 0) 100%)",
           backgroundColor: "#FEFEFB",
-          duration: 0.3,
+          duration: 2.0,
           ease: "power2.inOut",
           delay: 0.5,
         });
@@ -105,9 +106,9 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         gsap.set(box, { opacity: 0 });
         gsap.to(box, {
           opacity: 1,
-          duration: 0.6,
+          duration: 1.2,
           ease: "power2.inOut",
-          delay: 0.6,
+          delay: 0.8,
         });
       }
 
@@ -115,9 +116,9 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         gsap.set(footer, { opacity: 0 });
         gsap.to(footer, {
           opacity: 1,
-          duration: 0.6,
+          duration: 1.2,
           ease: "power2.inOut",
-          delay: 1.2,
+          delay: 1.5,
         });
       }
     }
@@ -131,7 +132,16 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         box.scrollTop = 0;
       }
     }
-  }, [selectedProject, setIsDarkMode]);
+  }, [selectedProject]);
+
+  // Apply dark mode class to document
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDarkMode]);
 
   // Re-trigger fade-in animation when navigating back to home from a project
   useEffect(() => {
@@ -175,10 +185,10 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   
   // Gemini Icon Animation (Dynamic)
   useEffect(() => {
-      const geminiIcon = document.querySelector(".gemini-icon");
+      const geminiIcons = document.querySelectorAll(".gemini-icon");
       const delay = isInitialLoad ? 0.9 : 0.2;
       
-      if (geminiIcon) {
+      geminiIcons.forEach(geminiIcon => {
          // Only reset opacity to 0 on initial load. on nav, keep it visible (or whatever current state)
          // and just animate rotation if desired, or ensure it is 1.
          const startVars: gsap.TweenVars = { rotation: -180 };
@@ -195,7 +205,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
            ease: "power2.inOut",
            delay: delay,
          });
-       }
+       });
   }, [selectedProject, isInitialLoad, isDarkMode]);
 
   useEffect(() => {
@@ -212,9 +222,9 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         { opacity: 0 },
         {
           opacity: 1,
-          duration: 0.6,
+          duration: 1.2,
           ease: "power2.inOut",
-          delay: delay,
+          delay: 1.0,
         }
       );
     }
@@ -224,9 +234,9 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         { opacity: 0 },
         {
           opacity: 1,
-          duration: 1,
+          duration: 1.5,
           ease: "power2.inOut",
-          delay: delay,
+          delay: 1.0,
         }
       );
     }
@@ -257,14 +267,14 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         }}
       >
         <div
-          className='fade-in-box rounded-lg bg-[#F8F8F5] flex-1'
+          className='fade-in-box rounded-lg flex-1 opacity-0'
           style={{
             width: "calc(100% - 48px)",
             marginTop: selectedProject ? "0px" : "16px",
             marginLeft: selectedProject ? "0px" : "16px",
             marginRight: selectedProject ? "0px" : "16px",
             paddingTop: selectedProject ? "0px" : "32px",
-            paddingRight: isMobile ? (selectedProject ? "32px" : "16px") : (selectedProject ? "48px" : "32px"),
+            paddingRight: isMobile ? "16px" : (selectedProject ? "48px" : "32px"),
             paddingBottom: selectedProject ? "0px" : "32px",
             paddingLeft: isMobile ? "16px" : selectedProject ? "16px" : "32px",
             display: "flex",
@@ -292,8 +302,8 @@ export default function Shell({ children }: { children: React.ReactNode }) {
               alignItems: "center",
               position: "absolute",
               top: selectedProject ? "48px" : "32px",
-              left: isMobile ? (selectedProject ? "32px" : "16px") : (selectedProject ? "48px" : "32px"),
-              right: isMobile ? (selectedProject ? "32px" : "16px") : (selectedProject ? "48px" : "32px"),
+              left: isMobile ? "16px" : (selectedProject ? "48px" : "32px"),
+              right: isMobile ? "16px" : (selectedProject ? "48px" : "32px"),
               zIndex: 10,
               width: "auto",
               height: "auto",
@@ -306,16 +316,19 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                 style={{ fontFamily: "'Instrument Sans', sans-serif" }}
               >
                 <Image
-                  src={isDarkMode ? "/icons/ArrowLight.svg" : "/icons/Arrow.svg"}
+                  className={isDarkMode ? 'gemini-icon' : ''}
+                  src={isDarkMode ? geminiLight : "/icons/Arrow.svg"}
                   width={32}
                   height={32}
-                  alt="Arrow"
-                  style={{ cursor: "pointer" }}
+                  alt={isDarkMode ? "Gemini" : "Arrow"}
+                  onMouseEnter={isDarkMode ? handleGeminiMouseEnter : undefined}
+                  onMouseLeave={isDarkMode ? handleGeminiMouseLeave : undefined}
+                  style={{ cursor: "pointer", opacity: isDarkMode ? 0 : 1 }}
                 />
               </Link>
             ) : (
               <div style={{ position: "relative", width: 32, height: 32 }}>
-                {/* Heart Icon - visible in dark mode */}
+                {/* Heart Icon or Gemini Light - visible in dark mode */}
                 <Link
                   href="/"
                   style={{
@@ -327,7 +340,20 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                     pointerEvents: isDarkMode ? "auto" : "none",
                   }}
                 >
-                  <Heart />
+                  {selectedProject ? (
+                    <Image
+                      className='gemini-icon'
+                      src={geminiLight}
+                      width={32}
+                      height={32}
+                      alt='Gemini'
+                      onMouseEnter={handleGeminiMouseEnter}
+                      onMouseLeave={handleGeminiMouseLeave}
+                      style={{ cursor: "pointer", opacity: 0 }}
+                    />
+                  ) : (
+                    <Heart />
+                  )}
                 </Link>
                 {/* Gemini Icon - visible in light mode */}
                 <Link 
@@ -436,7 +462,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                 >
                   {children}
                   {isMobile && selectedProject && (
-                    <footer className='w-full py-8 px-[32px] flex justify-between items-center'>
+                    <footer className='w-full py-8 px-[16px] flex justify-between items-center'>
                       <div className='flex items-center gap-2'>
                         <span
                           className='text-base'

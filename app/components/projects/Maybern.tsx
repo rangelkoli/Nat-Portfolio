@@ -4,9 +4,9 @@ import { useTheme } from "../../context/ThemeContext";
 import Image from "next/image";
 import { RiArrowRightLine } from "react-icons/ri";
 import Link from "next/link";
-import Dashboard from "@/public/projects/Dashboard.png";
+import Dashboard from "@/public/projects/Maybern1.png";
 import Divider from "@/public/Divider.svg";
-import ReportBuilder from "@/public/projects/ReportBuilder.png";
+import ReportBuilder from "@/public/projects/Maybern2.jpg";
 import Design from "@/public/projects/Design.png";
 import IRRBridge from "@/public/projects/IRRBridge.png";
 
@@ -47,14 +47,14 @@ function Maybern() {
             fontFamily: '"Instrument Sans", sans-serif',
             fontWeight: 400,
             fontStyle: "normal",
-            fontSize: "14px",
+            fontSize: "16px",
             lineHeight: "150%",
             letterSpacing: "-0.02em",
             color: isDarkMode ? "#B8B8B6" : "#6B6B69",
             transition: "color 0.3s ease",
           }}
         >
-          Series A | Senior Product Designer | 2025
+          Series B | Senior Product Designer
         </p>
       </div>
 
@@ -63,19 +63,19 @@ function Maybern() {
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mb-8'>
         {/* Introduction Section */}
 
-        <div className='w-full col-span-2 px-4 md:px-0'>
+        <div className='w-full col-span-2 px-4 md:px-0 h-full'>
           <Image
             src={Dashboard}
             alt='Maybern Project 1'
-            className='w-full h-full '
+            className='w-full h-full rounded-[8px]'
           />
         </div>
 
-        <div className='col-span-1 flex flex-col lg:flex-row gap-4 md:gap-8 px-4 md:px-0'>
-          <div className='w-full'>
+        <div className='col-span-2 px-4 md:px-0'>
+          <div className='max-w-[600px] w-full'>
             <div className='w-full leading-relaxed space-y-6'>
               <p
-                className='text-sm font-normal'
+                className='text-base font-normal'
                 style={{
                   fontFamily: "'Instrument Sans', sans-serif",
 
@@ -86,19 +86,20 @@ function Maybern() {
                   transition: "color 0.3s ease",
                 }}
               >
-                When I first saw Maybern, my thought was: how does this not
-                already exist? The billion-dollar fund management industry still
-                relies on outsourced administrators managing massive Excel
-                sheets, translating legal agreements into formulas, and juggling
-                ever-shifting LP pools.{" "}
-                <span className="bg-highlight px-[2px] py-[1px]" style={{ color: isDarkMode ? "#252423" : "#252423" }}>
+                The billion-dollar fund management industry relies on outsourced
+                administrators managing massive Excel sheets, translating legal
+                agreements into formula, and juggling shifting LP pools.{" "}
+                <span
+                  className='bg-highlight px-[2px] py-[1px]'
+                  style={{ color: isDarkMode ? "#FEFEFB" : "#252423" }}
+                >
                   Maybern handles this complexity with math-driven allocations
-                  and a user-configurable calculation language, mXL.
+                  and a user-configurable calc language, mXL.
                 </span>
               </p>
 
               <p
-                className='text-sm font-normal'
+                className='text-base font-normal'
                 style={{
                   fontFamily: "'Instrument Sans', sans-serif",
 
@@ -109,19 +110,7 @@ function Maybern() {
                   transition: "color 0.3s ease",
                 }}
               >
-                The leadership team includes experts from Cadre, Goldman Sachs,
-                and Google Sheets. At its core, Maybern reconciles capital
-                calls, LP opt-outs, distributions, and tax-sensitive fund
-                structures. The vision goes beyond accounting to empower CFOs
-                and fund offices with instant insight into performance, showing
-                how LP agreements, fund configurations, and investments impact
-                results. I joined as the core product was taking shape. Major
-                funds like KSL and Brookfield were coming on board, and{" "}
-                <span className="bg-highlight px-[2px] py-[1px]" style={{ color: isDarkMode ? "#252423" : "#252423" }}>
-                  my role was to design the self-serve UX, replacing the
-                  Excel-style training that dominates the industry, and lead
-                  design on a new product: the Maybern Report Builder
-                </span>
+               At its core, Maybern reconciles capital calls, LP opt-outs, distributions, and tax-sensitive fund structures. The vision goes beyond accounting to empower CFOs and fund offices with instant insight into performance so they can move from chasing numbers to making proactive decisions.
               </p>
             </div>
           </div>
@@ -129,8 +118,8 @@ function Maybern() {
 
         {/* Report Builder Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 px-4 md:px-0'>
-          <div className='w-full lg:w-1/2'>
+        <div className='col-span-2 px-4 md:px-0'>
+          <div className='max-w-[600px] w-full'>
             <div
               className='mb-4'
               style={{
@@ -153,7 +142,7 @@ function Maybern() {
             </div>
 
             <p
-              className='text-sm font-normal'
+              className='text-base font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -172,7 +161,7 @@ function Maybern() {
             </p>
 
             <p
-              className='text-sm font-normal mt-4'
+              className='text-base font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -196,66 +185,68 @@ function Maybern() {
           <Image
             src={ReportBuilder}
             alt='Maybern Project 2'
-            className='w-full h-full '
+            className='w-full h-full rounded-[8px]'
           />
         </div>
-        <div className='col-span-1 px-4 md:px-0'>
-          <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='col-span-2 px-4 md:px-0'>
+          <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* Research Section */}
 
         <div className='col-span-2 px-4 md:px-0'>
-          <div
-            className='mb-4'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
+          <div className='max-w-[600px] w-full'>
+            <div
+              className='mb-4'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
 
-              fontWeight: 400,
+                fontWeight: 400,
 
-              fontStyle: "normal",
+                fontStyle: "normal",
 
-              fontSize: "18px",
+                fontSize: "18px",
 
-              lineHeight: "150%",
-              letterSpacing: "-2%",
-              color: isDarkMode ? "#E8E8E6" : "#585755",
-              transition: "color 0.3s ease",
-            }}
-          >
-            Research
+                lineHeight: "150%",
+                letterSpacing: "-2%",
+                color: isDarkMode ? "#E8E8E6" : "#585755",
+                transition: "color 0.3s ease",
+              }}
+            >
+              Research
+            </div>
+
+            <p
+              className='text-base font-normal text-[#6B6B69]'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+
+                lineHeight: "150%",
+
+                letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
+              }}
+            >
+              I interviewed stakeholders in administration, operations, and
+              investor relations to understand how reports were requested and
+              created. Three report types consistently emerged: investor tear
+              sheets, providing quick snapshots of LP performance; ILPA reports,
+              the standard format for institutional investors; and dry powder
+              reports, which summarize unallocated capital for investment
+              decisions.
+            </p>
           </div>
-
-          <p
-            className='text-sm font-normal text-[#6B6B69]'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-
-              lineHeight: "150%",
-
-              letterSpacing: "-0.02em",
-              color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-              transition: "color 0.3s ease",
-            }}
-          >
-            I interviewed stakeholders in administration, operations, and
-            investor relations to understand how reports were requested and
-            created. Three report types consistently emerged: investor tear
-            sheets, providing quick snapshots of LP performance; ILPA reports,
-            the standard format for institutional investors; and dry powder
-            reports, which summarize unallocated capital for investment
-            decisions.
-          </p>
         </div>
 
-        <div className='col-span-1 px-4 md:px-0'>
-          <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='col-span-2 px-4 md:px-0'>
+           <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* Design Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
-          <div className='w-full lg:w-1/2 px-4 md:px-0'>
+        <div className='col-span-2 px-4 md:px-0'>
+          <div className='max-w-[600px] w-full'>
             <div
               className='mb-4'
               style={{
@@ -278,7 +269,7 @@ function Maybern() {
             </div>
 
             <p
-              className='text-sm font-normal'
+              className='text-base font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -297,7 +288,7 @@ function Maybern() {
             </p>
 
             <p
-              className='text-sm font-normal mt-4'
+              className='text-base font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -316,18 +307,10 @@ function Maybern() {
               usability and critical functionality.
             </p>
           </div>
-
-          <div className='w-full lg:w-1/2 px-4 md:px-0'>
-            <Image
-              src={Design}
-              alt='Design process'
-              className='w-full h-auto my-4'
-            />
-          </div>
         </div>
 
-        <div className='col-span-1 px-4 md:px-0'>
-          <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='col-span-2 px-4 md:px-0'>
+          <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* North Star Section */}
@@ -356,7 +339,7 @@ function Maybern() {
             </div>
 
             <p
-              className='text-sm font-normal'
+              className='text-base font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -372,13 +355,11 @@ function Maybern() {
               Users could start from blank or template-based reports,
               parameterize, timestamp, and schedule them. Within each report,
               users could define groupings, filters, and select calculations
-              from a searchable library of built-in or custom mXL functions. The
-              focus was on “a-ha” moments, graphing, and feature richness over
-              accommodating every possible permutation.
+              from a searchable library of built-in or custom mXL functions. <span className="bg-highlight px-[2px] py-[1px]" style={{ color: isDarkMode ? "#FEFEFB" : "#252423" }}>The focus here was on “A-Ha” moments, graphing, and feature richness over accommodating every possible permutation.</span>
             </p>
 
             <p
-              className='text-sm font-normal mt-4'
+              className='text-base font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -396,17 +377,20 @@ function Maybern() {
             </p>
           </div>
 
-          <div className='w-full lg:w-1/2 px-4 md:px-0'>
-            <Image
-              src={Design}
-              alt='North star design'
-              className='w-full h-auto my-4'
+         <div className='w-full lg:w-1/2 px-4 md:px-0'>
+            <video
+              src="/projects/Maybern3.mov"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className='w-full h-auto my-4 rounded-[8px]'
             />
           </div>
         </div>
 
-        <div className='col-span-1 px-4 md:px-0'>
-          <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='col-span-2 px-4 md:px-0'>
+          <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* MVP Section */}
@@ -435,7 +419,7 @@ function Maybern() {
             </div>
 
             <p
-              className='text-sm font-normal'
+              className='text-base font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -446,14 +430,15 @@ function Maybern() {
                 transition: "color 0.3s ease",
               }}
             >
-              The MVP focused on perfecting core workflows: creating, running,
-              and exporting reports. Internal reviews surfaced a few usability
+              <span className="bg-highlight px-[2px] py-[1px]" style={{ color: isDarkMode ? "#FEFEFB" : "#252423" }}>
+                MVP focused on perfecting core workflows: creating, running, and exporting reports.
+              </span> Internal reviews surfaced a few usability
               and technical constraints, like confusion around historical runs
               of a single report and deferred nested menu complexity.
             </p>
 
             <p
-              className='text-sm font-normal mt-4'
+              className='text-base font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -467,23 +452,24 @@ function Maybern() {
               We built a report database where each run is treated as a
               variation, clarified column setup into “Group By,” “Attributes,”
               and “Time” steps, and replaced dropdown menus with a dynamic
-              sidebar that adapts to selections. Fund Family was added as a
-              high-level parameter, with cross-fund reporting planned as a fast
-              follow.
+              sidebar that adapts to selections. 
             </p>
           </div>
 
-          <div className='w-full lg:w-1/2 px-4 md:px-0'>
-            <Image
-              src={Design}
-              alt='MVP design'
-              className='w-full h-auto my-4'
+           <div className='w-full lg:w-1/2 px-4 md:px-0'>
+            <video
+              src="/projects/Maybern4.mov"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className='w-full h-auto my-4 rounded-[8px]'
             />
           </div>
         </div>
 
-        <div className='col-span-1 px-4 md:px-0'>
-          <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='col-span-2 px-4 md:px-0'>
+          <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* IRR Bridges Section */}
@@ -512,7 +498,7 @@ function Maybern() {
             </div>
 
             <p
-              className='text-sm font-normal'
+              className='text-base font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -523,51 +509,29 @@ function Maybern() {
                 transition: "color 0.3s ease",
               }}
             >
-              While the MVP was in engineering, investors were especially
-              excited about IRR bridges, which visualize how an investment’s
-              return develops over time. Design explored integrating this into
-              Report Builder as a flexible, future-ready graphing tool.
+           While the MVP was with eng, customers got excited about the potential for generating IRR bridges, which visualize how an investment’s return develops over time. Design explored integrating this into Report Builder as a flexible graphing tool. Users can input starting and ending values, select drivers like leverage or timing, and generate dynamic charts bridge graphs.
             </p>
 
-            <p
-              className='text-sm font-normal mt-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-
-                lineHeight: "150%",
-
-                letterSpacing: "-0.02em",
-                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Users can input starting and ending values, select drivers like
-              leverage or timing, and instantly generate dynamic charts showing
-              change over time. Bridges pull directly from report outputs,
-              letting users transition smoothly from tabular data to visual
-              storytelling. This exploration helped Maybern move from static
-              reporting to interactive analytics that explain why results look
-              the way they do.
-            </p>
+           
           </div>
 
-          <div className='w-full lg:w-1/2 relative no-scrollbar px-4 md:px-0'>
+          <div className='w-full lg:w-1/2 relative no-scrollbar '>
             <Image
               src={IRRBridge}
               alt='IRR Bridges design'
-              className='w-full h-auto my-4  right-0 top-0'
+              className='w-full h-auto my-4 right-0 top-0 rounded-[8px]'
             />
           </div>
         </div>
 
-        <div className='col-span-1 px-4 md:px-0'>
-          <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='col-span-2 px-4 md:px-0'>
+          <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* Conclusions Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
-          <div className='w-full lg:w-1/2 px-4 md:px-0'>
+        <div className='col-span-2 px-4 md:px-0'>
+          <div className='max-w-[600px] w-full'>
             <div
               className='mb-4'
               style={{
@@ -590,7 +554,7 @@ function Maybern() {
             </div>
 
             <p
-              className='text-sm font-normal'
+              className='text-base font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -610,7 +574,7 @@ function Maybern() {
             </p>
 
             <p
-              className='text-sm font-normal mt-4'
+              className='text-base font-normal mt-4'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
 
@@ -633,7 +597,7 @@ function Maybern() {
       </div>
 
       {/* Mobile Navigation Pill */}
-      <div className="md:hidden w-full flex justify-center py-6">
+      <div className="md:hidden w-full flex justify-center py-4">
         <Link 
           href="/projects/Parker"
           style={{

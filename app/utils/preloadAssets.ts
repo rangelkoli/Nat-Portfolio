@@ -13,6 +13,7 @@ const projectImages = [
     '/projects/HereAfter4.jpg',
     '/projects/HereAfter7.png',
     '/Divider.svg',
+    '/gemini-light.svg',
 
     // Caravan
     '/projects/Caravan1.jpg',

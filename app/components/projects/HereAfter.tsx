@@ -41,7 +41,7 @@ function HereAfter() {
             fontFamily: '"Instrument Sans", sans-serif',
             fontWeight: 400,
             fontStyle: "normal",
-            fontSize: "14px",
+            fontSize: "16px",
             lineHeight: "150%",
             letterSpacing: "-0.02em",
             color: isDarkMode ? "#B8B8B6" : "#6B6B69",
@@ -59,15 +59,50 @@ function HereAfter() {
           <Image
             src={Dashboard}
             alt='HereAfter Project 1'
-            className='w-full h-auto'
+            className='w-full h-auto rounded-[8px]'
           />
         </div>
 
         {/* Introduction Section - text spans 2 columns */}
-        <div className='lg:col-span-2 px-4 md:px-0'>
-          <div className='leading-relaxed space-y-6'>
+        <div className='lg:col-span-3 px-4 md:px-0'>
+          <div className='max-w-[600px] w-full'>
+            <div className='leading-relaxed space-y-6'>
+              <p
+                className='text-base font-normal'
+                style={{
+                  fontFamily: "'Instrument Sans', sans-serif",
+                  lineHeight: "150%",
+                  letterSpacing: "-0.02em",
+                  color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                  transition: "color 0.3s ease",
+                }}
+              >
+                <span className="bg-highlight px-[2px] py-[1px]" style={{ color: isDarkMode ? "#FEFEFB" : "#252423" }}>HereAfter is a map-based social platform that strengthens real-world connections by turning everyday locations into shared memories.</span> Think Pokémon Go meets Instagram, but grounded in presence. I joined as Fractional Head of Product, leading UX, design systems, and strategy to bring the MVP from concept to release.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* What Section - text spans 2 columns */}
+        <div className='lg:col-span-3 px-4 md:px-0'>
+          <div className='max-w-[600px] w-full'>
+            <div
+              className='mb-4'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                fontWeight: 400,
+                fontStyle: "normal",
+                fontSize: "18px",
+                lineHeight: "150%",
+                letterSpacing: "-2%",
+                color: isDarkMode ? "#E8E8E6" : "#585755",
+                transition: "color 0.3s ease",
+              }}
+            >
+              What
+            </div>
             <p
-              className='text-sm font-normal'
+              className='text-base font-normal'
               style={{
                 fontFamily: "'Instrument Sans', sans-serif",
                 lineHeight: "150%",
@@ -76,150 +111,115 @@ function HereAfter() {
                 transition: "color 0.3s ease",
               }}
             >
-              <span className="bg-highlight px-[2px] py-[1px]" style={{ color: isDarkMode ? "#252423" : "#252423" }}>HereAfter is a map-based social platform that strengthens real-world connections by turning everyday locations into shared memories.</span> Think Pokémon Go meets Instagram, but grounded in presence. I joined as Fractional Head of Product, leading UX, design systems, and strategy to bring the MVP from concept to release.
+              A social tool rooted in physical space. Instead of infinite feeds and algorithms, the product centers your real world: where you've been, what you've experienced, and how those moments connect you to the people around you. Users drop memories on a map, explore moments from friends and friends-of-friends, and build an archive of personal and communal history.
             </p>
           </div>
         </div>
-        {/* Empty column for spacing */}
-        <div className='hidden lg:block'></div>
-
-        {/* What Section - text spans 2 columns */}
-        <div className='lg:col-span-2 px-4 md:px-0'>
-          <div
-            className='mb-4'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              fontWeight: 400,
-              fontStyle: "normal",
-              fontSize: "18px",
-              lineHeight: "150%",
-              letterSpacing: "-2%",
-              color: isDarkMode ? "#E8E8E6" : "#585755",
-              transition: "color 0.3s ease",
-            }}
-          >
-            What
-          </div>
-          <p
-            className='text-sm font-normal'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              lineHeight: "150%",
-              letterSpacing: "-0.02em",
-              color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-              transition: "color 0.3s ease",
-            }}
-          >
-            A social tool rooted in physical space. Instead of infinite feeds and algorithms, the product centers your real world: where you've been, what you've experienced, and how those moments connect you to the people around you. Users drop memories on a map, explore moments from friends and friends-of-friends, and build an archive of personal and communal history.
-          </p>
-        </div>
-        <div className='hidden lg:block'></div>
 
         {/* Divider */}
-        <div className='lg:col-span-2 px-4 md:px-0'>
-          <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='lg:col-span-3 px-4 md:px-0'>
+          <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
-        <div className='hidden lg:block'></div>
 
         {/* Why Section - text spans 2 columns */}
-        <div className='lg:col-span-2 px-4 md:px-0'>
-          <div
-            className='mb-4'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              fontWeight: 400,
-              fontStyle: "normal",
-              fontSize: "18px",
-              lineHeight: "150%",
-              letterSpacing: "-2%",
-              color: isDarkMode ? "#E8E8E6" : "#585755",
-              transition: "color 0.3s ease",
-            }}  
-          >
-            Why
+        <div className='lg:col-span-3 px-4 md:px-0'>
+          <div className='max-w-[600px] w-full'>
+            <div
+              className='mb-4'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                fontWeight: 400,
+                fontStyle: "normal",
+                fontSize: "18px",
+                lineHeight: "150%",
+                letterSpacing: "-2%",
+                color: isDarkMode ? "#E8E8E6" : "#585755",
+                transition: "color 0.3s ease",
+              }}  
+            >
+              Why
+            </div>
+            <p
+              className='text-base font-normal'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                lineHeight: "150%",
+                letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
+              }}
+            >
+              We're more digitally connected than ever, yet <a href="https://www.gse.harvard.edu/ideas/usable-knowledge/24/10/what-causing-our-epidemic-loneliness-and-how-can-we-fix-it" className="underline" style={{ color: isDarkMode ? "#FEFEFB" : "#252423", transition: "color 0.3s ease" }}>loneliness is rising</a>.  It’s not access that’s missing; it’s depth. When everything exists online, it’s easy to lose the sense of belonging that comes from being rooted in place.
+            </p>
+            <p
+              className='text-base font-normal text-[#6B6B69] mt-4'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                lineHeight: "150%",
+                letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
+              }}
+            >
+              HereAfter aims to close that gap. It doesn't attempt to replace IRL connection, but to support it by nudging you to explore your environment, strengthen friendships through shared experience, and reveal hidden threads in your community. It's a gentle counterpoint to the digital infinitum, a reminder that meaning happens where your feet touch the earth.
+            </p>
           </div>
-          <p
-            className='text-sm font-normal'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              lineHeight: "150%",
-              letterSpacing: "-0.02em",
-              color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-              transition: "color 0.3s ease",
-            }}
-          >
-            We're more digitally connected than ever, yet <a href="https://www.gse.harvard.edu/ideas/usable-knowledge/24/10/what-causing-our-epidemic-loneliness-and-how-can-we-fix-it" className="underline" style={{ color: isDarkMode ? "#FEFEFB" : "#252423", transition: "color 0.3s ease" }}>loneliness is rising</a>.  It’s not access that’s missing; it’s depth. When everything exists online, it’s easy to lose the sense of belonging that comes from being rooted in place.
-          </p>
-          <p
-            className='text-sm font-normal text-[#6B6B69] mt-4'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              lineHeight: "150%",
-              letterSpacing: "-0.02em",
-              color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-              transition: "color 0.3s ease",
-            }}
-          >
-            HereAfter aims to close that gap. It doesn't attempt to replace IRL connection, but to support it by nudging you to explore your environment, strengthen friendships through shared experience, and reveal hidden threads in your community. It's a gentle counterpoint to the digital infinitum, a reminder that meaning happens where your feet touch the earth.
-          </p>
         </div>
-        <div className='hidden lg:block'></div>
 
         {/* Divider */}
-        <div className='lg:col-span-2 px-4 md:px-0'>
-          <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='lg:col-span-3 px-4 md:px-0'>
+          <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
-        <div className='hidden lg:block'></div>
 
         {/* How Section - text spans 2 columns */}
-        <div className='lg:col-span-2 px-4 md:px-0'>
-          <div
-            className='mb-4'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              fontWeight: 400,
-              fontStyle: "normal",
-              fontSize: "18px",
-              lineHeight: "150%",
-              letterSpacing: "-2%",
-              color: isDarkMode ? "#E8E8E6" : "#585755",
-              transition: "color 0.3s ease",
-            }}
-          >
-            How?
+        <div className='lg:col-span-3 px-4 md:px-0'>
+          <div className='max-w-[600px] w-full'>
+            <div
+              className='mb-4'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                fontWeight: 400,
+                fontStyle: "normal",
+                fontSize: "18px",
+                lineHeight: "150%",
+                letterSpacing: "-2%",
+                color: isDarkMode ? "#E8E8E6" : "#585755",
+                transition: "color 0.3s ease",
+              }}
+            >
+              How?
+            </div>
+            <p
+              className='text-base font-normal italic mb-4'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                lineHeight: "150%",
+                letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
+              }}
+            >
+              How do friendships form and strengthen? By being present, engaging with shared spaces, making plans, sharing experiences, and connecting through friends of friends.
+            </p>
+            <p
+              className='text-base font-normal'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                lineHeight: "150%",
+                letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
+              }}
+            >
+              I began by translating the founders ideas into a clear value prop and set of values: <i>community, exploration, shared history, presence.</i> From there, I mapped the earliest user journeys and identified the minimum product we could build to validate.
+            </p>
           </div>
-          <p
-            className='text-sm font-normal italic mb-4'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              lineHeight: "150%",
-              letterSpacing: "-0.02em",
-              color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-              transition: "color 0.3s ease",
-            }}
-          >
-            How do friendships form and strengthen? By being present, engaging with shared spaces, making plans, sharing experiences, and connecting through friends of friends.
-          </p>
-          <p
-            className='text-sm font-normal'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              lineHeight: "150%",
-              letterSpacing: "-0.02em",
-              color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-              transition: "color 0.3s ease",
-            }}
-          >
-            I began by translating the founders ideas into a clear value prop and set of values: <i>community, exploration, shared history, presence.</i> From there, I mapped the earliest user journeys and identified the minimum product we could build to validate.
-          </p>
         </div>
-        <div className='hidden lg:block'></div>
 
         {/* Divider */}
-        <div className='lg:col-span-2 px-4 md:px-0'>
-          <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='lg:col-span-3 px-4 md:px-0'>
+          <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
-        <div className='hidden lg:block'></div>
 
         {/* MVP Section Header */}
         <div className='lg:col-span-3 px-4 md:px-0'>
@@ -262,7 +262,7 @@ function HereAfter() {
               fontFamily: "'Instrument Sans', sans-serif",
               fontWeight: 400,
               fontStyle: "normal",
-              fontSize: "14px",
+              fontSize: "16px",
               lineHeight: "150%",
               letterSpacing: "-0.02em",
               color: isDarkMode ? "#B8B8B6" : "#6B6B69",
@@ -281,7 +281,7 @@ function HereAfter() {
             muted
             playsInline
             preload="auto"
-            className='w-full h-[500px] md:h-auto'
+            className='w-full h-[500px] md:h-auto rounded-[8px]'
           />
         </div>
         
@@ -308,7 +308,7 @@ function HereAfter() {
               fontFamily: "'Instrument Sans', sans-serif",
               fontWeight: 400,
               fontStyle: "normal",
-              fontSize: "14px",
+              fontSize: "16px",
               lineHeight: "150%",
               letterSpacing: "-0.02em",
               color: isDarkMode ? "#B8B8B6" : "#6B6B69",
@@ -326,7 +326,7 @@ function HereAfter() {
             muted
             playsInline
             preload="auto"
-            className='w-full h-[500px] md:h-auto'
+            className='w-full h-[500px] md:h-auto rounded-[8px]'
           />
         </div>
 
@@ -361,7 +361,7 @@ function HereAfter() {
               fontFamily: "'Instrument Sans', sans-serif",
               fontWeight: 400,
               fontStyle: "normal",
-              fontSize: "14px",
+              fontSize: "16px",
               lineHeight: "150%",
               letterSpacing: "-0.02em",
               color: isDarkMode ? "#B8B8B6" : "#6B6B69",
@@ -379,7 +379,7 @@ function HereAfter() {
             muted
             playsInline
             preload="auto"
-            className='w-full h-[500px] md:h-auto'
+            className='w-full h-[500px] md:h-auto rounded-[8px]'
           />
         </div>
 
@@ -405,7 +405,7 @@ function HereAfter() {
               fontFamily: "'Instrument Sans', sans-serif",
               fontWeight: 400,
               fontStyle: "normal",
-              fontSize: "14px",
+              fontSize: "16px",
               lineHeight: "150%",
               letterSpacing: "-0.02em",
               color: isDarkMode ? "#B8B8B6" : "#6B6B69",
@@ -423,137 +423,137 @@ function HereAfter() {
             muted
             playsInline
             preload="auto"
-            className='w-full h-[500px] md:h-auto'
+            className='w-full h-[500px] md:h-auto rounded-[8px]'
           />
         </div>
 
         {/* Divider */}
-        <div className='lg:col-span-2 px-4 md:px-0'>
-          <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='lg:col-span-3 px-4 md:px-0'>
+          <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
-        <div className='hidden lg:block'></div>
 
         {/* Design / Eng Velocity Section - text spans 2 columns */}
-        <div className='lg:col-span-2 px-4 md:px-0'>
-          <div
-            className='mb-4'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              fontWeight: 400,
-              fontStyle: "normal",
-              fontSize: "18px",
-              lineHeight: "150%",
-              letterSpacing: "-2%",              color: isDarkMode ? "#E8E8E6" : "#585755",
-              transition: "color 0.3s ease",
-            }}
-          >
-            Design / Eng Velocity
-          </div>
-          <p
-            className='text-sm font-normal mb-4'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              lineHeight: "150%",
-              letterSpacing: "-0.02em",
-              color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-              transition: "color 0.3s ease",
-            }}
-          >
-            Alongside the UX work, I built a compact design system, created motion prototypes, pressure-tested the IA, and collaborated with engineering to define feasibility, edge cases, and technical possibilities.
-          </p>
-          <p
-            className='text-sm font-normal'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              lineHeight: "150%",
-              letterSpacing: "-0.02em",
-              display: "flex",
-              alignItems: "center", 
-              gap: "4px",
-            }}
-          >
-           
-            <a
-              href='https://www.figma.com/design/qax2lw4m3NY36w49ZdeE16/Design-System---HereAfter?node-id=98-3311&p=f&t=fHLBrWx36ynKLheZ-0'
-              target='_blank'
-              rel='noopener noreferrer'
-              style={{ color: isDarkMode ? "#FEFEFB" : "#252423", transition: "color 0.3s ease" }}
-              className='underline  hover:text-[#585755] transition-colors flex items-center gap-1'
+        <div className='lg:col-span-3 px-4 md:px-0'>
+          <div className='max-w-[600px] w-full'>
+            <div
+              className='mb-4'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                fontWeight: 400,
+                fontStyle: "normal",
+                fontSize: "18px",
+                lineHeight: "150%",
+                letterSpacing: "-2%",              color: isDarkMode ? "#E8E8E6" : "#585755",
+                transition: "color 0.3s ease",
+              }}
             >
-               (Check it out for yourself →
-            </a>{' '}
-              
-            PW: Nat)
-          </p>
+              Design / Eng Velocity
+            </div>
+            <p
+              className='text-base font-normal mb-4'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                lineHeight: "150%",
+                letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
+              }}
+            >
+              Alongside the UX work, I built a compact design system, created motion prototypes, pressure-tested the IA, and collaborated with engineering to define feasibility, edge cases, and technical possibilities.
+            </p>
+            <p
+              className='text-base font-normal'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                lineHeight: "150%",
+                letterSpacing: "-0.02em",
+                display: "flex",
+                alignItems: "center", 
+                gap: "4px",
+              }}
+            >
+            
+              <a
+                href='https://www.figma.com/design/qax2lw4m3NY36w49ZdeE16/Design-System---HereAfter?node-id=98-3311&p=f&t=fHLBrWx36ynKLheZ-0'
+                target='_blank'
+                rel='noopener noreferrer'
+                style={{ color: isDarkMode ? "#FEFEFB" : "#252423", transition: "color 0.3s ease" }}
+                className='underline  hover:text-[#585755] transition-colors flex items-center gap-1'
+              >
+                (Check it out for yourself →
+              </a>{' '}
+                
+              PW: Nat)
+            </p>
+          </div>
         </div>
-        <div className='hidden lg:block'></div>
 
         {/* Full-width design system image */}
         <div className='lg:col-span-3 px-4 md:px-0'>
           <Image
             src={HereAfter7}
             alt='HereAfter Design System'
-            className='w-full h-full'
+            className='w-full h-full rounded-[8px]'
           />
         </div>
 
         {/* Divider */}
-        <div className='lg:col-span-2 px-4 md:px-0'>
-          <Image src={Divider} alt='Divider' className='w-full h-auto my-2' />
+        <div className='lg:col-span-3 px-4 md:px-0'>
+          <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
-        <div className='hidden lg:block'></div>
 
         {/* The Road Ahead Section - text spans 2 columns */}
-        <div className='lg:col-span-2 px-4 md:px-0'>
-          <div
-            className='mb-4'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              fontWeight: 400,
-              fontStyle: "normal",
-              fontSize: "18px",
-              lineHeight: "150%",
-              letterSpacing: "-2%",              color: isDarkMode ? "#E8E8E6" : "#585755",
-              transition: "color 0.3s ease",
-            }}
-          >
-            The Road Ahead
+        <div className='lg:col-span-3 px-4 md:px-0'>
+          <div className='max-w-[600px] w-full'>
+            <div
+              className='mb-4'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                fontWeight: 400,
+                fontStyle: "normal",
+                fontSize: "18px",
+                lineHeight: "150%",
+                letterSpacing: "-2%",              color: isDarkMode ? "#E8E8E6" : "#585755",
+                transition: "color 0.3s ease",
+              }}
+            >
+              The Road Ahead
+            </div>
+            <p
+              className='text-[#6B6B69]'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                fontWeight: 400,
+                fontStyle: "normal",
+                fontSize: "16px",
+                lineHeight: "150%",
+                letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
+              }}
+            >
+  We are validating HereAfter's social value through a staged rollout: MVP & testing , Friends & Family beta, ahead of a wider launch in April. Pending user feedback, the roadmap expands into soundscapes, collections, walking tours, live events surfaced on the map, "pay it forward" money drops, and a Temporal Map that blends past memories, present happenings, and future events.          </p>
+            <p
+              className='text-base font-normal text-[#6B6B69] mt-4'
+              style={{
+                fontFamily: "'Instrument Sans', sans-serif",
+                lineHeight: "150%",
+                letterSpacing: "-0.02em",
+                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
+                transition: "color 0.3s ease",
+              }}
+            >
+              <span className="bg-highlight" style={{ color: isDarkMode ? "#FEFEFB" : "#252423", transition: "color 0.3s ease" }}>
+  In our first 12 weeks, we shipped a functional MVP,
+              </span>
+               {" "}aligned around a north star, and built a product foundation to support whats next. We now have a framework to test whether place-based digital connection can meaningfully reduce isolation and strengthen communities.
+            </p>
           </div>
-          <p
-            className='text-[#6B6B69]'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              fontWeight: 400,
-              fontStyle: "normal",
-              fontSize: "14px",
-              lineHeight: "150%",
-              letterSpacing: "-0.02em",
-              color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-              transition: "color 0.3s ease",
-            }}
-          >
-We are validating HereAfter's social value through a staged rollout: MVP & testing , Friends & Family beta, ahead of a wider launch in April. Pending user feedback, the roadmap expands into soundscapes, collections, walking tours, live events surfaced on the map, "pay it forward" money drops, and a Temporal Map that blends past memories, present happenings, and future events.          </p>
-          <p
-            className='text-sm font-normal text-[#6B6B69] mt-4'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              lineHeight: "150%",
-              letterSpacing: "-0.02em",
-              color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-              transition: "color 0.3s ease",
-            }}
-          >
-            <span className="bg-highlight" style={{ color: isDarkMode ? "#252423" : "#252423", transition: "color 0.3s ease" }}>
-In our first 12 weeks, we shipped a functional MVP,
-            </span>
-             {" "}aligned around a north star, and built a product foundation to support whats next. We now have a framework to test whether place-based digital connection can meaningfully reduce isolation and strengthen communities.
-          </p>
         </div>
-        <div className='hidden lg:block'></div>
       </div>
       
       {/* Mobile Navigation Pill */}
-      <div className="md:hidden w-full flex justify-center py-6 ">
+      <div className="md:hidden w-full flex justify-center py-4 ">
         <Link 
           href="/projects/Maybern"
           style={{
