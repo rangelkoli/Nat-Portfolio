@@ -17,11 +17,7 @@ import { useTheme } from "../context/ThemeContext";
 
 export default function Content() {
   const { isDarkMode } = useTheme();
-  const [isDribbleHovered, setIsDribbleHovered] = useState(false);
-  const [isFigmaHovered, setIsFigmaHovered] = useState(false);
-  const [isMediumHovered, setIsMediumHovered] = useState(false);
-  const [isInstagramHovered, setIsInstagramHovered] = useState(false);
-  const [isSpotifyHovered, setIsSpotifyHovered] = useState(false);
+
   return (
     <div className='max-w-xl max-md:max-w-full max-md:w-full max-md:text-center' style={{ minHeight: "fit-content" }}>
       <h1
@@ -118,7 +114,7 @@ export default function Content() {
               <FaArrowRight
                 color='#FEFEFB'
                 size={8}
-                className='transition-transform group-hover:translate-x-1'
+                className='transition-transform md:group-hover:translate-x-1'
               />
             </a>{" "}
             & dreaming up new ways to connect.
@@ -147,7 +143,7 @@ export default function Content() {
               <FaArrowRight
                 color='#252423'
                 size={8}
-                className='transition-transform group-hover:translate-x-1'
+                className='transition-transform md:group-hover:translate-x-1'
               />
             </a>{"    "}
             &{" "}
@@ -172,7 +168,7 @@ export default function Content() {
               <FaArrowRight
                 color='#252423'
                 size={8}
-                className='transition-transform group-hover:translate-x-1'
+                className='transition-transform md:group-hover:translate-x-1'
               />
             </a>
           </>
@@ -185,72 +181,34 @@ export default function Content() {
             href='https://www.instagram.com/natnud/'
             target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={() => setIsInstagramHovered(true)}
-            onMouseLeave={() => setIsInstagramHovered(false)}
-            style={{
-              display: "inline-block",
-              transition: "all 0.3s ease",
-            }}
+            className='group relative w-4 h-4'
           >
-            <div style={{ position: "relative", width: 16, height: 16 }}>
-              <div
-                style={{
-                  opacity: isInstagramHovered ? 0 : 1,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  transition: "opacity 0.3s ease",
-                }}
-              >
-                <Image src={InstagramIcon} width={16} height={16} alt='Instagram' />
-              </div>
-              <div
-                style={{
-                  opacity: isInstagramHovered ? 1 : 0,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  transition: "opacity 0.3s ease",
-                }}
-              >
-                <Image src={InstagramHover} width={16} height={16} alt='Instagram' />
-              </div>
+            <div
+              className='absolute top-0 left-0 transition-opacity duration-300 opacity-100 md:group-hover:opacity-0'
+            >
+              <Image src={InstagramIcon} width={16} height={16} alt='Instagram' />
+            </div>
+            <div
+              className='absolute top-0 left-0 transition-opacity duration-300 opacity-0 md:group-hover:opacity-100'
+            >
+              <Image src={InstagramHover} width={16} height={16} alt='Instagram' />
             </div>
           </a>
           <a
             href='https://open.spotify.com/show/00Iokzxkn8bFwdzZ9TBcJv?si=5b2b7241edab4398'
             target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={() => setIsSpotifyHovered(true)}
-            onMouseLeave={() => setIsSpotifyHovered(false)}
-            style={{
-              display: "inline-block",
-              transition: "all 0.3s ease",
-            }}
+            className='group relative w-4 h-4'
           >
-            <div style={{ position: "relative", width: 16, height: 16 }}>
-              <div
-                style={{
-                  opacity: isSpotifyHovered ? 0 : 1,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  transition: "opacity 0.3s ease",
-                }}
-              >
-                <Image src={SpotifyIcon} width={16} height={16} alt='Spotify' />
-              </div>
-              <div
-                style={{
-                  opacity: isSpotifyHovered ? 1 : 0,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  transition: "opacity 0.3s ease",
-                }}
-              >
-                <Image src={SpotifyHover} width={16} height={16} alt='Spotify' />
-              </div>
+            <div
+              className='absolute top-0 left-0 transition-opacity duration-300 opacity-100 md:group-hover:opacity-0'
+            >
+              <Image src={SpotifyIcon} width={16} height={16} alt='Spotify' />
+            </div>
+            <div
+              className='absolute top-0 left-0 transition-opacity duration-300 opacity-0 md:group-hover:opacity-100'
+            >
+              <Image src={SpotifyHover} width={16} height={16} alt='Spotify' />
             </div>
           </a>
         </div>
@@ -260,108 +218,51 @@ export default function Content() {
             href='https://dribbble.com/natnud'
             target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={() => setIsDribbleHovered(true)}
-            onMouseLeave={() => setIsDribbleHovered(false)}
-            style={{
-              display: "inline-block",
-              transition: "all 0.3s ease",
-            }}
+            className='group relative w-4 h-4'
           >
-            <div style={{ position: "relative", width: 16, height: 16 }}>
-              <div
-                style={{
-                  opacity: isDribbleHovered ? 0 : 1,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  transition: "opacity 0.3s ease",
-                }}
-              >
-                <Image src={DribbleIcon} width={16} height={16} alt='Dribbble' />
-              </div>
-              <div
-                style={{
-                  opacity: isDribbleHovered ? 1 : 0,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  transition: "opacity 0.3s ease",
-                }}
-              >
-                <Image src={DribbleHover} width={16} height={16} alt='Dribbble' />
-              </div>
+            <div
+              className='absolute top-0 left-0 transition-opacity duration-300 opacity-100 md:group-hover:opacity-0'
+            >
+              <Image src={DribbleIcon} width={16} height={16} alt='Dribbble' />
+            </div>
+            <div
+              className='absolute top-0 left-0 transition-opacity duration-300 opacity-0 md:group-hover:opacity-100'
+            >
+              <Image src={DribbleHover} width={16} height={16} alt='Dribbble' />
             </div>
           </a>
           <a
             href='https://www.figma.com/@natnud'
             target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={() => setIsFigmaHovered(true)}
-            onMouseLeave={() => setIsFigmaHovered(false)}
-            style={{
-              display: "inline-block",
-              transition: "all 0.3s ease",
-            }}
+            className='group relative w-4 h-4'
           >
-            <div style={{ position: "relative", width: 16, height: 16 }}>
-              <div
-                style={{
-                  opacity: isFigmaHovered ? 0 : 1,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  transition: "opacity 0.3s ease",
-                }}
-              >
-                <Image src={FigmaIcon} width={16} height={16} alt='Figma' />
-              </div>
-              <div
-                style={{
-                  opacity: isFigmaHovered ? 1 : 0,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  transition: "opacity 0.3s ease",
-                }}
-              >
-                <Image src={FigmaHover} width={16} height={16} alt='Figma' />
-              </div>
+            <div
+              className='absolute top-0 left-0 transition-opacity duration-300 opacity-100 md:group-hover:opacity-0'
+            >
+              <Image src={FigmaIcon} width={16} height={16} alt='Figma' />
+            </div>
+            <div
+              className='absolute top-0 left-0 transition-opacity duration-300 opacity-0 md:group-hover:opacity-100'
+            >
+              <Image src={FigmaHover} width={16} height={16} alt='Figma' />
             </div>
           </a>
           <a
             href='https://medium.com/@natnud'
             target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={() => setIsMediumHovered(true)}
-            onMouseLeave={() => setIsMediumHovered(false)}
-            style={{
-              display: "inline-block",
-              transition: "all 0.3s ease",
-            }}
+            className='group relative w-4 h-4'
           >
-            <div style={{ position: "relative", width: 16, height: 16 }}>
-              <div
-                style={{
-                  opacity: isMediumHovered ? 0 : 1,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  transition: "opacity 0.3s ease",
-                }}
-              >
-                <Image src={MediumIcon} width={16} height={16} alt='Medium' />
-              </div>
-              <div
-                style={{
-                  opacity: isMediumHovered ? 1 : 0,
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  transition: "opacity 0.3s ease",
-                }}
-              >
-                <Image src={MediumHover} width={16} height={16} alt='Medium' />
-              </div>
+            <div
+              className='absolute top-0 left-0 transition-opacity duration-300 opacity-100 md:group-hover:opacity-0'
+            >
+              <Image src={MediumIcon} width={16} height={16} alt='Medium' />
+            </div>
+            <div
+              className='absolute top-0 left-0 transition-opacity duration-300 opacity-0 md:group-hover:opacity-100'
+            >
+              <Image src={MediumHover} width={16} height={16} alt='Medium' />
             </div>
           </a>
         </div>
