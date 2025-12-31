@@ -214,7 +214,7 @@ function HereAfter() {
             muted
             playsInline
             preload="auto"
-            className='w-full h-[500px] md:h-auto rounded-[8px]'
+            className='w-full h-auto max-h-[500px] rounded-[8px]'
           />
         </div>
         
@@ -246,7 +246,7 @@ function HereAfter() {
             muted
             playsInline
             preload="auto"
-            className='w-full h-[500px] md:h-auto rounded-[8px]'
+            className='w-full h-auto max-h-[500px] rounded-[8px]'
           />
         </div>
 
@@ -286,7 +286,7 @@ function HereAfter() {
             muted
             playsInline
             preload="auto"
-            className='w-full h-[500px] md:h-auto rounded-[8px]'
+            className='w-full h-auto max-h-[500px] rounded-[8px]'
           />
         </div>
 
@@ -317,7 +317,7 @@ function HereAfter() {
             muted
             playsInline
             preload="auto"
-            className='w-full h-[500px] md:h-auto rounded-[8px]'
+            className='w-full h-auto max-h-[500px] rounded-[8px]'
           />
         </div>
 

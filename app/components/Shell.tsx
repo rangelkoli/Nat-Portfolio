@@ -341,10 +341,12 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                   {selectedProject ? (
                     <Image
                       className='gemini-icon'
-                      src={arrowLight}
+                      src={geminiLight}
                       width={32}
                       height={32}
-                      alt='Arrow'
+                      alt='Gemini'
+                      onMouseEnter={handleGeminiMouseEnter}
+                      onMouseLeave={handleGeminiMouseLeave}
                       style={{ cursor: "pointer", opacity: 0 }}
                     />
                   ) : (
@@ -366,10 +368,12 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                   {selectedProject ? (
                     <Image
                       className='gemini-icon'
-                      src={arrow}
+                      src={gemini}
                       width={32}
                       height={32}
-                      alt='Arrow'
+                      alt='Gemini'
+                      onMouseEnter={handleGeminiMouseEnter}
+                      onMouseLeave={handleGeminiMouseLeave}
                       style={{ cursor: "pointer", opacity: 0 }}
                     />
                   ) : (
