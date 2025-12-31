@@ -9,6 +9,8 @@ import Divider from "@/public/Divider.svg";
 import ReportBuilder from "@/public/projects/Maybern2.jpg";
 import Design from "@/public/projects/Design.png";
 import IRRBridge from "@/public/projects/IRRBridge.png";
+import Subheader from "../Subheader";
+
 
 function Maybern() {
   const { isDarkMode } = useTheme();
@@ -38,7 +40,7 @@ function Maybern() {
           className='text-lg mb-2 flex items-center gap-1 group cursor-pointer w-fit'
           style={{ color: isDarkMode ? "#FEFEFB" : "#252423", transition: "color 0.3s ease" }}
         >
-          Maybern.com
+          maybern.com
           <RiArrowRightLine className="transition-transform duration-300 group-hover:translate-x-1" />
         </a>
         <p
@@ -120,26 +122,7 @@ function Maybern() {
 
         <div className='col-span-2 px-4 md:px-0'>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-
-                fontWeight: 400,
-
-                fontStyle: "normal",
-
-                fontSize: "18px",
-
-                lineHeight: "150%",
-
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Report Builder
-            </div>
+            <Subheader>Report Builder</Subheader>
 
             <p
               className='text-base font-normal'
@@ -196,25 +179,7 @@ function Maybern() {
 
         <div className='col-span-2 px-4 md:px-0'>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-
-                fontWeight: 400,
-
-                fontStyle: "normal",
-
-                fontSize: "18px",
-
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#E8E8E6" : "#585755",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Research
-            </div>
+            <Subheader>Research</Subheader>
 
             <p
               className='text-base font-normal text-[#6B6B69]'
@@ -247,26 +212,7 @@ function Maybern() {
 
         <div className='col-span-2 px-4 md:px-0'>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-
-                fontWeight: 400,
-
-                fontStyle: "normal",
-
-                fontSize: "18px",
-
-                lineHeight: "150%",
-
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Design
-            </div>
+            <Subheader>Design</Subheader>
 
             <p
               className='text-base font-normal'
@@ -317,26 +263,7 @@ function Maybern() {
 
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-
-                fontWeight: 400,
-
-                fontStyle: "normal",
-
-                fontSize: "18px",
-
-                lineHeight: "150%",
-
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-                transition: "color 0.3s ease",
-              }}
-            >
-              North Star
-            </div>
+            <Subheader>North Star</Subheader>
 
             <p
               className='text-base font-normal'
@@ -397,26 +324,7 @@ function Maybern() {
 
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-
-                fontWeight: 400,
-
-                fontStyle: "normal",
-
-                fontSize: "18px",
-
-                lineHeight: "150%",
-
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-                transition: "color 0.3s ease",
-              }}
-            >
-              MVP
-            </div>
+            <Subheader>MVP</Subheader>
 
             <p
               className='text-base font-normal'
@@ -476,26 +384,7 @@ function Maybern() {
 
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-
-                fontWeight: 400,
-
-                fontStyle: "normal",
-
-                fontSize: "18px",
-
-                lineHeight: "150%",
-
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-                transition: "color 0.3s ease",
-              }}
-            >
-              IRR Bridges
-            </div>
+            <Subheader>IRR Bridges</Subheader>
 
             <p
               className='text-base font-normal'
@@ -532,26 +421,7 @@ function Maybern() {
 
         <div className='col-span-2 px-4 md:px-0'>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-
-                fontWeight: 400,
-
-                fontStyle: "normal",
-
-                fontSize: "18px",
-
-                lineHeight: "150%",
-
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Conclusions
-            </div>
+            <Subheader>Conclusions</Subheader>
 
             <p
               className='text-base font-normal'

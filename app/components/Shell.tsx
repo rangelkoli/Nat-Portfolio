@@ -11,6 +11,8 @@ import { LuHeart } from "react-icons/lu";
 import { FaRegCopyright } from "react-icons/fa";
 import heartsHovered from "../../public/hearts-hover.svg";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import arrow from "../../public/icons/Arrow.svg";
+import arrowLight from "../../public/icons/ArrowLight.svg";
 import { usePathname } from "next/navigation";
 import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
@@ -189,9 +191,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       const delay = isInitialLoad ? 0.9 : 0.2;
       
       geminiIcons.forEach(geminiIcon => {
-         // Only reset opacity to 0 on initial load. on nav, keep it visible (or whatever current state)
-         // and just animate rotation if desired, or ensure it is 1.
-         const startVars: gsap.TweenVars = { rotation: -180 };
+         const startVars: gsap.TweenVars = { rotation: selectedProject ? 0 : -180 };
          if (isInitialLoad) {
             startVars.opacity = 0;
          }
@@ -313,17 +313,15 @@ export default function Shell({ children }: { children: React.ReactNode }) {
               <Link
                 href="/"
                 className="text-gray-900 font-medium flex items-center gap-2"
-                style={{ fontFamily: "'Instrument Sans', sans-serif" }}
+                style={{ fontFamily: "'Instrument Sans', sans-serif", paddingLeft: "16px" }}
               >
                 <Image
-                  className={isDarkMode ? 'gemini-icon' : ''}
-                  src={isDarkMode ? geminiLight : "/icons/Arrow.svg"}
+                  className='gemini-icon'
+                  src={isDarkMode ? arrowLight : arrow}
                   width={32}
                   height={32}
-                  alt={isDarkMode ? "Gemini" : "Arrow"}
-                  onMouseEnter={isDarkMode ? handleGeminiMouseEnter : undefined}
-                  onMouseLeave={isDarkMode ? handleGeminiMouseLeave : undefined}
-                  style={{ cursor: "pointer", opacity: isDarkMode ? 0 : 1 }}
+                  alt="Arrow"
+                  style={{ cursor: "pointer", opacity: 0 }}
                 />
               </Link>
             ) : (
@@ -343,12 +341,10 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                   {selectedProject ? (
                     <Image
                       className='gemini-icon'
-                      src={geminiLight}
+                      src={arrowLight}
                       width={32}
                       height={32}
-                      alt='Gemini'
-                      onMouseEnter={handleGeminiMouseEnter}
-                      onMouseLeave={handleGeminiMouseLeave}
+                      alt='Arrow'
                       style={{ cursor: "pointer", opacity: 0 }}
                     />
                   ) : (
@@ -367,22 +363,33 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                     pointerEvents: isDarkMode ? "none" : "auto",
                   }}
                 >
-                  <Image
-                    className='gemini-icon'
-                    src={gemini}
-                    width={32}
-                    height={32}
-                    alt='Picture of the author'
-                    onMouseEnter={handleGeminiMouseEnter}
-                    onMouseLeave={handleGeminiMouseLeave}
-                    style={{ cursor: "pointer", opacity: 0 }}
-                  />
+                  {selectedProject ? (
+                    <Image
+                      className='gemini-icon'
+                      src={arrow}
+                      width={32}
+                      height={32}
+                      alt='Arrow'
+                      style={{ cursor: "pointer", opacity: 0 }}
+                    />
+                  ) : (
+                    <Image
+                      className='gemini-icon'
+                      src={gemini}
+                      width={32}
+                      height={32}
+                      alt='Picture of the author'
+                      onMouseEnter={handleGeminiMouseEnter}
+                      onMouseLeave={handleGeminiMouseLeave}
+                      style={{ cursor: "pointer", opacity: 0 }}
+                    />
+                  )}
                 </Link>
               </div>
             )}
 
             {/* Toggle Button */}
-            <div className='toggle-button' style={{ opacity: isInitialLoad ? 0 : 1 }}>
+            <div className='toggle-button' style={{ opacity: isInitialLoad ? 0 : 1, paddingRight: selectedProject ? '16px' : '0px' }}>
                 <Toggle />
             </div>
           </div>

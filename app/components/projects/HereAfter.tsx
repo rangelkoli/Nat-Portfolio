@@ -12,6 +12,8 @@ import Design from "@/public/projects/Design.png"; // Placeholder
 import HereAfter4 from "@/public/projects/HereAfter4.jpg";
 import HereAfter7 from "@/public/projects/HereAfter7.png";
 import { FaArrowRight } from "react-icons/fa";
+import Subheader from "../Subheader";
+
 
 
 function HereAfter() {
@@ -86,21 +88,7 @@ function HereAfter() {
         {/* What Section - text spans 2 columns */}
         <div className='lg:col-span-3 px-4 md:px-0'>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                fontSize: "18px",
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#E8E8E6" : "#585755",
-                transition: "color 0.3s ease",
-              }}
-            >
-              What
-            </div>
+            <Subheader>What</Subheader>
             <p
               className='text-base font-normal'
               style={{
@@ -124,21 +112,7 @@ function HereAfter() {
         {/* Why Section - text spans 2 columns */}
         <div className='lg:col-span-3 px-4 md:px-0'>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                fontSize: "18px",
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#E8E8E6" : "#585755",
-                transition: "color 0.3s ease",
-              }}  
-            >
-              Why
-            </div>
+            <Subheader>Why</Subheader>
             <p
               className='text-base font-normal'
               style={{
@@ -149,7 +123,7 @@ function HereAfter() {
                 transition: "color 0.3s ease",
               }}
             >
-              We're more digitally connected than ever, yet <a href="https://www.gse.harvard.edu/ideas/usable-knowledge/24/10/what-causing-our-epidemic-loneliness-and-how-can-we-fix-it" className="underline" style={{ color: isDarkMode ? "#FEFEFB" : "#252423", transition: "color 0.3s ease" }}>loneliness is rising</a>.  It’s not access that’s missing; it’s depth. When everything exists online, it’s easy to lose the sense of belonging that comes from being rooted in place.
+              We're more digitally connected than ever, yet <a href="https://www.gse.harvard.edu/ideas/usable-knowledge/24/10/what-causing-our-epidemic-loneliness-and-how-can-we-fix-it" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: isDarkMode ? "#FEFEFB" : "#252423", transition: "color 0.3s ease" }}>loneliness is rising</a>. It’s not access that’s missing; it’s depth. When everything exists online, it’s easy to lose the sense of belonging that comes from being rooted in place.
             </p>
             <p
               className='text-base font-normal text-[#6B6B69] mt-4'
@@ -174,21 +148,7 @@ function HereAfter() {
         {/* How Section - text spans 2 columns */}
         <div className='lg:col-span-3 px-4 md:px-0'>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                fontSize: "18px",
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#E8E8E6" : "#585755",
-                transition: "color 0.3s ease",
-              }}
-            >
-              How?
-            </div>
+            <Subheader>How?</Subheader>
             <p
               className='text-base font-normal italic mb-4'
               style={{
@@ -223,39 +183,12 @@ function HereAfter() {
 
         {/* MVP Section Header */}
         <div className='lg:col-span-3 px-4 md:px-0'>
-          <div
-            className='mb-4'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              fontWeight: 400,
-              fontStyle: "normal",
-              fontSize: "18px",
-              lineHeight: "150%",
-              letterSpacing: "-2%",              color: isDarkMode ? "#E8E8E6" : "#585755",
-
-            }}
-          >
-            MVP
-          </div>
+            <Subheader>MVP</Subheader>
         </div>
 
         {/* 1. Explore Map / Core UX - text spans 2 columns, video in last column */}
         <div className='lg:col-span-2 px-4 md:px-0'>
-          <h3
-            className='mb-2'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              fontWeight: 400,
-              fontStyle: "normal",
-              fontSize: "18px",
-              lineHeight: "150%",
-              letterSpacing: "-0.02em",
-              color: isDarkMode ? "#E8E8E6" : "#585755",
-              transition: "color 0.3s ease",
-            }}
-          >
-             🗺️ Explore Map / Core UX
-          </h3>
+          <Subheader>🗺️ Explore Map / Core UX</Subheader>
           <p
             className='text-[#6B6B69]'
             style={{
@@ -288,20 +221,7 @@ function HereAfter() {
 
         {/* 2. Onboarding - text spans 2 columns, video in last column */}
         <div className='lg:col-span-2 px-4 md:px-0'>
-          <h3
-            className='mb-2'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              fontWeight: 400,
-              fontStyle: "normal",
-              fontSize: "18px",
-              lineHeight: "150%",
-              letterSpacing: "-0.02em",              color: isDarkMode ? "#E8E8E6" : "#585755",
-              transition: "color 0.3s ease",
-            }}
-          >
-            👋 Onboarding
-          </h3>
+          <Subheader>👋 Onboarding</Subheader>
           <p
             className='text-balance'
             style={{
@@ -341,20 +261,7 @@ function HereAfter() {
 
         {/* 3. My Map / Profile - text spans 2 columns, video in last column */}
         <div className='lg:col-span-2 px-4 md:px-0'>
-          <h3
-            className='mb-2'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              fontWeight: 400,
-              fontStyle: "normal",
-              fontSize: "18px",
-              lineHeight: "150%",
-              letterSpacing: "-0.02em",              color: isDarkMode ? "#E8E8E6" : "#585755",
-              transition: "color 0.3s ease",
-            }}
-          >
-            👤 My Map / Profile
-          </h3>
+          <Subheader>👤 My Map / Profile</Subheader>
           <p
             className='text-[#6B6B69]'
             style={{
@@ -385,20 +292,7 @@ function HereAfter() {
 
         {/* 4. Notifications - text spans 2 columns, video in last column */}
         <div className='lg:col-span-2 px-4 md:px-0'>
-          <h3
-            className='mb-2'
-            style={{
-              fontFamily: "'Instrument Sans', sans-serif",
-              fontWeight: 400,
-              fontStyle: "normal",
-              fontSize: "18px",
-              lineHeight: "150%",
-              letterSpacing: "-0.02em",              color: isDarkMode ? "#E8E8E6" : "#585755",
-              transition: "color 0.3s ease",
-            }}
-          >
-            🔔 Notifications
-          </h3>
+          <Subheader>🔔 Notifications</Subheader>
           <p
             className='text-[#6B6B69]'
             style={{
@@ -435,20 +329,7 @@ function HereAfter() {
         {/* Design / Eng Velocity Section - text spans 2 columns */}
         <div className='lg:col-span-3 px-4 md:px-0'>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                fontSize: "18px",
-                lineHeight: "150%",
-                letterSpacing: "-2%",              color: isDarkMode ? "#E8E8E6" : "#585755",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Design / Eng Velocity
-            </div>
+              <Subheader>Design / Eng Velocity</Subheader>
             <p
               className='text-base font-normal mb-4'
               style={{
@@ -505,20 +386,7 @@ function HereAfter() {
         {/* The Road Ahead Section - text spans 2 columns */}
         <div className='lg:col-span-3 px-4 md:px-0'>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                fontSize: "18px",
-                lineHeight: "150%",
-                letterSpacing: "-2%",              color: isDarkMode ? "#E8E8E6" : "#585755",
-                transition: "color 0.3s ease",
-              }}
-            >
-              The Road Ahead
-            </div>
+              <Subheader>The Road Ahead</Subheader>
             <p
               className='text-[#6B6B69]'
               style={{

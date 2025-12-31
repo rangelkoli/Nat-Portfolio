@@ -14,6 +14,8 @@ import Drop1 from "@/public/projects/Drop1.png";
 import Drop2 from "@/public/projects/Drop2.png";
 import Vault3 from "@/public/projects/Vault3.png";
 import Vault4 from "@/public/projects/Vault4.png";
+import Subheader from "../Subheader";
+
 
 function Vault() {
   const { isDarkMode } = useTheme();
@@ -120,21 +122,7 @@ function Vault() {
 
         <div className='col-span-2 px-4 md:px-0'>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                fontSize: "18px",
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Research
-            </div>
+            <Subheader>Research</Subheader>
 
             <p
               className='text-base font-normal'
@@ -166,21 +154,7 @@ function Vault() {
 
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 relative'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                fontSize: "18px",
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Ideation
-            </div>
+            <Subheader>Ideation</Subheader>
 
             <p
               className='text-base font-normal'
@@ -282,26 +256,7 @@ function Vault() {
 
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-
-                fontWeight: 400,
-
-                fontStyle: "normal",
-
-                fontSize: "18px",
-
-                lineHeight: "150%",
-
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Collective Unlocking™️
-            </div>
+            <Subheader>Collective Unlocking™️</Subheader>
 
             <p
               className='text-base font-normal'
@@ -362,22 +317,15 @@ function Vault() {
         {/* Conclusions Section */}
 
         <div className='col-span-2 px-4 md:px-0'>
+           <div className='col-span-2 px-4 md:px-0 flex justify-center'>
+          <Image
+            src={Vault4}
+            alt='Vault Additional Image 1'
+            className='w-auto h-auto max-h-[500px] object-contain rounded-[8px]'
+          />
+        </div>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                fontSize: "18px",
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#B8B8B6" : "#6B6B69",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Conclusions
-            </div>
+            <Subheader>Conclusions</Subheader>
 
             <p
               className='text-base font-normal'
@@ -416,13 +364,7 @@ function Vault() {
           <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
-        <div className='col-span-2 px-4 md:px-0 flex justify-center'>
-          <Image
-            src={Vault4}
-            alt='Vault Additional Image 1'
-            className='w-auto h-auto max-h-[500px] object-contain rounded-[8px]'
-          />
-        </div>
+       
           <div className='col-span-2 px-4 md:px-0 flex justify-center'>
             <video
               src="/projects/Vault5.mov"

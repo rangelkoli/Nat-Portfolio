@@ -13,6 +13,8 @@ import Parker6 from "@/public/projects/Parker6.jpg";
 import Parker7 from "@/public/projects/Parker7.png";
 import Divider from "@/public/Divider.svg";
 import Parker8 from "@/public/projects/Parker8.png";
+import Subheader from "../Subheader";
+
 
 function Parker() {
   const { isDarkMode } = useTheme();
@@ -124,21 +126,7 @@ function Parker() {
 
         <div className='col-span-2 px-4 md:px-0'>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                fontSize: "18px",
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#E8E8E6" : "#585755",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Problem
-            </div>
+            <Subheader>Problem</Subheader>
 
             <p
               className='text-base font-normal'
@@ -183,21 +171,7 @@ function Parker() {
         {/* Process Section */}
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 px-4 md:px-0'>
           <div className='w-full lg:w-1/2'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                fontSize: "18px",
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#E8E8E6" : "#585755",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Process
-            </div>
+            <Subheader>Process</Subheader>
 
             <p
               className='text-base font-normal'
@@ -228,21 +202,7 @@ function Parker() {
         {/* Design Section */}
         <div className='col-span-2 px-4 md:px-0'>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                fontSize: "18px",
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#E8E8E6" : "#585755",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Design
-            </div>
+            <Subheader>Design</Subheader>
 
             <p
               className='text-base font-normal'
@@ -296,21 +256,7 @@ function Parker() {
         {/* Impact Section */}
         <div className='col-span-2 px-4 md:px-0'>
           <div className='max-w-[600px] w-full'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                fontSize: "18px",
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#E8E8E6" : "#585755",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Impact
-            </div>
+            <Subheader>Impact</Subheader>
 
             <p
               className='text-base font-normal'

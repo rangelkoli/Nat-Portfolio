@@ -8,6 +8,8 @@ import Caravan1 from "@/public/projects/Caravan1.jpg";
 import Caravan3 from "@/public/projects/Caravan3.png";
 import Caravan4 from "@/public/projects/Caravan4.png";
 import Divider from "@/public/Divider.svg";
+import Subheader from "../Subheader";
+
 
 function Caravan() {
   const { isDarkMode } = useTheme();
@@ -138,20 +140,7 @@ function Caravan() {
         {/* Design System Section */}
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 px-4 md:px-0'>
           <div className='w-full lg:w-1/2'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#E8E8E6" : "#585755",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Design System
-            </div>
+            <Subheader>Design System</Subheader>
 
             <p
               className='text-base font-normal'
@@ -182,20 +171,7 @@ function Caravan() {
         {/* Global Tasks Section */}
         <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 px-4 md:px-0'>
           <div className='w-full lg:w-1/2'>
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#E8E8E6" : "#585755",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Global Tasks
-            </div>
+            <Subheader>Global Tasks</Subheader>
 
             <p
               className='text-base font-normal'
@@ -226,20 +202,7 @@ function Caravan() {
         {/* Shipment Details Section */}
         <div className='col-span-2 px-4 md:px-0'>
           <div className='max-w-[600px] w-full' >
-            <div
-              className='mb-4'
-              style={{
-                fontFamily: "'Instrument Sans', sans-serif",
-                fontWeight: 400,
-                fontStyle: "normal",
-                lineHeight: "150%",
-                letterSpacing: "-2%",
-                color: isDarkMode ? "#E8E8E6" : "#585755",
-                transition: "color 0.3s ease",
-              }}
-            >
-              Shipment Details
-            </div>
+            <Subheader>Shipment Details</Subheader>
 
             <p
               className='text-base font-normal'

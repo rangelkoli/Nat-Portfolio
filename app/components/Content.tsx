@@ -60,19 +60,11 @@ export default function Content() {
       >
         {isDarkMode ? (
           <>
-            My time is spent exploring new ideas, moving my body, curating my
-            spaces, and living in wellness. I'm an aerial acrobat, love to
-            renovate, and dive into anything that makes life feel alive.
-            Vulnerability is my strength, imperfection is beautiful, and the
-            best experiences are the ones we lean into with curiosity and care.
+           My time is spent exploring new ideas, moving my body, curating my spaces, and living in wellness. I'm an aerial acrobat, love to renovate, and dive into anything that makes life feel alive. Vulnerability is strength, imperfection is beautiful, and the best experiences are the ones we lean into with curiosity and care.
           </>
         ) : (
           <>
-            I believe life is a canvas and I’m using mine to craft tools that
-            make life bigger, clearer, and more connected. Design is how I
-            balance play and purpose ~ my opportunity to create experiences that
-            help others live healthier, more meaningful lives, both on and
-            offline.
+           I believe life is a canvas and I’m using mine to craft tools that make life bigger, clearer, and more connected. Design is how I balance play and purpose. It is my opportunity to create experiences that help others live healthier, more meaningful lives, both on and offline.
           </>
         )}
       </p>
