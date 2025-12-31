@@ -163,23 +163,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           }
         );
       }
-      
-      // Animate toggle and projects to be visible when returning to home
-      if (toggle) {
-        gsap.to(toggle, {
-          opacity: 1,
-          duration: 0.6,
-          ease: "power2.inOut",
-        });
-      }
-      
-      if (projects) {
-        gsap.to(projects, {
-          opacity: 1,
-          duration: 0.6,
-          ease: "power2.inOut",
-        });
-      }
     }
     // Update the ref to track the previous value
     previousSelectedProject.current = selectedProject;
@@ -255,7 +238,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
             : isDarkMode
             ? "#3C3B3A"
             : "#FEFEFB",
-        transition: "background-color 0.6s ease-out",
+        transition: "all 0.6s ease-in-out",
       }}
     >
       <div
@@ -287,7 +270,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
               : isDarkMode
               ? "#252423"
               : "#F8F8F5",
-            transition: "background-color 0.6s ease-out",
+            transition: "all 0.6s ease-in-out",
             overflow: isMobile || selectedProject ? "auto" : "hidden",
             maxHeight: selectedProject ? "100vh" : "calc(100vh - 75px)",
             height: selectedProject ? "100vh" : "calc(100vh - 75px)",
@@ -307,6 +290,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
               zIndex: 10,
               width: "auto",
               height: "auto",
+              transition: "all 0.6s ease-in-out",
             }}
           >
             {isMobile && selectedProject ? (
@@ -316,12 +300,11 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                 style={{ fontFamily: "'Instrument Sans', sans-serif", paddingLeft: "16px" }}
               >
                 <Image
-                  className='gemini-icon'
                   src={isDarkMode ? arrowLight : arrow}
                   width={32}
                   height={32}
                   alt="Arrow"
-                  style={{ cursor: "pointer", opacity: 0 }}
+                  style={{ cursor: "pointer", opacity: 1 }}
                 />
               </Link>
             ) : (
@@ -340,12 +323,11 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                 >
                   {selectedProject ? (
                     <Image
-                      className='gemini-icon'
                       src={arrowLight}
                       width={32}
                       height={32}
                       alt='Arrow'
-                      style={{ cursor: "pointer", opacity: 0 }}
+                      style={{ cursor: "pointer", opacity: 1 }}
                     />
                   ) : (
                     <Heart />
@@ -365,12 +347,11 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                 >
                   {selectedProject ? (
                     <Image
-                      className='gemini-icon'
                       src={arrow}
                       width={32}
                       height={32}
                       alt='Arrow'
-                      style={{ cursor: "pointer", opacity: 0 }}
+                      style={{ cursor: "pointer", opacity: 1 }}
                     />
                   ) : (
                     <Image
@@ -389,7 +370,11 @@ export default function Shell({ children }: { children: React.ReactNode }) {
             )}
 
             {/* Toggle Button */}
-            <div className='toggle-button' style={{ opacity: isInitialLoad ? 0 : 1, paddingRight: selectedProject ? '16px' : '0px' }}>
+            <div className='toggle-button' style={{ 
+              opacity: isInitialLoad ? 0 : 1, 
+              paddingRight: selectedProject ? '16px' : '0px',
+              transition: "all 0.6s ease-in-out",
+            }}>
                 <Toggle />
             </div>
           </div>
@@ -406,6 +391,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
               paddingTop: isMobile ? selectedProject ? "24px" : "160px" : "0",
               paddingBottom: isMobile ? "60px" : "0",
               overflow: "visible",
+              transition: "all 0.6s ease-in-out",
             }}
           >
             {/* Desktop Content Section - visible on md+ screens */}
@@ -511,22 +497,24 @@ export default function Shell({ children }: { children: React.ReactNode }) {
             </div>
 
             {/* Sidebar */}
-            {(!isMobile || !selectedProject) && (
-              <div
-                className="projects-wrapper"
-                style={{
-                  width: isMobile ? "100%" : "auto",
-                  overflowY: isMobile ? "visible" : "visible",
-                  paddingRight: isMobile ? "0" : "0",
-                  paddingBottom: isMobile ? "0" : selectedProject ? "91px" : "0px",
-                  display: "flex",
-                  justifyContent: isMobile ? "center" : "flex-end",
-                  opacity: 0, // Start hidden, GSAP animates in
-                }}
-              >
-                <Projects isMobile={isMobile} />
-              </div>
-            )}
+            <div
+              className="projects-wrapper"
+              style={{
+                width: isMobile ? "100%" : "auto",
+                overflowY: isMobile ? "visible" : "visible",
+                paddingRight: isMobile ? "0" : "0",
+                paddingBottom: isMobile ? "0" : selectedProject ? "91px" : "0px",
+                display: "flex",
+                justifyContent: isMobile ? "center" : "flex-end",
+                opacity: (isMobile && selectedProject) ? 0 : 1,
+                maxHeight: (isMobile && selectedProject) ? "0px" : "2000px",
+                overflow: (isMobile && selectedProject) ? "hidden" : "visible",
+                transition: "all 0.6s ease-in-out",
+                pointerEvents: (isMobile && selectedProject) ? "none" : "auto",
+              }}
+            >
+              <Projects isMobile={isMobile} />
+            </div>
           </div>
         </div>
       </div>
