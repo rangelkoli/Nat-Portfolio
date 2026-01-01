@@ -206,7 +206,7 @@ function HereAfter() {
             moments, transforming the map into a collective landscape.
           </p>
         </div>
-        <div className='lg:col-span-1'>
+        <div className='lg:col-span-1 flex justify-center'>
           <video
             src='/projects/HereAfter2.mov'
             autoPlay
@@ -214,7 +214,7 @@ function HereAfter() {
             muted
             playsInline
             preload="auto"
-            className='w-full h-auto max-h-[500px] rounded-[8px]'
+            className='h-auto w-auto max-h-[500px] rounded-[8px]'
           />
         </div>
         
@@ -238,7 +238,7 @@ function HereAfter() {
             First impressions matter. Onboarding establishes the visual brand, sets emotional tone, builds trust before permission requests, and lands users quickly in the core map experience.
           </p>
         </div>
-        <div className='lg:col-span-1'>
+        <div className='lg:col-span-1 flex justify-center'>
           <video
             src='/projects/HereAfter3.mov'
             autoPlay
@@ -246,7 +246,7 @@ function HereAfter() {
             muted
             playsInline
             preload="auto"
-            className='w-full h-auto max-h-[500px] rounded-[8px]'
+            className='h-auto w-auto max-h-[500px] rounded-[8px]'
           />
         </div>
 
@@ -278,7 +278,7 @@ function HereAfter() {
             A personal timeline of everywhere you've been and everything you've shared.
           </p>
         </div>
-        <div className='lg:col-span-1'>
+        <div className='lg:col-span-1 flex justify-center'>
           <video
             src='/projects/HereAfter8.mov'
             autoPlay
@@ -286,7 +286,7 @@ function HereAfter() {
             muted
             playsInline
             preload="auto"
-            className='w-full h-auto max-h-[500px] rounded-[8px]'
+            className='h-auto w-auto max-h-[500px] rounded-[8px]'
           />
         </div>
 
@@ -309,15 +309,15 @@ function HereAfter() {
             In-app (and future push) notifications to support discovery, engagement, and community prompts.
           </p>
         </div>
-        <div className='lg:col-span-1'>
-         <video
+        <div className='lg:col-span-1 flex justify-center'>
+          <video
             src='/projects/HereAfter9.mov'
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
-            className='w-full h-auto max-h-[500px] rounded-[8px]'
+            className='h-auto w-auto max-h-[500px] rounded-[8px]'
           />
         </div>
 

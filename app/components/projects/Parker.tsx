@@ -255,7 +255,7 @@ function Parker() {
 
         {/* Impact Section */}
         <div className='col-span-2 px-4 md:px-0'>
-          <div className='max-w-[600px] w-full'>
+          <div className='max-w-[600px] w-full mb-8'>
             <Subheader>Impact</Subheader>
 
             <p
@@ -271,7 +271,7 @@ function Parker() {
               The product drove measurable results: 30–40% of existing credit customers converted to paid Analytics users, and those users were significantly more likely to stay with Parker rather than churn. Beyond metrics, the work created a framework linking insights → engagement → business growth, proving that transparency and actionable analytics could meaningfully improve both the customer experience and Parker’s lending outcomes.
             </p>
           </div>
-              <div className='w-full col-span-2 space-y-8 px-4 md:px-0'>
+            <div className='w-full col-span-2 space-y-8 px-4 md:px-0'>
            <Image
             src={Parker8}
             alt='Design 1'
@@ -279,18 +279,20 @@ function Parker() {
           />
          
         </div>
-         <div className='col-span-2 px-4 md:px-0'>
+         <div className='col-span-2 px-4 md:px-0 py-8'>
            <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
         <div className='w-full col-span-2 space-y-8 px-4 md:px-0'>
+          <div className="rounded-[8px] overflow-hidden">
             <video
               src="/projects/Parker9.mov"
               autoPlay
               loop
               muted
               playsInline
-              className='w-full h-auto rounded-[8px]'
+              className='w-full h-auto'
             />
+          </div>
           </div>
         </div>
       </div>

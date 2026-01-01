@@ -123,6 +123,7 @@ function Caravan() {
           </div>
         </div>
        <div className="w-full col-span-2 px-4 md:px-0">
+          <div className="rounded-[8px] overflow-hidden">
               <video
               src='/projects/Caravan2.mov'
               autoPlay
@@ -130,8 +131,9 @@ function Caravan() {
               muted
               playsInline
               preload="auto"
-              className='w-full h-auto rounded-[8px]'
+              className='w-full h-auto'
             />
+          </div>
         </div>
         <div className='col-span-2 px-4 md:px-0'>
            <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
@@ -219,6 +221,7 @@ function Caravan() {
           </div>
         </div>
         <div className="w-full col-span-2 px-4 md:px-0">
+          <div className="rounded-[8px] overflow-hidden">
               <video
               src='/projects/Caravan5.mov'
               autoPlay
@@ -226,8 +229,9 @@ function Caravan() {
               muted
               playsInline
               preload="auto"
-              className='w-full h-auto rounded-[8px]'
+              className='w-full h-auto'
             />
+          </div>
         </div>
       </div>
 

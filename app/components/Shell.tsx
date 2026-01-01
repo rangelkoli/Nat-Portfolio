@@ -393,12 +393,11 @@ export default function Shell({ children }: { children: React.ReactNode }) {
             )}
 
             {/* Toggle Button */}
-            <div className='toggle-button' style={{ opacity: isInitialLoad ? 0 : 1, paddingRight: selectedProject ? '16px' : '0px' }}>
+            <div className='toggle-button' style={{ opacity: isInitialLoad ? 0 : 1, paddingRight: (isMobile && selectedProject) ? '16px' : '0px' }}>
                 <Toggle />
             </div>
           </div>
 
-          {/* Content Section */}
           <div
             style={{
               display: "flex",

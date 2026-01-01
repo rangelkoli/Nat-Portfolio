@@ -366,14 +366,16 @@ function Vault() {
 
        
           <div className='col-span-2 px-4 md:px-0 flex justify-center'>
+          <div className="rounded-[8px] overflow-hidden">
             <video
               src="/projects/Vault5.mov"
               autoPlay
               loop
               muted
               playsInline
-              className='w-auto h-auto max-h-[500px] object-contain rounded-[8px]'
+              className='w-auto h-auto max-h-[500px] object-contain'
             />
+          </div>
         </div>
       </div>
 

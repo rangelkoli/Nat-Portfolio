@@ -305,14 +305,16 @@ function Maybern() {
           </div>
 
          <div className='w-full lg:w-1/2 px-4 md:px-0'>
+          <div className="rounded-[8px] overflow-hidden my-4">
             <video
               src="/projects/Maybern3.mov"
               autoPlay
               loop
               muted
               playsInline
-              className='w-full h-auto my-4 rounded-[8px]'
+              className='w-full h-auto'
             />
+          </div>
           </div>
         </div>
 
@@ -365,14 +367,16 @@ function Maybern() {
           </div>
 
            <div className='w-full lg:w-1/2 px-4 md:px-0'>
+          <div className="rounded-[8px] overflow-hidden my-4">
             <video
               src="/projects/Maybern4.mov"
               autoPlay
               loop
               muted
               playsInline
-              className='w-full h-auto my-4 rounded-[8px]'
+              className='w-full h-auto'
             />
+          </div>
           </div>
         </div>
 
