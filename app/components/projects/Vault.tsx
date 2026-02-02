@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import Image from "next/image";
 import Divider from "@/public/Divider.svg";
@@ -15,10 +15,27 @@ import Drop2 from "@/public/projects/Drop2.png";
 import Vault3 from "@/public/projects/Vault3.png";
 import Vault4 from "@/public/projects/Vault4.png";
 import Subheader from "../Subheader";
-
+import LightboxImage from "../LightboxImage";
+import ImageLightbox from "../ImageLightbox";
+import LightboxVideo from "../LightboxVideo";
 
 function Vault() {
   const { isDarkMode } = useTheme();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const images = [
+    { src: Vault1, alt: "Vault Project 1" },
+    { src: VaultBoard, alt: "Design process" },
+    { src: VaultBoard1, alt: "Design process" },
+    { src: Vault3, alt: "North star design" },
+    { src: Vault4, alt: "Vault Additional Image 1" },
+    {
+      type: "video" as const,
+      sources: [{ src: "/projects/Vault5.mp4", type: "video/mp4" }],
+      poster: typeof Vault4 === "string" ? Vault4 : Vault4.src,
+    },
+  ];
   return (
     <div className='min-h-screen bg-transparent md:p-8 overflow-auto mt-6 md:mt-10 overflow-hidden'>
       {/* Header */}
@@ -51,20 +68,24 @@ function Vault() {
             transition: "color 0.3s ease",
           }}
         >
-  Series A | Design Consultant 
+          Series A | Design Consultant
         </p>
       </div>
 
       {/* Main Content Grid */}
 
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mb-8'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mb-8'>
         {/* Introduction Section */}
 
         <div className='w-full col-span-2 px-4 md:px-0'>
-          <Image
+          <LightboxImage
             src={Vault1}
             alt='Vault Project 1'
             className='w-full h-full rounded-[8px]'
+            onClick={() => {
+              setLightboxIndex(0);
+              setLightboxOpen(true);
+            }}
           />
         </div>
 
@@ -81,13 +102,15 @@ function Vault() {
                   transition: "color 0.3s ease",
                 }}
               >
-                <span className="bg-highlight px-[2px] py-[1px]" style={{ color: isDarkMode ? "#FEFEFB" : "#252423" }}>
-                Vault is a platform for artists to share unreleased music and
-                exclusive drops with fans.
-                </span>
-                {" "}
-                  I was brought in to increase artist engagement and accelerate
-                  product → design → engineering loops.
+                <span
+                  className='bg-highlight px-[2px] py-[1px]'
+                  style={{ color: isDarkMode ? "#FEFEFB" : "#252423" }}
+                >
+                  Vault is a platform for artists to share unreleased music and
+                  exclusive drops with fans.
+                </span>{" "}
+                I was brought in to increase artist engagement and accelerate
+                product → design → engineering loops.
               </p>
 
               <p
@@ -152,7 +175,7 @@ function Vault() {
 
         {/* Design Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8 relative'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-8 md:gap-16 relative'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <Subheader>Ideation</Subheader>
 
@@ -196,22 +219,29 @@ function Vault() {
                 color: isDarkMode ? "#B8B8B6" : "#6B6B69",
                 transition: "color 0.3s ease",
                 listStyleType: "disc",
-                paddingLeft: "1.25rem"
+                paddingLeft: "1.25rem",
               }}
             >
               <li style={{ color: isDarkMode ? "#E8E8E6" : "#252423" }}>
                 <span className='font-normal'>Collective Unlocking</span>
-                <ul className="mt-2 space-y-1 ml-4" style={{ listStyleType: "circle" }}>
+                <ul
+                  className='mt-2 space-y-1 ml-4'
+                  style={{ listStyleType: "circle" }}
+                >
                   <li style={{ color: isDarkMode ? "#B8B8B6" : "#6B6B69" }}>
                     <span className='text-base'>
-                      fans unlock a drop <i>together</i>, turning it into an event
+                      fans unlock a drop <i>together</i>, turning it into an
+                      event
                     </span>
                   </li>
                 </ul>
               </li>
               <li style={{ color: isDarkMode ? "#E8E8E6" : "#252423" }}>
                 <span className='font-normal'>Leak-for-Follow</span>
-                <ul className="mt-2 space-y-1 ml-4" style={{ listStyleType: "circle" }}>
+                <ul
+                  className='mt-2 space-y-1 ml-4'
+                  style={{ listStyleType: "circle" }}
+                >
                   <li style={{ color: isDarkMode ? "#B8B8B6" : "#6B6B69" }}>
                     <span className='text-base'>
                       fans trade a follow for access
@@ -221,7 +251,10 @@ function Vault() {
               </li>
               <li style={{ color: isDarkMode ? "#E8E8E6" : "#252423" }}>
                 <span className='font-normal'>Social Proof</span>
-                <ul className="mt-2 space-y-1 ml-4" style={{ listStyleType: "circle" }}>
+                <ul
+                  className='mt-2 space-y-1 ml-4'
+                  style={{ listStyleType: "circle" }}
+                >
                   <li style={{ color: isDarkMode ? "#B8B8B6" : "#6B6B69" }}>
                     <span className='text-base'>
                       show fans who else unlocked the drop
@@ -234,16 +267,24 @@ function Vault() {
 
           <div className='w-full lg:w-1/2 lg:absolute lg:bottom-3 lg:right-0'>
             <div className='flex justify-center items-center px-4 md:px-0'>
-              <Image
+              <LightboxImage
                 src={VaultBoard}
                 alt='Design process'
                 className='w-[80%] h-auto my-4 rounded-[8px]'
+                onClick={() => {
+                  setLightboxIndex(1);
+                  setLightboxOpen(true);
+                }}
               />
             </div>
-            <Image
+            <LightboxImage
               src={VaultBoard1}
               alt='Design process'
               className='w-full h-auto my-4 rounded-[8px]'
+              onClick={() => {
+                setLightboxIndex(2);
+                setLightboxOpen(true);
+              }}
             />
           </div>
         </div>
@@ -254,7 +295,7 @@ function Vault() {
 
         {/* North Star Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-8 md:gap-16'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <Subheader>Collective Unlocking™️</Subheader>
 
@@ -270,7 +311,10 @@ function Vault() {
                 transition: "color 0.3s ease",
               }}
             >
-            Collective Unlocking turns drops into mini fan-driven events. Artists set a threshold, share the link, and watch the progress bar fill. Fans request access, track the momentum, and celebrate together when the drop unlocks.
+              Collective Unlocking turns drops into mini fan-driven events.
+              Artists set a threshold, share the link, and watch the progress
+              bar fill. Fans request access, track the momentum, and celebrate
+              together when the drop unlocks.
             </p>
 
             <p
@@ -285,7 +329,9 @@ function Vault() {
                 transition: "color 0.3s ease",
               }}
             >
-            It gives artists an emotional payoff, gives fans a reason to come back, and gives Vault a repeatable mechanic for engagement spikes between campaigns.
+              It gives artists an emotional payoff, gives fans a reason to come
+              back, and gives Vault a repeatable mechanic for engagement spikes
+              between campaigns.
             </p>
           </div>
 
@@ -296,10 +342,14 @@ function Vault() {
                 alt='North star design'
                 className='w-1/2 h-auto my-4 max-h-[400px] object-contain'
               /> */}
-              <Image
+              <LightboxImage
                 src={Vault3}
                 alt='North star design'
                 className='w-full h-auto my-4 max-h-[400px] object-contain rounded-[8px]'
+                onClick={() => {
+                  setLightboxIndex(3);
+                  setLightboxOpen(true);
+                }}
               />
               {/* <Image
                 src={Drop2}
@@ -317,13 +367,17 @@ function Vault() {
         {/* Conclusions Section */}
 
         <div className='col-span-2 px-4 md:px-0'>
-           <div className='col-span-2 px-4 md:px-0 flex justify-center'>
-          <Image
-            src={Vault4}
-            alt='Vault Additional Image 1'
-            className='w-auto h-auto max-h-[500px] object-contain rounded-[8px]'
-          />
-        </div>
+          <div className='col-span-2 px-4 md:px-0 flex justify-center'>
+            <LightboxImage
+              src={Vault4}
+              alt='Vault Additional Image 1'
+              className='w-auto h-auto max-h-[500px] object-contain rounded-[8px]'
+              onClick={() => {
+                setLightboxIndex(4);
+                setLightboxOpen(true);
+              }}
+            />
+          </div>
           <div className='max-w-[600px] w-full'>
             <Subheader>Conclusions</Subheader>
 
@@ -364,45 +418,56 @@ function Vault() {
           <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
-       
-          <div className='col-span-2 px-4 md:px-0 flex justify-center'>
-          <div className="rounded-[8px] overflow-hidden">
-            <video
-              src="/projects/Vault5.mov"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className='w-auto h-auto max-h-[500px] object-contain'
-            />
-          </div>
+        <div className='col-span-2 px-4 md:px-0 flex justify-center'>
+          <LightboxVideo
+            src='/projects/Vault5.mp4'
+            autoPlay
+            loop
+            muted
+            playsInline
+            className='w-auto h-auto max-h-[500px] object-contain'
+            wrapperClassName='rounded-[8px] overflow-hidden'
+            label='Vault video 1'
+            onClick={() => {
+              setLightboxIndex(5);
+              setLightboxOpen(true);
+            }}
+          />
         </div>
       </div>
 
+      {/* Lightbox */}
+      <ImageLightbox
+        images={images}
+        open={lightboxOpen}
+        index={lightboxIndex}
+        onClose={() => setLightboxOpen(false)}
+      />
+
       {/* Mobile Navigation Pill */}
-      <div className="md:hidden w-full flex justify-center py-4">
-        <Link 
-          href="/"
+      <div className='md:hidden w-full flex justify-center py-4'>
+        <Link
+          href='/'
           style={{
-              borderRadius: "64px",
-              borderWidth: "1px",
-              borderColor: isDarkMode ? "#C8C7C5" : "#C8C7C5",
-              paddingTop: "12px",
-              paddingRight: "32px",
-              paddingBottom: "12px",
-              paddingLeft: "32px",
-              fontFamily: '"Instrument Sans", sans-serif',
-              fontWeight: 400,
-              fontSize: "28px",
-              lineHeight: "150%",
-              letterSpacing: "-2%",
-              color: isDarkMode ? "#FEFEFB" : "#252423",
-              backgroundColor: "transparent",
-              cursor: "pointer",
-              transition: "background-color 0.3s ease",
-              textAlign: "center",
-              display: "block", 
-              textDecoration: "none"
+            borderRadius: "64px",
+            borderWidth: "1px",
+            borderColor: isDarkMode ? "#C8C7C5" : "#C8C7C5",
+            paddingTop: "12px",
+            paddingRight: "32px",
+            paddingBottom: "12px",
+            paddingLeft: "32px",
+            fontFamily: '"Instrument Sans", sans-serif',
+            fontWeight: 400,
+            fontSize: "28px",
+            lineHeight: "150%",
+            letterSpacing: "-2%",
+            color: isDarkMode ? "#FEFEFB" : "#252423",
+            backgroundColor: "transparent",
+            cursor: "pointer",
+            transition: "background-color 0.3s ease",
+            textAlign: "center",
+            display: "block",
+            textDecoration: "none",
           }}
         >
           <RiHomeLine />

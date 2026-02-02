@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import Image from "next/image";
 import { RiArrowRightLine } from "react-icons/ri";
@@ -10,10 +10,30 @@ import ReportBuilder from "@/public/projects/Maybern2.jpg";
 import Design from "@/public/projects/Design.png";
 import IRRBridge from "@/public/projects/IRRBridge.png";
 import Subheader from "../Subheader";
-
+import LightboxImage from "../LightboxImage";
+import ImageLightbox from "../ImageLightbox";
+import LightboxVideo from "../LightboxVideo";
 
 function Maybern() {
   const { isDarkMode } = useTheme();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const images = [
+    { src: Dashboard, alt: "Maybern Project 1" },
+    { src: ReportBuilder, alt: "Maybern Project 2" },
+    { src: IRRBridge, alt: "IRR Bridges design" },
+    {
+      type: "video" as const,
+      sources: [{ src: "/projects/Maybern3.mp4", type: "video/mp4" }],
+      poster: typeof Dashboard === "string" ? Dashboard : Dashboard.src,
+    },
+    {
+      type: "video" as const,
+      sources: [{ src: "/projects/Maybern4.mp4", type: "video/mp4" }],
+      poster: typeof ReportBuilder === "string" ? ReportBuilder : ReportBuilder.src,
+    },
+  ];
   return (
     <div className='min-h-screen bg-transparent md:p-8 overflow-auto mt-6 md:mt-10 custom-scrollbar'>
       {/* Header */}
@@ -34,14 +54,17 @@ function Maybern() {
           Maybern
         </h1>
         <a
-          href="https://Maybern.com"
-          target="_blank"
-          rel="noopener noreferrer"
+          href='https://Maybern.com'
+          target='_blank'
+          rel='noopener noreferrer'
           className='text-lg mb-2 flex items-center gap-1 group cursor-pointer w-fit'
-          style={{ color: isDarkMode ? "#FEFEFB" : "#252423", transition: "color 0.3s ease" }}
+          style={{
+            color: isDarkMode ? "#FEFEFB" : "#252423",
+            transition: "color 0.3s ease",
+          }}
         >
           maybern.com
-          <RiArrowRightLine className="transition-transform duration-300 group-hover:translate-x-1" />
+          <RiArrowRightLine className='transition-transform duration-300 group-hover:translate-x-1' />
         </a>
         <p
           className=''
@@ -62,14 +85,18 @@ function Maybern() {
 
       {/* Main Content Grid */}
 
-      <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mb-8'>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mb-8'>
         {/* Introduction Section */}
 
         <div className='w-full col-span-2 px-4 md:px-0 h-full'>
-          <Image
+          <LightboxImage
             src={Dashboard}
             alt='Maybern Project 1'
             className='w-full h-full rounded-[8px]'
+            onClick={() => {
+              setLightboxIndex(0);
+              setLightboxOpen(true);
+            }}
           />
         </div>
 
@@ -112,7 +139,11 @@ function Maybern() {
                   transition: "color 0.3s ease",
                 }}
               >
-               At its core, Maybern reconciles capital calls, LP opt-outs, distributions, and tax-sensitive fund structures. The vision goes beyond accounting to empower CFOs and fund offices with instant insight into performance so they can move from chasing numbers to making proactive decisions.
+                At its core, Maybern reconciles capital calls, LP opt-outs,
+                distributions, and tax-sensitive fund structures. The vision
+                goes beyond accounting to empower CFOs and fund offices with
+                instant insight into performance so they can move from chasing
+                numbers to making proactive decisions.
               </p>
             </div>
           </div>
@@ -139,8 +170,7 @@ function Maybern() {
               For fund managers, the biggest pain point is access to their own
               numbers. Legacy systems give fund administrators control, so even
               simple requests like “capital called to date” can take days or
-              weeks. When investors ask questions, delays cost credibility and
-              deals.
+              weeks.
             </p>
 
             <p
@@ -165,13 +195,17 @@ function Maybern() {
           </div>
         </div>
         <div className='w-full col-span-2 px-4 md:px-0'>
-          <Image
+          <LightboxImage
             src={ReportBuilder}
             alt='Maybern Project 2'
             className='w-full h-full rounded-[8px]'
+            onClick={() => {
+              setLightboxIndex(1);
+              setLightboxOpen(true);
+            }}
           />
         </div>
-        <div className='col-span-2 px-4 md:px-0'>
+        <div className='col-span-2 lg:col-span-1 px-4 md:px-0'>
           <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
@@ -204,8 +238,8 @@ function Maybern() {
           </div>
         </div>
 
-        <div className='col-span-2 px-4 md:px-0'>
-           <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
+        <div className='col-span-2 lg:col-span-1 px-4 md:px-0'>
+          <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* Design Section */}
@@ -255,13 +289,13 @@ function Maybern() {
           </div>
         </div>
 
-        <div className='col-span-2 px-4 md:px-0'>
+        <div className='col-span-2 lg:col-span-1 px-4 md:px-0'>
           <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* North Star Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-8 md:gap-16'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <Subheader>North Star</Subheader>
 
@@ -282,7 +316,14 @@ function Maybern() {
               Users could start from blank or template-based reports,
               parameterize, timestamp, and schedule them. Within each report,
               users could define groupings, filters, and select calculations
-              from a searchable library of built-in or custom mXL functions. <span className="bg-highlight px-[2px] py-[1px]" style={{ color: isDarkMode ? "#FEFEFB" : "#252423" }}>The focus here was on “A-Ha” moments, graphing, and feature richness over accommodating every possible permutation.</span>
+              from a searchable library of built-in or custom mXL functions.{" "}
+              <span
+                className='bg-highlight px-[2px] py-[1px]'
+                style={{ color: isDarkMode ? "#FEFEFB" : "#252423" }}
+              >
+                The focus here was on “A-Ha” moments, graphing, and feature
+                richness over accommodating every possible permutation.
+              </span>
             </p>
 
             <p
@@ -304,27 +345,31 @@ function Maybern() {
             </p>
           </div>
 
-         <div className='w-full lg:w-1/2 px-4 md:px-0'>
-          <div className="rounded-[8px] overflow-hidden my-4">
-            <video
-              src="/projects/Maybern3.mov"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className='w-full h-auto'
-            />
-          </div>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
+          <LightboxVideo
+            src='/projects/Maybern3.mp4'
+            autoPlay
+            loop
+            muted
+            playsInline
+            className='w-full h-auto'
+            wrapperClassName='rounded-[8px] overflow-hidden my-4'
+            label='Maybern video 1'
+            onClick={() => {
+              setLightboxIndex(3);
+              setLightboxOpen(true);
+            }}
+          />
           </div>
         </div>
 
-        <div className='col-span-2 px-4 md:px-0'>
+        <div className='col-span-2 lg:col-span-1 px-4 md:px-0'>
           <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* MVP Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-8 md:gap-16'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <Subheader>MVP</Subheader>
 
@@ -340,11 +385,16 @@ function Maybern() {
                 transition: "color 0.3s ease",
               }}
             >
-              <span className="bg-highlight px-[2px] py-[1px]" style={{ color: isDarkMode ? "#FEFEFB" : "#252423" }}>
-                MVP focused on perfecting core workflows: creating, running, and exporting reports.
-              </span> Internal reviews surfaced a few usability
-              and technical constraints, like confusion around historical runs
-              of a single report and deferred nested menu complexity.
+              <span
+                className='bg-highlight px-[2px] py-[1px]'
+                style={{ color: isDarkMode ? "#FEFEFB" : "#252423" }}
+              >
+                MVP focused on perfecting core workflows: creating, running, and
+                exporting reports.
+              </span>{" "}
+              Internal reviews surfaced a few usability and technical
+              constraints, like confusion around historical runs of a single
+              report and deferred nested menu complexity.
             </p>
 
             <p
@@ -362,31 +412,35 @@ function Maybern() {
               We built a report database where each run is treated as a
               variation, clarified column setup into “Group By,” “Attributes,”
               and “Time” steps, and replaced dropdown menus with a dynamic
-              sidebar that adapts to selections. 
+              sidebar that adapts to selections.
             </p>
           </div>
 
-           <div className='w-full lg:w-1/2 px-4 md:px-0'>
-          <div className="rounded-[8px] overflow-hidden my-4">
-            <video
-              src="/projects/Maybern4.mov"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className='w-full h-auto'
-            />
-          </div>
+          <div className='w-full lg:w-1/2 px-4 md:px-0'>
+          <LightboxVideo
+            src='/projects/Maybern4.mp4'
+            autoPlay
+            loop
+            muted
+            playsInline
+            className='w-full h-auto'
+            wrapperClassName='rounded-[8px] overflow-hidden my-4'
+            label='Maybern video 2'
+            onClick={() => {
+              setLightboxIndex(4);
+              setLightboxOpen(true);
+            }}
+          />
           </div>
         </div>
 
-        <div className='col-span-2 px-4 md:px-0'>
+        <div className='col-span-2 lg:col-span-1 px-4 md:px-0'>
           <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
         {/* IRR Bridges Section */}
 
-        <div className='col-span-2 flex flex-col lg:flex-row gap-4 md:gap-8'>
+        <div className='col-span-2 flex flex-col lg:flex-row gap-8 md:gap-16'>
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
             <Subheader>IRR Bridges</Subheader>
 
@@ -402,22 +456,29 @@ function Maybern() {
                 transition: "color 0.3s ease",
               }}
             >
-           While the MVP was with eng, customers got excited about the potential for generating IRR bridges, which visualize how an investment’s return develops over time. Design explored integrating this into Report Builder as a flexible graphing tool. Users can input starting and ending values, select drivers like leverage or timing, and generate dynamic charts bridge graphs.
+              While the MVP was with eng, customers got excited about the
+              potential for generating IRR bridges, which visualize how an
+              investment’s return develops over time. Design explored
+              integrating this into Report Builder as a flexible graphing tool.
+              Users can input starting and ending values, select drivers like
+              leverage or timing, and generate dynamic charts bridge graphs.
             </p>
-
-           
           </div>
 
           <div className='w-full lg:w-1/2 relative no-scrollbar '>
-            <Image
+            <LightboxImage
               src={IRRBridge}
               alt='IRR Bridges design'
               className='w-full h-auto my-4 right-0 top-0 rounded-[8px]'
+              onClick={() => {
+                setLightboxIndex(2);
+                setLightboxOpen(true);
+              }}
             />
           </div>
         </div>
 
-        <div className='col-span-2 px-4 md:px-0'>
+        <div className='col-span-2 lg:col-span-1 px-4 md:px-0'>
           <Image src={Divider} alt='Divider' className='w-full h-[16px] my-2' />
         </div>
 
@@ -439,12 +500,11 @@ function Maybern() {
                 transition: "color 0.3s ease",
               }}
             >
-              This project taught me that designing a north star isn’t just
-              about vision—it’s about giving stakeholders something real to
-              believe in. The polished future state made people feel heard,
-              while the MVP showed how we’d get there. Finding that balance
-              between aspiration and execution was what built trust across
-              design, product, and engineering.
+              This project taught me that starting with a north star gives
+              stakeholders something to get excited about. The polished future
+              state made people feel heard, while the MVP showed how we’d get
+              there. Finding that balance between aspiration and execution was
+              what built trust across design, product, and engineering.
             </p>
 
             <p
@@ -459,41 +519,47 @@ function Maybern() {
                 transition: "color 0.3s ease",
               }}
             >
-              I also learned that in finance, visuals only matter if they
-              reinforce the math behind them. The most elegant chart means
-              nothing without accuracy, and the best product experience builds
-              confidence first, delight second. Report Builder became the bridge
-              between those worlds—a product that speaks the language of
-              numbers.
+              In finance, beautiful visuals only matter if they reinforce the
+              math behind them. The most elegant chart means nothing without
+              accuracy, and the best product experience builds confidence first,
+              delight second.
             </p>
           </div>
         </div>
       </div>
 
+      {/* Lightbox */}
+      <ImageLightbox
+        images={images}
+        open={lightboxOpen}
+        index={lightboxIndex}
+        onClose={() => setLightboxOpen(false)}
+      />
+
       {/* Mobile Navigation Pill */}
-      <div className="md:hidden w-full flex justify-center py-4">
-        <Link 
-          href="/projects/Parker"
+      <div className='md:hidden w-full flex justify-center py-4'>
+        <Link
+          href='/projects/Parker'
           style={{
-              borderRadius: "64px",
-              borderWidth: "1px",
-              borderColor: isDarkMode ? "#C8C7C5" : "#C8C7C5",
-              paddingTop: "12px",
-              paddingRight: "32px",
-              paddingBottom: "12px",
-              paddingLeft: "32px",
-              fontFamily: '"Instrument Sans", sans-serif',
-              fontWeight: 400,
-              fontSize: "28px",
-              lineHeight: "150%",
-              letterSpacing: "-2%",
-              color: isDarkMode ? "#FEFEFB" : "#252423",
-              backgroundColor: "transparent",
-              cursor: "pointer",
-              transition: "background-color 0.3s ease",
-              textAlign: "center",
-              display: "block", 
-              textDecoration: "none"
+            borderRadius: "64px",
+            borderWidth: "1px",
+            borderColor: isDarkMode ? "#C8C7C5" : "#C8C7C5",
+            paddingTop: "12px",
+            paddingRight: "32px",
+            paddingBottom: "12px",
+            paddingLeft: "32px",
+            fontFamily: '"Instrument Sans", sans-serif',
+            fontWeight: 400,
+            fontSize: "28px",
+            lineHeight: "150%",
+            letterSpacing: "-2%",
+            color: isDarkMode ? "#FEFEFB" : "#252423",
+            backgroundColor: "transparent",
+            cursor: "pointer",
+            transition: "background-color 0.3s ease",
+            textAlign: "center",
+            display: "block",
+            textDecoration: "none",
           }}
         >
           Parker
