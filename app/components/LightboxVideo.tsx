@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 type LightboxVideoProps = React.VideoHTMLAttributes<HTMLVideoElement> & {
   onClick?: () => void;
@@ -14,19 +14,34 @@ export default function LightboxVideo({
   className = "",
   ...props
 }: LightboxVideoProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Disable lightbox on mobile
+  const handleClick = isMobile ? undefined : onClick;
+  const isClickable = handleClick !== undefined;
+
   return (
     <div
-      onClick={onClick}
-      className={`${onClick ? "cursor-pointer group" : ""} ${wrapperClassName}`}
-      role={onClick ? "button" : undefined}
-      tabIndex={onClick ? 0 : undefined}
+      onClick={handleClick}
+      className={`${isClickable ? "cursor-pointer group" : ""} ${wrapperClassName}`}
+      role={isClickable ? "button" : undefined}
+      tabIndex={isClickable ? 0 : undefined}
       aria-label={label}
       onKeyDown={
-        onClick
+        isClickable
           ? (e) => {
               if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
-                onClick();
+                handleClick();
               }
             }
           : undefined
@@ -35,7 +50,7 @@ export default function LightboxVideo({
       <video
         {...props}
         className={`${className} ${
-          onClick ? "transition-transform duration-200 group-hover:scale-[1.01]" : ""
+          isClickable ? "transition-transform duration-200 md:group-hover:scale-[1.005]" : ""
         }`}
       />
     </div>

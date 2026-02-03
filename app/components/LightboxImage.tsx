@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image, { StaticImageData, ImageProps } from "next/image";
 
 interface LightboxImageProps extends Omit<ImageProps, "onClick"> {
@@ -15,18 +15,33 @@ export default function LightboxImage({
   className = "",
   ...props
 }: LightboxImageProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Disable lightbox on mobile
+  const handleClick = isMobile ? undefined : onClick;
+  const isClickable = handleClick !== undefined;
+
   return (
     <div
-      onClick={onClick}
-      className={`${onClick ? "cursor-pointer group" : ""}`}
-      role={onClick ? "button" : undefined}
-      tabIndex={onClick ? 0 : undefined}
+      onClick={handleClick}
+      className={`${isClickable ? "cursor-pointer group" : ""}`}
+      role={isClickable ? "button" : undefined}
+      tabIndex={isClickable ? 0 : undefined}
       onKeyDown={
-        onClick
+        isClickable
           ? (e) => {
               if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
-                onClick();
+                handleClick();
               }
             }
           : undefined
@@ -36,7 +51,7 @@ export default function LightboxImage({
         src={src}
         alt={alt}
         className={`${className} ${
-          onClick ? "transition-transform duration-200 group-hover:scale-[1.01]" : ""
+          isClickable ? "transition-transform duration-200 md:group-hover:scale-[1.005]" : ""
         }`}
         {...props}
       />

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Lightbox from "yet-another-react-lightbox";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Video from "yet-another-react-lightbox/plugins/video";
 import "yet-another-react-lightbox/styles.css";
 import { useTheme } from "../context/ThemeContext";
@@ -81,7 +80,7 @@ export default function ImageLightbox({
       close={onClose}
       index={index}
       slides={slides}
-      plugins={[Zoom, Video]}
+      plugins={[Video]}
       video={{
         autoPlay: true,
         controls: true,
@@ -89,22 +88,15 @@ export default function ImageLightbox({
         playsInline: true,
         loop: true,
       }}
-      zoom={{
-        maxZoomPixelRatio: 3,
-        zoomInMultiplier: 2,
-        doubleTapDelay: 300,
-        doubleClickDelay: 300,
-        doubleClickMaxStops: 2,
-        keyboardMoveDistance: 50,
-        wheelZoomDistanceFactor: 100,
-        pinchZoomDistanceFactor: 100,
-        scrollToZoom: true,
-      }}
       styles={{
         container: {
           backgroundColor: isDarkMode
             ? "rgba(37, 36, 35, 0.95)"
             : "rgba(254, 254, 251, 0.95)",
+          padding: "128px 32px",
+        },
+        slide: {
+          padding: "0",
         },
         navigationPrev: {
           color: isDarkMode ? "#FEFEFB" : "#252423",
@@ -121,6 +113,7 @@ export default function ImageLightbox({
       carousel={{
         finite: true,
         preload: 2,
+        padding: "128px",
       }}
     />
   );
