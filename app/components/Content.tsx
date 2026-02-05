@@ -43,7 +43,7 @@ export default function Content() {
         ) : (
           <>
             Hey, I'm Nat - <br />
-            NYC based product designer.
+            NYC product designer.
           </>
         )}
       </h1>
@@ -71,11 +71,7 @@ export default function Content() {
           </>
         ) : (
           <>
-            I believe life is a canvas and I’m using mine to craft tools that
-            make life bigger, clearer, and more connected. Design is how I
-            balance play and purpose. It is my opportunity to create experiences
-            that help others live healthier, more meaningful lives, both on and
-            offline.
+            I believe life is a canvas and I’m using mine to craft tools that make the world bigger, clearer, and more connected. Design is how I balance play and purpose. It is my opportunity to create experiences that help others live healthier, more meaningful lives, on and offline
           </>
         )}
       </p>
@@ -124,7 +120,7 @@ export default function Content() {
           </>
         ) : (
           <>
-            Currently building cool stuff with{" "}
+            Building cool stuff with{" "}
             <a
               href='https://aaru.com/'
               target='_blank'

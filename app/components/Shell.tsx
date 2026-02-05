@@ -504,7 +504,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
                           }}
                         >
                           <FaRegCopyright />
-                          Nat Nuding 2025
+                          Nat Nuding {new Date().getFullYear()}
                         </span>
                       </div>
                     </footer>
@@ -582,7 +582,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
             }}
           >
             <FaRegCopyright />
-            Nat Nuding 2025
+            Nat Nuding {new Date().getFullYear()}
           </span>
         </div>
       </footer>
