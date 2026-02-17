@@ -245,7 +245,7 @@ function HereAfter() {
             loop
             muted
             playsInline
-            preload='auto'
+            preload='metadata'
             className='h-auto w-auto max-h-[550px] rounded-lg'
             label='HereAfter video 1'
             onClick={() => {
@@ -283,7 +283,7 @@ function HereAfter() {
             loop
             muted
             playsInline
-            preload='auto'
+            preload='metadata'
             className='h-auto w-auto max-h-[550px] rounded-lg'
             label='HereAfter video 2'
             onClick={() => {
@@ -329,7 +329,7 @@ function HereAfter() {
             loop
             muted
             playsInline
-            preload='auto'
+            preload='metadata'
             className='h-auto w-auto max-h-[550px] rounded-lg'
             label='HereAfter video 3'
             onClick={() => {
@@ -366,7 +366,7 @@ function HereAfter() {
             loop
             muted
             playsInline
-            preload='auto'
+            preload='metadata'
             className='h-auto w-auto max-h-[550px] rounded-lg'
             label='HereAfter video 4'
             onClick={() => {

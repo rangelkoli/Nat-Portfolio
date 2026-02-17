@@ -18,7 +18,7 @@ import { useTheme } from "../context/ThemeContext";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import Heart from "@/public/heart";
-import { preloadAllProjectAssets } from "../utils/preloadAssets";
+
 
 export default function Shell({ children }: { children: React.ReactNode }) {
   const { isDarkMode, setIsDarkMode } = useTheme();
@@ -81,10 +81,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Preload all project images and videos for faster navigation
-  useEffect(() => {
-    preloadAllProjectAssets();
-  }, []);
+
 
   useEffect(() => {
     // Permanent elements animation (runs once)

@@ -174,7 +174,7 @@ function Caravan() {
             loop
             muted
             playsInline
-            preload='auto'
+            preload='metadata'
             className='w-full h-auto'
             wrapperClassName='rounded-lg overflow-hidden'
             label='Caravan video 1'
@@ -294,7 +294,7 @@ function Caravan() {
             loop
             muted
             playsInline
-            preload='auto'
+            preload='metadata'
             className='w-full h-auto'
             wrapperClassName='rounded-lg overflow-hidden'
             label='Caravan video 2'
