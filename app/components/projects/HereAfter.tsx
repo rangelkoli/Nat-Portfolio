@@ -2,20 +2,15 @@
 import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import Image from "next/image";
-import { RiArrowRightLine } from "react-icons/ri";
 import Link from "next/link";
 import Dashboard from "@/public/projects/HereAfterHero.png"; // Placeholder
 import Divider from "@/public/Divider.svg";
-import Drop1 from "@/public/projects/Drop1.png"; // Placeholder
-import Drop2 from "@/public/projects/Drop2.png"; // Placeholder
-import Design from "@/public/projects/Design.png"; // Placeholder
-import HereAfter4 from "@/public/projects/HereAfter4.jpg";
 import HereAfter7 from "@/public/projects/HereAfter7.png";
-import { FaArrowRight } from "react-icons/fa";
 import Subheader from "../Subheader";
 import LightboxImage from "../LightboxImage";
 import ImageLightbox from "../ImageLightbox";
 import LightboxVideo from "../LightboxVideo";
+import { getProjectVideoUrl } from "../../utils/projectVideos";
 
 function HereAfter() {
   const { isDarkMode } = useTheme();
@@ -27,22 +22,22 @@ function HereAfter() {
     { src: HereAfter7, alt: "HereAfter Design System" },
     {
       type: "video" as const,
-      sources: [{ src: "/projects/HereAfter2.mp4", type: "video/mp4" }],
+      sources: [{ src: getProjectVideoUrl("HereAfter2.mp4"), type: "video/mp4" }],
       poster: typeof Dashboard === "string" ? Dashboard : Dashboard.src,
     },
     {
       type: "video" as const,
-      sources: [{ src: "/projects/HereAfter3.mp4", type: "video/mp4" }],
+      sources: [{ src: getProjectVideoUrl("HereAfter3.mp4"), type: "video/mp4" }],
       poster: typeof Dashboard === "string" ? Dashboard : Dashboard.src,
     },
     {
       type: "video" as const,
-      sources: [{ src: "/projects/HereAfter8.mp4", type: "video/mp4" }],
+      sources: [{ src: getProjectVideoUrl("HereAfter8.mp4"), type: "video/mp4" }],
       poster: typeof Dashboard === "string" ? Dashboard : Dashboard.src,
     },
     {
       type: "video" as const,
-      sources: [{ src: "/projects/HereAfter9.mp4", type: "video/mp4" }],
+      sources: [{ src: getProjectVideoUrl("HereAfter9.mp4"), type: "video/mp4" }],
       poster: typeof Dashboard === "string" ? Dashboard : Dashboard.src,
     },
   ];
@@ -142,8 +137,8 @@ function HereAfter() {
               }}
             >
               A social tool rooted in physical space. Instead of infinite feeds
-              and algorithms, the product centers your real world: where you've
-              been, what you've experienced, and how those moments connect you
+              and algorithms, the product centers your real world: where you&apos;ve
+              been, what you&apos;ve experienced, and how those moments connect you
               to the people around you. Users drop memories on a map, explore
               moments from friends and friends-of-friends, and build an archive
               of personal and communal history.
@@ -170,7 +165,7 @@ function HereAfter() {
                 transition: "color 0.3s ease",
               }}
             >
-              We're more digitally connected than ever, yet{" "}
+              We&apos;re more digitally connected than ever, yet{" "}
               <a
                 href='https://www.gse.harvard.edu/ideas/usable-knowledge/24/10/what-causing-our-epidemic-loneliness-and-how-can-we-fix-it'
                 target='_blank'
@@ -183,8 +178,8 @@ function HereAfter() {
               >
                 loneliness is rising
               </a>
-              . It’s not access that’s missing; it’s depth. When everything
-              exists online, it’s easy to lose the sense of belonging that comes
+              . It&apos;s not access that&apos;s missing; it&apos;s depth. When everything
+              exists online, it&apos;s easy to lose the sense of belonging that comes
               from being rooted in place.
             </p>
             <p
@@ -197,10 +192,10 @@ function HereAfter() {
                 transition: "color 0.3s ease",
               }}
             >
-              HereAfter aims to close that gap. It doesn't attempt to replace
+              HereAfter aims to close that gap. It doesn&apos;t attempt to replace
               IRL connection, but to support it by nudging you to explore your
               environment, strengthen friendships through shared experience, and
-              reveal hidden threads in your community. It's a gentle
+              reveal hidden threads in your community. It&apos;s a gentle
               counterpoint to the digital infinitum, a reminder that meaning
               happens where your feet touch the earth.
             </p>
@@ -240,7 +235,7 @@ function HereAfter() {
         </div>
         <div className='lg:col-span-1 flex justify-center'>
           <LightboxVideo
-            src='/projects/HereAfter2.mp4'
+            src={getProjectVideoUrl("HereAfter2.mp4")}
             autoPlay
             loop
             muted
@@ -278,7 +273,7 @@ function HereAfter() {
         </div>
         <div className='lg:col-span-1 flex justify-center'>
           <LightboxVideo
-            src='/projects/HereAfter3.mp4'
+            src={getProjectVideoUrl("HereAfter3.mp4")}
             autoPlay
             loop
             muted
@@ -292,15 +287,6 @@ function HereAfter() {
             }}
           />
         </div>
-
-        {/* Full-width onboarding image */}
-        {/* <div className='lg:col-span-3 px-4 md:px-0'>
-          <Image
-            src={HereAfter4}
-            alt='HereAfter Onboarding Flow'
-            className='w-full h-full'
-          />
-        </div> */}
 
         {/* 3. My Map / Profile - text spans 2 columns, video in last column */}
         <div className='lg:col-span-2 px-4 md:px-0'>
@@ -317,14 +303,14 @@ function HereAfter() {
               color: isDarkMode ? "#B8B8B6" : "#6B6B69",
               transition: "color 0.3s ease",
             }}
-          >
-            A personal timeline of everywhere you've been and everything you've
-            shared.
-          </p>
+            >
+              A personal timeline of everywhere you&apos;ve been and everything you&apos;ve
+              shared.
+            </p>
         </div>
         <div className='lg:col-span-1 flex justify-center'>
           <LightboxVideo
-            src='/projects/HereAfter8.mp4'
+            src={getProjectVideoUrl("HereAfter8.mp4")}
             autoPlay
             loop
             muted
@@ -361,7 +347,7 @@ function HereAfter() {
         </div>
         <div className='lg:col-span-1 flex justify-center'>
           <LightboxVideo
-            src='/projects/HereAfter9.mp4'
+            src={getProjectVideoUrl("HereAfter9.mp4")}
             autoPlay
             loop
             muted
@@ -463,11 +449,11 @@ function HereAfter() {
                 transition: "color 0.3s ease",
               }}
             >
-              We are validating HereAfter's social value through a staged
+              We are validating HereAfter&apos;s social value through a staged
               rollout: MVP & testing , Friends & Family beta, ahead of a wider
               launch in April. Pending user feedback, the roadmap expands into
               soundscapes, collections, walking tours, live events surfaced on
-              the map, "pay it forward" money drops, and a Temporal Map that
+              the map, &quot;pay it forward&quot; money drops, and a Temporal Map that
               blends past memories, present happenings, and future events.{" "}
             </p>
             <p

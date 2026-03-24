@@ -1,7 +1,5 @@
 "use client";
-import rightarrow from "../../public/rightarrow.svg";
 import Image from "next/image";
-import { useState } from "react";
 import DribbleIcon from "../../public/icons/Dribble.svg";
 import DribbleHover from "../../public/icons/DribbleHover.svg";
 import FigmaIcon from "../../public/icons/Figma.svg";
@@ -37,12 +35,12 @@ export default function Content() {
       >
         {isDarkMode ? (
           <>
-            Hey, I'm Nat - <br />
+            Hey, I&apos;m Nat - <br />
             and I believe in magic.
           </>
         ) : (
           <>
-            Hey, I'm Nat - <br />
+            Hey, I&apos;m Nat - <br />
             NYC product designer.
           </>
         )}
@@ -64,14 +62,14 @@ export default function Content() {
         {isDarkMode ? (
           <>
             My time is spent exploring new ideas, moving my body, curating my
-            spaces, and living in wellness. I'm an aerial acrobat, love to
+            spaces, and living in wellness. I&apos;m an aerial acrobat, love to
             renovate, and dive into anything that makes life feel alive.
             Vulnerability is strength, imperfection is beautiful, and the best
             experiences are the ones we lean into with curiosity and care.
           </>
         ) : (
           <>
-            I believe life is a canvas and I’m using mine to craft tools that make the world bigger, clearer, and more connected. Design is how I balance play and purpose. It is my opportunity to create experiences that help others live healthier, more meaningful lives, on and offline
+            I believe life is a canvas and I&apos;m using mine to craft tools that make the world bigger, clearer, and more connected. Design is how I balance play and purpose. It is my opportunity to create experiences that help others live healthier, more meaningful lives, on and offline.
           </>
         )}
       </p>

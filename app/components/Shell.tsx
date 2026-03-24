@@ -4,13 +4,10 @@ import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import Toggle from "./Toggle";
 import Projects from "./Projects";
-import hearts from "../../public/hearts.svg";
 import gemini from "../../public/gemini.svg";
 import geminiLight from "../../public/gemini-light.svg";
 import { LuHeart } from "react-icons/lu";
 import { FaRegCopyright } from "react-icons/fa";
-import heartsHovered from "../../public/hearts-hover.svg";
-import { IoMdArrowRoundBack } from "react-icons/io";
 import arrow from "../../public/icons/Arrow.svg";
 import arrowLight from "../../public/icons/ArrowLight.svg";
 import { usePathname } from "next/navigation";
@@ -21,10 +18,8 @@ import Heart from "@/public/heart";
 
 
 export default function Shell({ children }: { children: React.ReactNode }) {
-  const { isDarkMode, setIsDarkMode } = useTheme();
+  const { isDarkMode } = useTheme();
   const pathname = usePathname();
-  const [isGeminiHovered, setIsGeminiHovered] = useState(false);
-  const [isHeartsHovered, setIsHeartsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
   const previousSelectedProject = useRef<string | null>(null);
@@ -40,7 +35,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   }, []);
 
   const handleGeminiMouseEnter = (e: React.MouseEvent) => {
-    setIsGeminiHovered(true);
     const geminiIcon = e.currentTarget;
     if (geminiIcon) {
       gsap.to(geminiIcon, {
@@ -52,7 +46,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   };
 
   const handleGeminiMouseLeave = (e: React.MouseEvent) => {
-    setIsGeminiHovered(false);
     const geminiIcon = e.currentTarget;
     if (geminiIcon) {
       gsap.to(geminiIcon, {
@@ -61,14 +54,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
         ease: "power2.inOut",
       });
     }
-  };
-
-  const handleHeartsMouseEnter = () => {
-    setIsHeartsHovered(true);
-  };
-
-  const handleHeartsMouseLeave = () => {
-    setIsHeartsHovered(false);
   };
 
   useEffect(() => {
@@ -211,8 +196,6 @@ export default function Shell({ children }: { children: React.ReactNode }) {
 
     const projects = document.querySelector(".projects-wrapper");
     const toggle = document.querySelector(".toggle-button");
-    
-    const delay = 0.9;
 
     if (projects) {
       gsap.fromTo(projects,

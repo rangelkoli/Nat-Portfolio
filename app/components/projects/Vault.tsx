@@ -4,20 +4,17 @@ import { useTheme } from "../../context/ThemeContext";
 import Image from "next/image";
 import Divider from "@/public/Divider.svg";
 import Link from "next/link";
-import { RiArrowRightLine, RiHomeLine } from "react-icons/ri";
-import Report from "@/public/projects/Report.png";
+import { RiHomeLine } from "react-icons/ri";
 import Vault1 from "@/public/projects/Vault1.png";
-import Design from "@/public/projects/Design.png";
 import VaultBoard from "@/public/projects/VaultBoard.png";
 import VaultBoard1 from "@/public/projects/VaultBoard1.png";
-import Drop1 from "@/public/projects/Drop1.png";
-import Drop2 from "@/public/projects/Drop2.png";
 import Vault3 from "@/public/projects/Vault3.png";
 import Vault4 from "@/public/projects/Vault4.png";
 import Subheader from "../Subheader";
 import LightboxImage from "../LightboxImage";
 import ImageLightbox from "../ImageLightbox";
 import LightboxVideo from "../LightboxVideo";
+import { getProjectVideoUrl } from "../../utils/projectVideos";
 
 function Vault() {
   const { isDarkMode } = useTheme();
@@ -32,7 +29,7 @@ function Vault() {
     { src: Vault4, alt: "Vault Additional Image 1" },
     {
       type: "video" as const,
-      sources: [{ src: "/projects/Vault5.mp4", type: "video/mp4" }],
+      sources: [{ src: getProjectVideoUrl("Vault5.mp4"), type: "video/mp4" }],
       poster: typeof Vault4 === "string" ? Vault4 : Vault4.src,
     },
   ];
@@ -420,7 +417,7 @@ function Vault() {
 
         <div className='col-span-2 px-4 md:px-0 flex justify-center'>
           <LightboxVideo
-            src='/projects/Vault5.mp4'
+            src={getProjectVideoUrl("Vault5.mp4")}
             autoPlay
             loop
             muted

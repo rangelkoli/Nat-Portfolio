@@ -17,6 +17,7 @@ import Subheader from "../Subheader";
 import LightboxImage from "../LightboxImage";
 import ImageLightbox from "../ImageLightbox";
 import LightboxVideo from "../LightboxVideo";
+import { getProjectVideoUrl } from "../../utils/projectVideos";
 
 function Parker() {
   const { isDarkMode } = useTheme();
@@ -34,7 +35,7 @@ function Parker() {
     { src: Parker8, alt: "Design 1" },
     {
       type: "video" as const,
-      sources: [{ src: "/projects/Parker9.mp4", type: "video/mp4" }],
+      sources: [{ src: getProjectVideoUrl("Parker9.mp4"), type: "video/mp4" }],
       poster: typeof Parker8 === "string" ? Parker8 : Parker8.src,
     },
   ];
@@ -386,7 +387,7 @@ function Parker() {
           </div>
           <div className='w-full col-span-2 space-y-16 px-4 md:px-0'>
             <LightboxVideo
-              src='/projects/Parker9.mp4'
+              src={getProjectVideoUrl("Parker9.mp4")}
               autoPlay
               loop
               muted

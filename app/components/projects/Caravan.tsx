@@ -12,6 +12,7 @@ import Subheader from "../Subheader";
 import LightboxImage from "../LightboxImage";
 import ImageLightbox from "../ImageLightbox";
 import LightboxVideo from "../LightboxVideo";
+import { getProjectVideoUrl } from "../../utils/projectVideos";
 
 function Caravan() {
   const { isDarkMode } = useTheme();
@@ -24,12 +25,12 @@ function Caravan() {
     { src: Caravan4, alt: "Global Tasks" },
     {
       type: "video" as const,
-      sources: [{ src: "/projects/Caravan2.mp4", type: "video/mp4" }],
+      sources: [{ src: getProjectVideoUrl("Caravan2.mp4"), type: "video/mp4" }],
       poster: typeof Caravan1 === "string" ? Caravan1 : Caravan1.src,
     },
     {
       type: "video" as const,
-      sources: [{ src: "/projects/Caravan5.mp4", type: "video/mp4" }],
+      sources: [{ src: getProjectVideoUrl("Caravan5.mp4"), type: "video/mp4" }],
       poster: typeof Caravan1 === "string" ? Caravan1 : Caravan1.src,
     },
   ];
@@ -169,7 +170,7 @@ function Caravan() {
         </div>
         <div className='w-full col-span-2 px-4 md:px-0'>
           <LightboxVideo
-            src='/projects/Caravan2.mp4'
+            src={getProjectVideoUrl("Caravan2.mp4")}
             autoPlay
             loop
             muted
@@ -289,7 +290,7 @@ function Caravan() {
         </div>
         <div className='w-full col-span-2 px-4 md:px-0'>
           <LightboxVideo
-            src='/projects/Caravan5.mp4'
+            src={getProjectVideoUrl("Caravan5.mp4")}
             autoPlay
             loop
             muted

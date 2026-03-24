@@ -7,12 +7,12 @@ import Link from "next/link";
 import Dashboard from "@/public/projects/Maybern1.png";
 import Divider from "@/public/Divider.svg";
 import ReportBuilder from "@/public/projects/Maybern2.jpg";
-import Design from "@/public/projects/Design.png";
 import IRRBridge from "@/public/projects/IRRBridge.png";
 import Subheader from "../Subheader";
 import LightboxImage from "../LightboxImage";
 import ImageLightbox from "../ImageLightbox";
 import LightboxVideo from "../LightboxVideo";
+import { getProjectVideoUrl } from "../../utils/projectVideos";
 
 function Maybern() {
   const { isDarkMode } = useTheme();
@@ -25,12 +25,12 @@ function Maybern() {
     { src: IRRBridge, alt: "IRR Bridges design" },
     {
       type: "video" as const,
-      sources: [{ src: "/projects/Maybern3.mp4", type: "video/mp4" }],
+      sources: [{ src: getProjectVideoUrl("Maybern3.mp4"), type: "video/mp4" }],
       poster: typeof Dashboard === "string" ? Dashboard : Dashboard.src,
     },
     {
       type: "video" as const,
-      sources: [{ src: "/projects/Maybern4.mp4", type: "video/mp4" }],
+      sources: [{ src: getProjectVideoUrl("Maybern4.mp4"), type: "video/mp4" }],
       poster: typeof ReportBuilder === "string" ? ReportBuilder : ReportBuilder.src,
     },
   ];
@@ -347,7 +347,7 @@ function Maybern() {
 
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
           <LightboxVideo
-            src='/projects/Maybern3.mp4'
+            src={getProjectVideoUrl("Maybern3.mp4")}
             autoPlay
             loop
             muted
@@ -418,7 +418,7 @@ function Maybern() {
 
           <div className='w-full lg:w-1/2 px-4 md:px-0'>
           <LightboxVideo
-            src='/projects/Maybern4.mp4'
+            src={getProjectVideoUrl("Maybern4.mp4")}
             autoPlay
             loop
             muted
